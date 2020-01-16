@@ -1,0 +1,27 @@
+@import 'styles/utilities';
+
+.button-action {
+  width: rem(100);
+  padding: rem(8);
+  border: none;
+  color: #fff;
+  font-size: em(10);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    color: #fff;
+  }
+
+  &--success {
+    background-color: #27ae60;
+  }
+
+  &--danger {
+    margin-left: rem(5);
+    background-color: #e74c3c;
+  }
+}

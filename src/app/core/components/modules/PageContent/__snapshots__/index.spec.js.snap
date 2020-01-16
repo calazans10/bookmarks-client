@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageContent renders without crashing 1`] = `
+<MainWrapper>
+  <MainHeader>
+    <Logo
+      to="/home"
+    />
+    <Connect(MainNavigation) />
+  </MainHeader>
+  <MainContent>
+    <p>
+      Test
+    </p>
+  </MainContent>
+</MainWrapper>
+`;

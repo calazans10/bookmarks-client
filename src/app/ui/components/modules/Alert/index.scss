@@ -1,0 +1,62 @@
+@import 'styles/utilities';
+
+.alert {
+  display: flex;
+  position: fixed;
+  top: -100%;
+  right: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(71);
+  padding-right: rem(40);
+  padding-left: rem(40);
+  transition: top .5s;
+  background: #e74c3c;
+  color: #fff;
+  box-shadow: 0 rem(1) rem(3) 0 rgba(0,0,0,0.2);
+  z-index: 1004;
+
+  @media(min-width: 1044px) {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &--visible {
+    top: 0;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    font-size: em(14);
+    line-height: lh(14px, 17px);
+  }
+
+  &__icon {
+    display: block;
+    width: rem(20);
+    height: rem(20);
+    margin-right: rem(20);
+    background: url('../../../../../images/alerticon.svg') center center no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__trigger {
+    display: block;
+    width: rem(16);
+    height: rem(16);
+    margin-left: rem(20);
+    border: none;
+    background: url('../../../../../images/closeicon.svg') center center no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+
+    @media(min-width: 1044px) {
+      position: absolute;
+      right: rem(40);
+    }
+  }
+}

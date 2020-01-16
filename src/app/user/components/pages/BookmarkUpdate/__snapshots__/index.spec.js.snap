@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookmarkUpdate renders without crashing 1`] = `
+<PageContent
+  to="/bookmarks"
+>
+  <BookmarkForm
+    action="Update"
+    legend="Edit bookmark"
+    onSubmit={[Function]}
+    title="Introducing the React RFC Process"
+    url="https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html"
+  />
+</PageContent>
+`;

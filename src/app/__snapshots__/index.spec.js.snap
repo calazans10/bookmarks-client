@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<Fragment>
+  <Connect(Loading) />
+  <Suspense
+    fallback={<FallbackLoading />}
+  >
+    <Connect(ConnectedRouterWithContext)
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Switch>
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/sign_in"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/sign_up"
+        />
+        <Connect(PrivateRoute)
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/bookmarks"
+        />
+        <Connect(PrivateRoute)
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/bookmarks/new"
+        />
+        <Connect(PrivateRoute)
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/bookmarks/:id/edit"
+        />
+        <Connect(PrivateRoute)
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/admin/bookmarks"
+        />
+        <Connect(PrivateRoute)
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/admin/users"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+        />
+      </Switch>
+    </Connect(ConnectedRouterWithContext)>
+  </Suspense>
+</Fragment>
+`;

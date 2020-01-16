@@ -1,0 +1,35 @@
+@import 'styles/utilities';
+
+.table-column {
+  display: block;
+
+  &:before {
+    display: block;
+    margin-bottom: rem(10);
+    font-size: em(18);
+    font-weight: 500;
+    content: attr(data-label);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: rem(20);
+  }
+
+  @media(min-width: 600px) {
+    display: table-cell;
+    padding: rem(12);
+
+    &:before {
+      display: none;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &--actions {
+      width: 40%;
+      text-align: right;
+    }
+  }
+}

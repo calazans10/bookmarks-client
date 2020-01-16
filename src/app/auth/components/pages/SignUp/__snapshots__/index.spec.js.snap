@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp renders without crashing 1`] = `
+<MainWrapper>
+  <MainHeader>
+    <Logo
+      to="/"
+    />
+    <Connect(MainNavigation)
+      pathname="/sign_in"
+      title="Sign In"
+    />
+  </MainHeader>
+  <MainContent>
+    <AuthForm
+      action="Register"
+      isRegistration={true}
+      legend="Sign up for free"
+      onSubmit={[Function]}
+    />
+  </MainContent>
+</MainWrapper>
+`;

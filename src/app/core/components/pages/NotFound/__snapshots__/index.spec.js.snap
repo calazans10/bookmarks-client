@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound renders without crashing 1`] = `
+<MainWrapper>
+  <MainContent
+    title="Page not found"
+  >
+    <PageSection
+      title="404 - Page not found"
+    >
+      <p>
+        Sorry, the page you were looking for cannot be found!
+      </p>
+      <p>
+        Do you want to go back to where you were?
+         
+        <ButtonLink
+          onClick={[Function]}
+        >
+          Click here
+        </ButtonLink>
+        .
+      </p>
+    </PageSection>
+  </MainContent>
+</MainWrapper>
+`;

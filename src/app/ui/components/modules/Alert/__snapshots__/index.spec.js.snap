@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert when is visible renders without crashing 1`] = `
+<div
+  className="alert alert--visible"
+>
+  <p
+    className="alert__message"
+  >
+    <span
+      className="alert__icon"
+    />
+    Invalid credendials
+  </p>
+  <button
+    aria-label="Close alert"
+    className="alert__trigger"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    <span
+      className="sr-only"
+    >
+      x
+    </span>
+  </button>
+</div>
+`;

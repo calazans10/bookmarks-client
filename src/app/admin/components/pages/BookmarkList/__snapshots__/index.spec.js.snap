@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookmarkList renders without crashing 1`] = `
+<PageContent
+  to="/admin/bookmarks"
+>
+  <PageNavigation
+    pathname="/admin/users"
+    title="Users list"
+  />
+  <Connect(BookmarkTable) />
+</PageContent>
+`;

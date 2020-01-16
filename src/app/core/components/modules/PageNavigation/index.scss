@@ -1,0 +1,9 @@
+@import 'styles/utilities';
+
+.page-navigation {
+  margin-bottom: rem(25);
+
+  @media(min-width: 600px) {
+    margin-top: rem(60);
+  }
+}

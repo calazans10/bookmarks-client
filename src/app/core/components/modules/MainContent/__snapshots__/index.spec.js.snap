@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContent renders without crashing 1`] = `
+<main
+  className="main-content"
+>
+  <p>
+    Lorem Ipsum
+  </p>
+</main>
+`;

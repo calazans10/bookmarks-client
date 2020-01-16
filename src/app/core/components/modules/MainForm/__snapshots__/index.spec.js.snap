@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainForm renders without crashing 1`] = `
+<form
+  autoComplete="off"
+  className="main-form"
+  noValidate={true}
+  onSubmit={[MockFunction]}
+>
+  <fieldset>
+    <legend
+      className="main-form__legend"
+    >
+      A legend
+    </legend>
+    <div>
+      <label
+        htmlFor="test"
+      >
+        A label
+      </label>
+      <input
+        id="test"
+        name="test"
+        type="text"
+      />
+    </div>
+  </fieldset>
+</form>
+`;

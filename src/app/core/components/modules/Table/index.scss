@@ -1,0 +1,13 @@
+@import 'styles/utilities';
+
+.table {
+  width: 100%;
+  border-right: rem(2) solid #efefef;
+  border-left: rem(2) solid #efefef;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  @media(min-width: 600px) {
+    margin: 0 auto rem(40);
+  }
+}

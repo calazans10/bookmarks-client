@@ -1,0 +1,30 @@
+@import 'styles/utilities';
+
+.form-group {
+  margin-bottom: rem(20);
+
+  &__label {
+    display: block;
+    margin-bottom: rem(5);
+    font-weight: 500;
+    letter-spacing: 1.25px;
+  }
+
+  &__control {
+    width: 100%;
+    padding: rem(12);
+    border: 1px solid #e3e3e3;
+    background: #fff;
+
+    &--textarea {
+      resize: none;
+    }
+  }
+
+  &__error {
+    display: block;
+    margin-top: rem(5);
+    color: #e74c3c;
+    font-size: em(14);
+  }
+}

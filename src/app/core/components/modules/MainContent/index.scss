@@ -1,0 +1,11 @@
+@import 'styles/utilities';
+
+.main-content {
+  padding: rem(40) rem(20);
+
+  @media(min-width: 1044px) {
+    max-width: rem(1044);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
