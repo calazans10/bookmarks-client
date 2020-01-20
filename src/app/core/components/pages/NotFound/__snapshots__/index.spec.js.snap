@@ -1,27 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotFound renders without crashing 1`] = `
-<MainWrapper>
-  <MainContent
-    title="Page not found"
-  >
-    <PageSection
-      title="404 - Page not found"
-    >
-      <p>
-        Sorry, the page you were looking for cannot be found!
-      </p>
-      <p>
-        Do you want to go back to where you were?
-         
-        <ButtonLink
-          onClick={[Function]}
-        >
-          Click here
-        </ButtonLink>
-        .
-      </p>
-    </PageSection>
-  </MainContent>
-</MainWrapper>
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "kdaiba",
+          "pathname": "/unknown",
+          "search": "",
+          "state": undefined,
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "kdaiba",
+        "pathname": "/unknown",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <NotFound />
+</Router>
 `;

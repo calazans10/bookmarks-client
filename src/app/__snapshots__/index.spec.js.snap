@@ -30,111 +30,58 @@ exports[`renders without crashing 1`] = `
     >
       <Switch>
         <Route
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/"
-        />
+        >
+          <lazy />
+        </Route>
         <Route
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/sign_in"
-        />
+        >
+          <lazy />
+        </Route>
         <Route
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/sign_up"
-        />
+        >
+          <lazy />
+        </Route>
         <Connect(PrivateRoute)
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/bookmarks"
-        />
+        >
+          <lazy />
+        </Connect(PrivateRoute)>
         <Connect(PrivateRoute)
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/bookmarks/new"
-        />
+        >
+          <lazy />
+        </Connect(PrivateRoute)>
         <Connect(PrivateRoute)
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/bookmarks/:id/edit"
-        />
+        >
+          <lazy />
+        </Connect(PrivateRoute)>
         <Connect(PrivateRoute)
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/admin/bookmarks"
-        />
+        >
+          <lazy />
+        </Connect(PrivateRoute)>
         <Connect(PrivateRoute)
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
           exact={true}
           path="/admin/users"
-        />
+        >
+          <lazy />
+        </Connect(PrivateRoute)>
         <Route
-          component={
-            Object {
-              "$$typeof": Symbol(react.lazy),
-              "_ctor": [Function],
-              "_result": null,
-              "_status": -1,
-            }
-          }
-        />
+          path="*"
+        >
+          <lazy />
+        </Route>
       </Switch>
     </Connect(ConnectedRouterWithContext)>
   </Suspense>

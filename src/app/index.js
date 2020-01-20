@@ -22,15 +22,33 @@ const App = ({ history }) => (
     <Suspense fallback={<FallbackLoading />}>
       <ConnectedRouter history={history}>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/sign_in" exact component={SignIn} />
-          <Route path="/sign_up" exact component={SignUp} />
-          <PrivateRoute path="/bookmarks" exact component={BookmarkList} />
-          <PrivateRoute path="/bookmarks/new" exact component={BookmarkCreate} />
-          <PrivateRoute path="/bookmarks/:id/edit" exact component={BookmarkUpdate} />
-          <PrivateRoute path="/admin/bookmarks" exact component={AdminBookmarkList} />
-          <PrivateRoute path="/admin/users" exact component={AdminUserList} />
-          <Route component={NotFound} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/sign_in">
+            <SignIn />
+          </Route>
+          <Route exact path="/sign_up">
+            <SignUp />
+          </Route>
+          <PrivateRoute exact path="/bookmarks">
+            <BookmarkList />
+          </PrivateRoute>
+          <PrivateRoute exact path="/bookmarks/new">
+            <BookmarkCreate />
+          </PrivateRoute>
+          <PrivateRoute exact path="/bookmarks/:id/edit">
+            <BookmarkUpdate />
+          </PrivateRoute>
+          <PrivateRoute exact path="/admin/bookmarks">
+            <AdminBookmarkList />
+          </PrivateRoute>
+          <PrivateRoute exact path="/admin/users">
+            <AdminUserList />
+          </PrivateRoute>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </ConnectedRouter>
     </Suspense>
