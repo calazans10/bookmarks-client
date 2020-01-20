@@ -1,3 +1,4 @@
+import { createAction } from '@reduxjs/toolkit';
 import {
   ALERT_SHOW,
   ALERT_HIDE,
@@ -7,38 +8,25 @@ import {
   LOADING_HIDE,
   LOADING_REQUEST,
 } from '../constants/actionTypes';
-import { LOGOUT_REQUEST } from '../../auth/constants/actionTypes';
+import { doRequestLogout } from '../../auth/actions';
 
-export const doShowAlert = message => ({
-  type: ALERT_SHOW,
+export const doShowAlert = createAction(ALERT_SHOW, message => ({
   payload: {
     message,
   },
-});
+}));
 
-export const doHideAlert = () => ({
-  type: ALERT_HIDE,
-});
+export const doHideAlert = createAction(ALERT_HIDE);
 
-export const doShowConfirm = () => ({
-  type: CONFIRM_SHOW,
-});
+export const doShowConfirm = createAction(CONFIRM_SHOW);
 
-export const doHideConfirm = () => ({
-  type: CONFIRM_HIDE,
-});
+export const doHideConfirm = createAction(CONFIRM_HIDE);
 
-export const doShowLoading = () => ({
-  type: LOADING_SHOW,
-});
+export const doShowLoading = createAction(LOADING_SHOW);
 
-export const doHideLoading = () => ({
-  type: LOADING_HIDE,
-});
+export const doHideLoading = createAction(LOADING_HIDE);
 
-export const doRequestLoading = () => ({
-  type: LOADING_REQUEST,
-});
+export const doRequestLoading = createAction(LOADING_REQUEST);
 
 export const doHandleError = error => {
   let statusCode = 500;
@@ -63,7 +51,7 @@ export const doHandleError = error => {
   }
 
   if (statusCode === 401) {
-    return { type: LOGOUT_REQUEST };
+    return doRequestLogout();
   }
 
   return doShowAlert(errorMessage);

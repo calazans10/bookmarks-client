@@ -1,7 +1,6 @@
-import { applyMiddleware, createStore } from 'redux';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { routerMiddleware } from 'connected-react-router';
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
@@ -16,20 +15,26 @@ const persistConfig = {
 };
 
 const createAppMiddleware = sagaMiddleware => {
+  const appMiddleware = [...getDefaultMiddleware(), routerMiddleware(history), sagaMiddleware];
+
   if (process.env.REACT_APP_ENVIRONMENT === 'development') {
-    return composeWithDevTools(applyMiddleware(routerMiddleware(history), sagaMiddleware, logger));
+    return [...appMiddleware, logger];
   }
 
-  return applyMiddleware(routerMiddleware(history), sagaMiddleware);
+  return appMiddleware;
 };
 
 const sagaMiddleware = createSagaMiddleware();
-const appMiddleware = createAppMiddleware(sagaMiddleware);
+const middleware = createAppMiddleware(sagaMiddleware);
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export default () => {
-  const store = createStore(persistedReducer, appMiddleware);
+  const store = configureStore({
+    reducer: persistedReducer,
+    middleware,
+    devTools: process.env.REACT_APP_ENVIRONMENT !== 'production',
+  });
   const persistor = persistStore(store);
   sagaMiddleware.run(rootSaga);
   return { store, persistor };

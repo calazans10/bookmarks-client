@@ -1,3 +1,4 @@
+import { createReducer } from '@reduxjs/toolkit';
 import {
   GET_MY_BOOKMARKS_SUCCESS,
   DELETE_BOOKMARK_SUCCESS,
@@ -36,17 +37,10 @@ const applyChangeSelectedBookmark = (state, action) => {
   return { ...state, selectedBookmark: bookmark };
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case GET_MY_BOOKMARKS_SUCCESS:
-      return applySuccessGetMyBookmarks(state, action);
-    case DELETE_BOOKMARK_SUCCESS:
-      return applySuccessDeleteBookmark(state, action);
-    case SELECTED_BOOKMARK_CHANGE:
-      return applyChangeSelectedBookmark(state, action);
-    default:
-      return state;
-  }
-};
+const userReducer = createReducer(INITIAL_STATE, {
+  [GET_MY_BOOKMARKS_SUCCESS]: (state, action) => applySuccessGetMyBookmarks(state, action),
+  [DELETE_BOOKMARK_SUCCESS]: (state, action) => applySuccessDeleteBookmark(state, action),
+  [SELECTED_BOOKMARK_CHANGE]: (state, action) => applyChangeSelectedBookmark(state, action),
+});
 
 export default userReducer;

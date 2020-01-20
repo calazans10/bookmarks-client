@@ -1,3 +1,4 @@
+import { createReducer } from '@reduxjs/toolkit';
 import { LOGIN_SUCCESS } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
@@ -14,13 +15,8 @@ const applySuccessLogin = (state, action) => {
   return { ...state, user, token };
 };
 
-const authReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case LOGIN_SUCCESS:
-      return applySuccessLogin(state, action);
-    default:
-      return state;
-  }
-};
+const authReducer = createReducer(INITIAL_STATE, {
+  [LOGIN_SUCCESS]: (state, action) => applySuccessLogin(state, action),
+});
 
 export default authReducer;

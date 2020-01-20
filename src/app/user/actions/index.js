@@ -1,3 +1,4 @@
+import { createAction } from '@reduxjs/toolkit';
 import {
   GET_MY_BOOKMARKS_REQUEST,
   GET_MY_BOOKMARKS_SUCCESS,
@@ -8,54 +9,50 @@ import {
   SELECTED_BOOKMARK_CHANGE,
 } from '../constants/actionTypes';
 
-export const doRequestGetMyBookmarks = (offset, limit) => ({
-  type: GET_MY_BOOKMARKS_REQUEST,
+export const doRequestGetMyBookmarks = createAction(GET_MY_BOOKMARKS_REQUEST, (offset, limit) => ({
   payload: {
     offset,
     limit,
   },
-});
+}));
 
-export const doSuccessGetMyBookmarks = (meta, data) => ({
-  type: GET_MY_BOOKMARKS_SUCCESS,
+export const doSuccessGetMyBookmarks = createAction(GET_MY_BOOKMARKS_SUCCESS, (meta, data) => ({
   payload: {
     meta,
     data,
   },
-});
+}));
 
-export const doRequestCreateBookmark = data => ({
-  type: CREATE_BOOKMARK_REQUEST,
+export const doRequestCreateBookmark = createAction(CREATE_BOOKMARK_REQUEST, data => ({
   payload: {
     data,
   },
-});
+}));
 
-export const doRequestUpdateBookmark = (bookmarkId, data) => ({
-  type: UPDATE_BOOKMARK_REQUEST,
-  payload: {
-    bookmarkId,
-    data,
-  },
-});
+export const doRequestUpdateBookmark = createAction(
+  UPDATE_BOOKMARK_REQUEST,
+  (bookmarkId, data) => ({
+    payload: {
+      bookmarkId,
+      data,
+    },
+  })
+);
 
-export const doRequestDeleteBookmark = bookmarkId => ({
-  type: DELETE_BOOKMARK_REQUEST,
-  payload: {
-    bookmarkId,
-  },
-});
-
-export const doSuccessDeleteBookmark = bookmarkId => ({
-  type: DELETE_BOOKMARK_SUCCESS,
+export const doRequestDeleteBookmark = createAction(DELETE_BOOKMARK_REQUEST, bookmarkId => ({
   payload: {
     bookmarkId,
   },
-});
+}));
 
-export const doChangeSelectedBookmark = bookmark => ({
-  type: SELECTED_BOOKMARK_CHANGE,
+export const doSuccessDeleteBookmark = createAction(DELETE_BOOKMARK_SUCCESS, bookmarkId => ({
+  payload: {
+    bookmarkId,
+  },
+}));
+
+export const doChangeSelectedBookmark = createAction(SELECTED_BOOKMARK_CHANGE, bookmark => ({
   payload: {
     bookmark,
   },
-});
+}));

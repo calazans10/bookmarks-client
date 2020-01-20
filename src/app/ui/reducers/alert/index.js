@@ -1,3 +1,4 @@
+import { createReducer } from '@reduxjs/toolkit';
 import { ALERT_SHOW, ALERT_HIDE } from '../../constants/actionTypes';
 
 const INITIAL_STATE = {
@@ -15,15 +16,9 @@ const applyHideAlert = () => ({
   isVisible: false,
 });
 
-const alertReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case ALERT_SHOW:
-      return applyShowAlert(state, action);
-    case ALERT_HIDE:
-      return applyHideAlert();
-    default:
-      return state;
-  }
-};
+const alertReducer = createReducer(INITIAL_STATE, {
+  [ALERT_SHOW]: (state, action) => applyShowAlert(state, action),
+  [ALERT_HIDE]: () => applyHideAlert(),
+});
 
 export default alertReducer;

@@ -1,3 +1,4 @@
+import { createAction } from '@reduxjs/toolkit';
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -6,37 +7,25 @@ import {
   REGISTRATION_REQUEST,
 } from '../constants/actionTypes';
 
-export const doRequestLogin = (email, password) => ({
-  type: LOGIN_REQUEST,
-  payload: {
-    auth: {
+export const doRequestLogin = createAction(LOGIN_REQUEST, (email, password) => ({
+  payload: { auth: { email, password } },
+}));
+
+export const doSuccessLogin = createAction(LOGIN_SUCCESS, (user, token) => ({
+  payload: { user, token },
+}));
+
+export const doRequestLogout = createAction(LOGOUT_REQUEST);
+
+export const doSuccessLogout = createAction(LOGOUT_SUCCESS);
+
+export const doRequestRegistration = createAction(
+  REGISTRATION_REQUEST,
+  (name, email, password) => ({
+    payload: {
+      name,
       email,
       password,
     },
-  },
-});
-
-export const doSuccessLogin = (user, token) => ({
-  type: LOGIN_SUCCESS,
-  payload: {
-    user,
-    token,
-  },
-});
-
-export const doRequestLogout = () => ({
-  type: LOGOUT_REQUEST,
-});
-
-export const doSuccessLogout = () => ({
-  type: LOGOUT_SUCCESS,
-});
-
-export const doRequestRegistration = (name, email, password) => ({
-  type: REGISTRATION_REQUEST,
-  payload: {
-    name,
-    email,
-    password,
-  },
-});
+  })
+);

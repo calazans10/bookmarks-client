@@ -1,3 +1,4 @@
+import { createReducer } from '@reduxjs/toolkit';
 import { GET_BOOKMARKS_SUCCESS, GET_USERS_SUCCESS } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
@@ -33,15 +34,9 @@ const applySuccessGetUsers = (state, action) => {
   return { ...state, users: updatedUsers };
 };
 
-const adminReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case GET_BOOKMARKS_SUCCESS:
-      return applySuccessGetBookmarks(state, action);
-    case GET_USERS_SUCCESS:
-      return applySuccessGetUsers(state, action);
-    default:
-      return state;
-  }
-};
+const adminReducer = createReducer(INITIAL_STATE, {
+  [GET_BOOKMARKS_SUCCESS]: (state, action) => applySuccessGetBookmarks(state, action),
+  [GET_USERS_SUCCESS]: (state, action) => applySuccessGetUsers(state, action),
+});
 
 export default adminReducer;
