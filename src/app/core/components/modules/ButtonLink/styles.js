@@ -1,6 +1,6 @@
-@import 'styles/utilities';
+import styled from 'styled-components';
 
-.button-link {
+export const Button = styled.button`
   padding: 0;
   transition: color 0.1s linear;
   border: none;
@@ -17,4 +17,4 @@
   &:hover {
     color: #20638f;
   }
-}
+`;

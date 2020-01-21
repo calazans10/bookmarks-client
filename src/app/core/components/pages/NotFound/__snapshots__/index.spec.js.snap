@@ -11,7 +11,7 @@ exports[`NotFound renders without crashing 1`] = `
       "entries": Array [
         Object {
           "hash": "",
-          "key": "s2f0kt",
+          "key": "qpo9hj",
           "pathname": "/unknown",
           "search": "",
           "state": undefined,
@@ -25,7 +25,7 @@ exports[`NotFound renders without crashing 1`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "s2f0kt",
+        "key": "qpo9hj",
         "pathname": "/unknown",
         "search": "",
         "state": undefined,

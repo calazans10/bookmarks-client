@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import { Container } from './styles';
 
-const Table = ({ children }) => <table className="table">{children}</table>;
+const Table = ({ children }) => <Container>{children}</Container>;
 
 Table.propTypes = {
   children: PropTypes.node.isRequired,

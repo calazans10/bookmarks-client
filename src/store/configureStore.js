@@ -1,14 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'connected-react-router';
 import storage from 'redux-persist/lib/storage';
@@ -26,7 +17,8 @@ const persistConfig = {
 const createAppMiddleware = sagaMiddleware => {
   const appMiddleware = [
     ...getDefaultMiddleware({
-      serializableCheck: { ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER] },
+      thunk: false,
+      serializableCheck: false,
     }),
     routerMiddleware(history),
     sagaMiddleware,

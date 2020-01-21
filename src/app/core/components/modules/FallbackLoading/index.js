@@ -1,10 +1,10 @@
 import React from 'react';
-import './index.scss';
+import { Container } from './styles';
 
 export const FallbackLoading = () => (
-  <div className="fallback-loading">
+  <Container>
     <p>Loading...</p>
-  </div>
+  </Container>
 );
 
 export default FallbackLoading;

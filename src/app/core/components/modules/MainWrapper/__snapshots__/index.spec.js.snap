@@ -1,12 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MainWrapper renders without crashing 1`] = `
-<div
-  className="main-wrapper"
->
+<styled.div>
   <Connect(Alert) />
   <p>
     Lorem Ipsum
   </p>
-</div>
+</styled.div>
 `;

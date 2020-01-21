@@ -1,21 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MainNavigation renders without crashing 1`] = `
-<nav
-  className="main-navigation"
->
-  <ul
-    className="main-navigation__list"
-  >
-    <li
-      className="main-navigation__item"
-    >
+<styled.nav>
+  <ul>
+    <styled.li>
       <Link
         to="/home"
       >
         Home
       </Link>
-    </li>
+    </styled.li>
   </ul>
-</nav>
+</styled.nav>
 `;

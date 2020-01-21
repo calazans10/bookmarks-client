@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { doRequestLogout } from '../../../../auth/actions';
-import './index.scss';
+import { Container, Item, Button } from './styles';
 
 export const MainNavigation = ({ pathname, title, onRequestLogout }) => (
-  <nav className="main-navigation">
-    <ul className="main-navigation__list">
-      <li className="main-navigation__item">
+  <Container>
+    <ul>
+      <Item>
         {pathname && title ? (
           <Link to={pathname}>{title}</Link>
         ) : (
-          <button className="main-navigation__button" type="button" onClick={onRequestLogout}>
+          <Button type="button" onClick={onRequestLogout}>
             Sign Out
-          </button>
+          </Button>
         )}
-      </li>
+      </Item>
     </ul>
-  </nav>
+  </Container>
 );
 
 MainNavigation.propTypes = {

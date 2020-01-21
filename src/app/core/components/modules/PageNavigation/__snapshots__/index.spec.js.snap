@@ -1,15 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageNavigation renders without crashing 1`] = `
-<div
-  className="page-navigation"
->
-  <ul
-    className="page-navigation__list"
-  >
-    <li
-      className="page-navigation__item"
-    >
+<styled.div>
+  <ul>
+    <li>
       <Link
         to="/home"
       >
@@ -17,5 +11,5 @@ exports[`PageNavigation renders without crashing 1`] = `
       </Link>
     </li>
   </ul>
-</div>
+</styled.div>
 `;
