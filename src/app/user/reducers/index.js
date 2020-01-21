@@ -20,21 +20,18 @@ const INITIAL_STATE = {
 
 const applySuccessGetMyBookmarks = (state, action) => {
   const { meta, data } = action.payload;
-  const updatedBookmarks = { ...state.bookmarks, meta, data };
-  return { ...state, bookmarks: updatedBookmarks };
+  state.bookmarks.meta = meta;
+  state.bookmarks.data = data;
 };
 
 const applySuccessDeleteBookmark = (state, action) => {
   const { bookmarkId } = action.payload;
-  const { data } = state.bookmarks;
-  const filteredData = data.filter(bookmark => bookmark.id !== bookmarkId);
-  const updatedBookmarks = { ...state.bookmarks, data: filteredData };
-  return { ...state, bookmarks: updatedBookmarks };
+  state.bookmarks.data = state.bookmarks.data.filter(bookmark => bookmark.id !== bookmarkId);
 };
 
 const applyChangeSelectedBookmark = (state, action) => {
   const { bookmark } = action.payload;
-  return { ...state, selectedBookmark: bookmark };
+  state.selectedBookmark = bookmark;
 };
 
 const userReducer = createReducer(INITIAL_STATE, {

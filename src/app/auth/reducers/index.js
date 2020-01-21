@@ -12,7 +12,8 @@ const INITIAL_STATE = {
 
 const applySuccessLogin = (state, action) => {
   const { user, token } = action.payload;
-  return { ...state, user, token };
+  state.user = user;
+  state.token = token;
 };
 
 const authReducer = createReducer(INITIAL_STATE, {

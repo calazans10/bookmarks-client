@@ -8,7 +8,8 @@ const INITIAL_STATE = {
 
 const applyShowAlert = (state, action) => {
   const { message } = action.payload;
-  return { ...state, message, isVisible: true };
+  state.message = message;
+  state.isVisible = true;
 };
 
 const applyHideAlert = () => ({

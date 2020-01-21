@@ -24,14 +24,14 @@ const INITIAL_STATE = {
 
 const applySuccessGetBookmarks = (state, action) => {
   const { meta, data } = action.payload;
-  const updatedBookmarks = { ...state.bookmarks, meta, data };
-  return { ...state, bookmarks: updatedBookmarks };
+  state.bookmarks.meta = meta;
+  state.bookmarks.data = data;
 };
 
 const applySuccessGetUsers = (state, action) => {
   const { meta, data } = action.payload;
-  const updatedUsers = { ...state.users, meta, data };
-  return { ...state, users: updatedUsers };
+  state.users.meta = meta;
+  state.users.data = data;
 };
 
 const adminReducer = createReducer(INITIAL_STATE, {
