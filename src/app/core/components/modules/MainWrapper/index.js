@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Alert from '../../../../ui/components/modules/Alert';
-import { Container } from './styles';
+import { Container } from './style';
 
 const MainWrapper = ({ children }) => (
   <Container>

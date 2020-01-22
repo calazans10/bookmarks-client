@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { doRequestLogout } from '../../../../auth/actions';
-import { Container, Item, Button } from './styles';
+import { Container, Item, Button } from './style';
 
 export const MainNavigation = ({ pathname, title, onRequestLogout }) => (
   <Container>

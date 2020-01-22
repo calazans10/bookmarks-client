@@ -1,20 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import Table from './index';
 
 describe('Table', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(
+    const { container } = render(
       <Table>
-        <tr>
-          <th>Title</th>
-        </tr>
-        <tr>
-          <td>Test</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Title</th>
+          </tr>
+          <tr>
+            <td>Test</td>
+          </tr>
+        </tbody>
       </Table>
     );
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,11 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MainHeader renders without crashing 1`] = `
-<styled.header>
-  <styled.div>
-    <p>
-      Lorem Ipsum
-    </p>
-  </styled.div>
-</styled.header>
+<header
+  class="sc-AykKC iYFxAq"
+>
+  <div
+    class="sc-AykKD enPysH"
+  >
+    <ul>
+      <li>
+        Test
+      </li>
+    </ul>
+  </div>
+</header>
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Wrapper } from './styles';
+import { Container, Wrapper } from './style';
 
 const MainHeader = ({ children }) => (
   <Container>

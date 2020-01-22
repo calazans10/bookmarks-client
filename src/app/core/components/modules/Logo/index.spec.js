@@ -1,14 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
 import Logo from './index';
 
 describe('Logo', () => {
   it('renders without crashing', () => {
-    const props = {
-      to: '/',
-    };
-    const wrapper = shallow(<Logo {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Logo to="/" />
+      </MemoryRouter>
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

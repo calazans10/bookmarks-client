@@ -1,15 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import TableRow from './index';
 
 describe('TableRow', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(
+    const tableBody = document.createElement('tbody');
+    const { container } = render(
       <TableRow>
         <td>Test</td>
       </TableRow>,
+      {
+        container: document.body.appendChild(tableBody),
+      }
     );
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

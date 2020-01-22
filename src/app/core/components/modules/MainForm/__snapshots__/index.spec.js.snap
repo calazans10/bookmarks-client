@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MainForm renders without crashing 1`] = `
-<styled.form
-  autoComplete="off"
-  noValidate={true}
-  onSubmit={[MockFunction]}
+<form
+  autocomplete="off"
+  class="sc-AykKC fCHCXg"
+  novalidate=""
 >
   <fieldset>
-    <styled.legend>
+    <legend
+      class="sc-AykKD jWsEOj"
+    >
       A legend
-    </styled.legend>
+    </legend>
     <div>
       <label
-        htmlFor="test"
+        for="test"
       >
         A label
       </label>
@@ -23,5 +25,5 @@ exports[`MainForm renders without crashing 1`] = `
       />
     </div>
   </fieldset>
-</styled.form>
+</form>
 `;

@@ -1,17 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageContent renders without crashing 1`] = `
-<MainWrapper>
-  <MainHeader>
-    <Logo
-      to="/home"
-    />
-    <Connect(MainNavigation) />
-  </MainHeader>
-  <MainContent>
-    <p>
-      Test
+<div
+  class="sc-AykKE cbnKn"
+>
+  <div
+    class="alert"
+  >
+    <p
+      class="alert__message"
+    >
+      <span
+        class="alert__icon"
+      />
+      
     </p>
-  </MainContent>
-</MainWrapper>
+    <button
+      aria-label="Close alert"
+      class="alert__trigger"
+      type="button"
+    >
+      <span
+        class="sr-only"
+      >
+        x
+      </span>
+    </button>
+  </div>
+  <header
+    class="sc-AykKF gPfWA-d"
+  >
+    <div
+      class="sc-AykKG gQpYtq"
+    >
+      <div
+        class="sc-AykKC gagnNP"
+      >
+        <a
+          class="sc-AykKD inQTEp"
+          href="/home"
+        >
+          Bookmarks
+        </a>
+      </div>
+      <nav
+        class="sc-AykKH cNaBMr"
+      >
+        <ul>
+          <li
+            class="sc-AykKI dyYYSk"
+          >
+            <button
+              class="sc-AykKJ dkmSlc"
+              type="button"
+            >
+              Sign Out
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-AykKK eIQyZi"
+  >
+    <p>
+      Lorem Ipsum
+    </p>
+  </main>
+</div>
 `;

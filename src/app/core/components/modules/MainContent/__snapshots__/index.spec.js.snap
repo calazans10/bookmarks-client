@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MainContent renders without crashing 1`] = `
-<styled.main>
+<main
+  class="sc-AykKC dZBchq"
+>
   <p>
     Lorem Ipsum
   </p>
-</styled.main>
+</main>
 `;

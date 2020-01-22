@@ -1,14 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import TableColumn from './index';
 
 describe('TableColumn', () => {
   it('renders without crashing', () => {
-    const props = {
-      label: 'Name',
-    };
-    const wrapper = shallow(<TableColumn {...props}>Test</TableColumn>);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const tableRow = document.createElement('tr');
+    const { container } = render(<TableColumn label="Name">John Doe</TableColumn>, {
+      container: document.body.appendChild(tableRow),
+    });
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,11 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Logo renders without crashing 1`] = `
-<styled.div>
-  <Styled(Link)
-    to="/"
+<div
+  class="sc-AykKC gagnNP"
+>
+  <a
+    class="sc-AykKD inQTEp"
+    href="/"
   >
     Bookmarks
-  </Styled(Link)>
-</styled.div>
+  </a>
+</div>
 `;

@@ -1,11 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import ButtonSubmit from './index';
 
 describe('ButtonSubmit', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(<ButtonSubmit>Save</ButtonSubmit>);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = render(<ButtonSubmit>Save</ButtonSubmit>);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

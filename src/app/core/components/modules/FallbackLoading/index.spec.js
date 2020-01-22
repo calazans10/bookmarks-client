@@ -1,11 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import FallbackLoading from './index';
 
 describe('FallbackLoading', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(<FallbackLoading />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = render(<FallbackLoading />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

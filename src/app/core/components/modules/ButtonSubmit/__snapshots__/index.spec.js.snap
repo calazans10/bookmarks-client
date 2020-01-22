@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonSubmit renders without crashing 1`] = `
-<styled.button
+<button
+  class="sc-AykKC dUTulZ"
   type="submit"
 >
   Save
-</styled.button>
+</button>
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from './styles';
+import { Button } from './style';
 
 const ButtonSubmit = ({ children }) => <Button type="submit">{children}</Button>;
 

@@ -1,10 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MainWrapper renders without crashing 1`] = `
-<styled.div>
-  <Connect(Alert) />
+<div
+  class="sc-AykKC kTkcGl"
+>
+  <div
+    class="alert"
+  >
+    <p
+      class="alert__message"
+    >
+      <span
+        class="alert__icon"
+      />
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="alert__trigger"
+      type="button"
+    >
+      <span
+        class="sr-only"
+      >
+        x
+      </span>
+    </button>
+  </div>
   <p>
     Lorem Ipsum
   </p>
-</styled.div>
+</div>
 `;

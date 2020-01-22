@@ -11,6 +11,6 @@ describe('NotFound', () => {
         <NotFound />
       </MemoryRouter>
     );
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(toJson(wrapper.find(NotFound))).toMatchSnapshot();
   });
 });

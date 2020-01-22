@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from './styles';
+import { Container } from './style';
 
 const MainContent = ({ children }) => <Container>{children}</Container>;
 

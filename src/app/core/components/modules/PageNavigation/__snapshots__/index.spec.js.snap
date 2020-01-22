@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageNavigation renders without crashing 1`] = `
-<styled.div>
+<div
+  class="sc-AykKC dMKcac"
+>
   <ul>
     <li>
-      <Link
-        to="/home"
+      <a
+        href="/home"
       >
         Home
-      </Link>
+      </a>
     </li>
   </ul>
-</styled.div>
+</div>
 `;

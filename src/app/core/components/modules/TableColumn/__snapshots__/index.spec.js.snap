@@ -2,9 +2,9 @@
 
 exports[`TableColumn renders without crashing 1`] = `
 <td
-  className="table-column"
+  class="sc-AykKC kFfEWf"
   data-label="Name"
 >
-  Test
+  John Doe
 </td>
 `;

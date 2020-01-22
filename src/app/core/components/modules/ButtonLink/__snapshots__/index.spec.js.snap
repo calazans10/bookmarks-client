@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonLink renders without crashing 1`] = `
-<styled.button
-  onClick={[MockFunction]}
+<button
+  class="sc-AykKC hSJRhy"
   type="button"
 >
   Edit
-</styled.button>
+</button>
 `;

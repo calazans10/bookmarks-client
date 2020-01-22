@@ -1,16 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table renders without crashing 1`] = `
-<styled.table>
-  <tr>
-    <th>
-      Title
-    </th>
-  </tr>
-  <tr>
-    <td>
-      Test
-    </td>
-  </tr>
-</styled.table>
+<table
+  class="sc-AykKC jwhca-D"
+>
+  <tbody>
+    <tr>
+      <th>
+        Title
+      </th>
+    </tr>
+    <tr>
+      <td>
+        Test
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;

@@ -1,15 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import PageSection from './index';
 
 describe('PageSection', () => {
   it('renders without crashing', () => {
-    const props = {
-      title: 'A title',
-      children: <p>Lorem Ipsum</p>,
-    };
-    const wrapper = shallow(<PageSection {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = render(
+      <PageSection title="A title">
+        <p>Lorem Ipsum</p>
+      </PageSection>
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

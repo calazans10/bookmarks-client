@@ -1,14 +1,24 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { Provider } from 'react-redux';
+import { render } from '@testing-library/react';
+import configureStore from 'redux-mock-store';
 import MainWrapper from './index';
+
+const mockStore = configureStore([]);
 
 describe('MainWrapper', () => {
   it('renders without crashing', () => {
-    const props = {
-      children: <p>Lorem Ipsum</p>,
-    };
-    const wrapper = shallow(<MainWrapper {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const store = mockStore({
+      ui: { alert: { message: '', isVisible: false } },
+    });
+
+    const { container } = render(
+      <Provider store={store}>
+        <MainWrapper>
+          <p>Lorem Ipsum</p>
+        </MainWrapper>
+      </Provider>
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

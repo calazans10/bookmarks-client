@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Legend } from './styles';
+import { Container, Legend } from './style';
 
 const MainForm = ({ legend, children, onSubmit }) => (
   <Container autoComplete="off" noValidate onSubmit={onSubmit}>

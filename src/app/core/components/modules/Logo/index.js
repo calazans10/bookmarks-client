@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, StyledLink } from './styles';
+import { Container, StyledLink } from './style';
 
 const Logo = ({ to }) => (
   <Container>
