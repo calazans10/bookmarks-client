@@ -5,11 +5,9 @@ import PageNavigation from './index';
 
 describe('PageNavigation', () => {
   it('renders without crashing', () => {
-    const { container } = render(
-      <MemoryRouter>
-        <PageNavigation pathname="/home" title="Home" />
-      </MemoryRouter>
-    );
+    const { container } = render(<PageNavigation pathname="/home" title="Home" />, {
+      wrapper: MemoryRouter,
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 });

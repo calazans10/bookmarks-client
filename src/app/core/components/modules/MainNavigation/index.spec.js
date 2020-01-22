@@ -6,9 +6,8 @@ import { MainNavigation } from './index';
 describe('MainNavigation', () => {
   it('renders without crashing', () => {
     const { container } = render(
-      <MemoryRouter>
-        <MainNavigation pathname="/home" title="Home" onRequestLogout={jest.fn()} />
-      </MemoryRouter>
+      <MainNavigation pathname="/home" title="Home" onRequestLogout={jest.fn()} />,
+      { wrapper: MemoryRouter }
     );
     expect(container.firstChild).toMatchSnapshot();
   });

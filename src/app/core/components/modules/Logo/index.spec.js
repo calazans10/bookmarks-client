@@ -5,11 +5,7 @@ import Logo from './index';
 
 describe('Logo', () => {
   it('renders without crashing', () => {
-    const { container } = render(
-      <MemoryRouter>
-        <Logo to="/" />
-      </MemoryRouter>
-    );
+    const { container } = render(<Logo to="/" />, { wrapper: MemoryRouter });
     expect(container.firstChild).toMatchSnapshot();
   });
 });
