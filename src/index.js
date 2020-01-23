@@ -5,13 +5,14 @@ import { PersistGate } from 'redux-persist/integration/react';
 import App from './app';
 import history from './history';
 import { store, persistor } from './store';
-import './index.scss';
+import { GlobalStyle } from './style';
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
+      <GlobalStyle />
       <App history={history} />
     </PersistGate>
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
