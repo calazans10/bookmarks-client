@@ -3,6 +3,7 @@ import { rem } from 'polished';
 
 export const Container = styled.table`
   width: 100%;
+  margin-bottom: ${rem('40px')};
   border-right: ${rem('2px')} solid #efefef;
   border-left: ${rem('2px')} solid #efefef;
   border-collapse: collapse;

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FormError renders without crashing 1`] = `
-<span
-  className="form-group__error"
->
-  A message
-</span>
-`;

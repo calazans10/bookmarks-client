@@ -1,33 +1,20 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import FormLabel from './atoms/FormLabel';
-import FormInput from './atoms/FormInput';
-import FormError from './atoms/FormError';
-import './index.scss';
+import { Container, Label, Input, ErrorMessage } from './style';
 
 const FormGroup = ({ input, meta, label, type, mask, formatChars, autoFocus, disabled }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const isInvalid = meta.touched && meta.error && !isFocused;
 
-  const divClass = classNames({
-    'form-group': true,
-    'form-group--invalid': isInvalid,
-  });
+  const onFocus = () => setIsFocused(true);
 
-  const onFocus = () => {
-    setIsFocused(true);
-  };
-
-  const onBlur = () => {
-    setIsFocused(false);
-  };
+  const onBlur = () => setIsFocused(false);
 
   return (
-    <div className={divClass}>
-      <FormLabel htmlFor={input.name}>{label}</FormLabel>
-      <FormInput
+    <Container>
+      <Label htmlFor={input.name}>{label}</Label>
+      <Input
         input={input}
         type={type}
         mask={mask}
@@ -38,8 +25,8 @@ const FormGroup = ({ input, meta, label, type, mask, formatChars, autoFocus, dis
         onFocus={onFocus}
         onBlur={onBlur}
       />
-      {isInvalid && <FormError>{meta.error}</FormError>}
-    </div>
+      {isInvalid && <ErrorMessage>{meta.error}</ErrorMessage>}
+    </Container>
   );
 };
 

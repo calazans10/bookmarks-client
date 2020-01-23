@@ -7,7 +7,7 @@ export const Container = styled.nav`
 
 export const Item = styled.li`
   display: inline-block;
-  line-height: 26px;
+  line-height: 1.625;
 
   &:not(:last-child) {
     margin-right: ${rem('20px')};

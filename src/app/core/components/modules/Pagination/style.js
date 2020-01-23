@@ -1,12 +1,13 @@
-import ReactPaginate from 'react-paginate';
 import styled from 'styled-components';
-import { em, rem } from 'polished';
+import { em, rem, math, stripUnit } from 'polished';
 
-export const Paginate = styled(ReactPaginate)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
+export const Container = styled.div`
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
 
   li {
     margin-right: ${rem('9px')};
@@ -29,7 +30,7 @@ export const Paginate = styled(ReactPaginate)`
     color: #2980b9;
     font-family: 'Gilroy SemiBold';
     font-size: ${em('14px')};
-    line-height: lh(14px, 17px);
+    line-height: ${stripUnit(math('14px / 17px'))};
     cursor: pointer;
 
     &:focus,

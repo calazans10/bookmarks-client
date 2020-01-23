@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import FormGroup from './index';
 
 describe('FormGroup', () => {
@@ -9,29 +8,45 @@ describe('FormGroup', () => {
     data: {},
     dirty: false,
     dirtySinceLastSubmit: false,
-    error: 'Este campo é requerido.',
+    error: 'This field is required.',
     invalid: true,
     pristine: true,
     submitFailed: false,
     submitSucceeded: false,
-    submitting: false,
     touched: false,
     valid: false,
     visited: false,
   };
 
-  it('renders without crashing', () => {
-    const props = {
-      input: {
-        name: 'senha',
-        value: '',
-      },
-      meta: { ...defaultMeta, type: 'password' },
-      label: 'Senha',
-      type: 'password',
-    };
+  describe('when is valid', () => {
+    it('renders without crashing', () => {
+      const props = {
+        input: {
+          name: 'password',
+        },
+        meta: { ...defaultMeta, touched: false, type: 'password' },
+        label: 'Password',
+        type: 'password',
+      };
 
-    const wrapper = shallow(<FormGroup {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+      const { container } = render(<FormGroup {...props} />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
+
+  describe('when is invalid', () => {
+    it('renders without crashing', () => {
+      const props = {
+        input: {
+          name: 'password',
+        },
+        meta: { ...defaultMeta, touched: true, type: 'password' },
+        label: 'Password',
+        type: 'password',
+      };
+
+      const { container } = render(<FormGroup {...props} />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 });
