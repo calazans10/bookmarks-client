@@ -1,14 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { MemoryRouter } from 'react-router-dom';
+import renderWithRedux from '../../../../../lib/renderWithRedux';
 import { Home } from './index';
 
 describe('Home', () => {
   it('renders without crashing', () => {
-    const props = {
-      onRequestLoading: jest.fn(),
-    };
-    const wrapper = shallow(<Home {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = renderWithRedux(
+      <MemoryRouter>
+        <Home onRequestLoading={jest.fn()} />
+      </MemoryRouter>
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

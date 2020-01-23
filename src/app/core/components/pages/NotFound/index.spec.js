@@ -1,16 +1,15 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import renderWithRedux from '../../../../../lib/renderWithRedux';
 import NotFound from './index';
 
 describe('NotFound', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(
+    const { container } = renderWithRedux(
       <MemoryRouter initialEntries={['/unknown']}>
         <NotFound />
       </MemoryRouter>
     );
-    expect(toJson(wrapper.find(NotFound))).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

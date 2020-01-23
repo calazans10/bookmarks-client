@@ -1,33 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home renders without crashing 1`] = `
-<MainWrapper>
-  <MainHeader>
-    <Logo
-      to="/"
-    />
-    <Connect(MainNavigation)
-      pathname="/sign_in"
-      title="Sign In"
-    />
-  </MainHeader>
-  <MainContent>
-    <PageSection
-      title="A smarter way to save your web pages"
+<div
+  class="sc-AykKE cbnKn"
+>
+  <div
+    class="alert"
+  >
+    <p
+      class="alert__message"
     >
+      <span
+        class="alert__icon"
+      />
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="alert__trigger"
+      type="button"
+    >
+      <span
+        class="sr-only"
+      >
+        x
+      </span>
+    </button>
+  </div>
+  <header
+    class="sc-AykKF gPfWA-d"
+  >
+    <div
+      class="sc-AykKG gQpYtq"
+    >
+      <div
+        class="sc-AykKC gagnNP"
+      >
+        <a
+          class="sc-AykKD inQTEp"
+          href="/"
+        >
+          Bookmarks
+        </a>
+      </div>
+      <nav
+        class="sc-AykKH cNaBMr"
+      >
+        <ul>
+          <li
+            class="sc-AykKI ebILbc"
+          >
+            <a
+              href="/sign_in"
+            >
+              Sign In
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-AykKK eIQyZi"
+  >
+    <section
+      class="sc-fzXfLO flqtiY"
+    >
+      <h1
+        class="sc-fzXfLP Zidlo"
+      >
+        A smarter way to save your web pages
+      </h1>
       <p>
         Bookmarks makes it simple to save web pages you find useful, interesting, or inspiring in a beautiful, easy-to-use web app.
       </p>
       <p>
         Don't have an account? 
-        <Link
-          to="/sign_up"
+        <a
+          href="/sign_up"
         >
           Sign up here
-        </Link>
+        </a>
         .
       </p>
-    </PageSection>
-  </MainContent>
-</MainWrapper>
+    </section>
+  </main>
+</div>
 `;
