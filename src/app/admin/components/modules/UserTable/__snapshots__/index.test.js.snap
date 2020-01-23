@@ -1,24 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserTable renders without crashing 1`] = `
-<Table>
+<table
+  class="sc-AykKC gpLFuK"
+>
   <tbody>
-    <TableRow
-      key="e4f262c4-8dd3-4db4-85c8-83e03b8ecad4"
+    <tr
+      class="sc-AykKD gfykfH"
     >
-      <TableColumn
-        hasActions={false}
-        label="Name"
+      <td
+        class="sc-AykKE dvzogp"
+        data-label="Name"
       >
         John Doe
-      </TableColumn>
-      <TableColumn
-        hasActions={false}
-        label="Email"
+      </td>
+      <td
+        class="sc-AykKE dvzogp"
+        data-label="Email"
       >
         john.doe@example.com
-      </TableColumn>
-    </TableRow>
+      </td>
+    </tr>
   </tbody>
-</Table>
+</table>
 `;

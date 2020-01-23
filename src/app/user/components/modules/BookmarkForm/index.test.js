@@ -1,16 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
 import BookmarkForm from './index';
 
 describe('BookmarkForm', () => {
   it('renders without crashing', () => {
-    const props = {
-      legend: 'A legend',
-      action: 'Save',
-      onSubmit: jest.fn(),
-    };
-    const wrapper = shallow(<BookmarkForm {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <BookmarkForm legend="A legend" action="Save" onSubmit={jest.fn()} />
+      </MemoryRouter>
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

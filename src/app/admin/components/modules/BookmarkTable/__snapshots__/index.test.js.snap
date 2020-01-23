@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BookmarkTable renders without crashing 1`] = `
-<Table>
+<table
+  class="sc-AykKC gpLFuK"
+>
   <tbody>
-    <TableRow
-      key="9b2bfb9a-3776-48ca-835a-2c17ccef44c6"
+    <tr
+      class="sc-AykKD gfykfH"
     >
-      <TableColumn
-        hasActions={false}
-        label="Title"
+      <td
+        class="sc-AykKE dvzogp"
+        data-label="Title"
       >
         <a
           href="https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html"
@@ -17,8 +19,8 @@ exports[`BookmarkTable renders without crashing 1`] = `
         >
           Introducing the React RFC Process
         </a>
-      </TableColumn>
-    </TableRow>
+      </td>
+    </tr>
   </tbody>
-</Table>
+</table>
 `;

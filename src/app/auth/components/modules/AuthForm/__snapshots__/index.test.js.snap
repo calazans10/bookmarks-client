@@ -1,8 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthForm renders without crashing 1`] = `
-<ReactFinalForm
-  onSubmit={[MockFunction]}
-  render={[Function]}
-/>
+exports[`AuthForm when is not registration renders without crashing 1`] = `
+<form
+  autocomplete="off"
+  class="sc-AykKC fCHCXg"
+  novalidate=""
+>
+  <fieldset>
+    <legend
+      class="sc-AykKD jWsEOj"
+    >
+      A legend
+    </legend>
+    <div
+      class="sc-AykKE dMuQNO"
+    >
+      <label
+        class="sc-AykKF fboVCh"
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        class="sc-AykKG glNtFx"
+        id="email"
+        name="email"
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AykKE dMuQNO"
+    >
+      <label
+        class="sc-AykKF fboVCh"
+        for="password"
+      >
+        Password
+      </label>
+      <input
+        class="sc-AykKG glNtFx"
+        id="password"
+        name="password"
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        class="sc-AykKI bmvfEn"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`AuthForm when is registration renders without crashing 1`] = `
+<form
+  autocomplete="off"
+  class="sc-AykKC fCHCXg"
+  novalidate=""
+>
+  <fieldset>
+    <legend
+      class="sc-AykKD jWsEOj"
+    >
+      A legend
+    </legend>
+    <div
+      class="sc-AykKE dMuQNO"
+    >
+      <label
+        class="sc-AykKF fboVCh"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        class="sc-AykKG glNtFx"
+        id="name"
+        name="name"
+        placeholder="Name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AykKE dMuQNO"
+    >
+      <label
+        class="sc-AykKF fboVCh"
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        class="sc-AykKG glNtFx"
+        id="email"
+        name="email"
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AykKE dMuQNO"
+    >
+      <label
+        class="sc-AykKF fboVCh"
+        for="password"
+      >
+        Password
+      </label>
+      <input
+        class="sc-AykKG glNtFx"
+        id="password"
+        name="password"
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        class="sc-AykKI bmvfEn"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </fieldset>
+</form>
 `;

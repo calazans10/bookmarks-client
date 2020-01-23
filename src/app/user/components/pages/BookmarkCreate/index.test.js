@@ -1,14 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { MemoryRouter } from 'react-router-dom';
+import renderWithRedux from '../../../../../lib/renderWithRedux';
 import { BookmarkCreate } from './index';
 
 describe('BookmarkCreate', () => {
   it('renders without crashing', () => {
-    const props = {
-      onRequestCreateBookmark: jest.fn(),
-    };
-    const wrapper = shallow(<BookmarkCreate {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = renderWithRedux(
+      <MemoryRouter>
+        <BookmarkCreate onRequestCreateBookmark={jest.fn()} />
+      </MemoryRouter>
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

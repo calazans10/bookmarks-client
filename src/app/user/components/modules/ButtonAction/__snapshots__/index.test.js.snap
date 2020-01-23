@@ -2,8 +2,7 @@
 
 exports[`ButtonAction renders without crashing 1`] = `
 <button
-  className="button-action button-action--success"
-  onClick={[MockFunction]}
+  class="sc-AykKC kTcdEt"
   type="button"
 >
   Edit

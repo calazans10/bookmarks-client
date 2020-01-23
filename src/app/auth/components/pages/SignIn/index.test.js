@@ -1,14 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { MemoryRouter } from 'react-router-dom';
+import renderWithRedux from '../../../../../lib/renderWithRedux';
 import { SignIn } from './index';
 
 describe('SignIn', () => {
   it('renders without crashing', () => {
-    const props = {
-      onRequestLogin: jest.fn(),
-    };
-    const wrapper = shallow(<SignIn {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const { container } = renderWithRedux(
+      <MemoryRouter>
+        <SignIn onRequestLogin={jest.fn()} />
+      </MemoryRouter>
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
