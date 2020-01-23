@@ -12,7 +12,8 @@ exports[`FormGroup when is invalid renders without crashing 1`] = `
   </label>
   <input
     class="sc-AykKE kuUACb"
-    input="[object Object]"
+    id="password"
+    name="password"
     placeholder="Password"
     type="password"
   />
@@ -36,7 +37,8 @@ exports[`FormGroup when is valid renders without crashing 1`] = `
   </label>
   <input
     class="sc-AykKE kuUACb"
-    input="[object Object]"
+    id="password"
+    name="password"
     placeholder="Password"
     type="password"
   />

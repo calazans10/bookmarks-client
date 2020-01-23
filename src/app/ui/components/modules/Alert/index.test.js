@@ -1,18 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import { Alert } from './index';
 
 describe('Alert', () => {
-  describe('when is visible', () => {
-    it('renders without crashing', () => {
-      const props = {
-        message: 'Invalid credendials',
-        isVisible: true,
-        onHideAlert: jest.fn(),
-      };
-      const wrapper = shallow(<Alert {...props} />);
-      expect(toJson(wrapper)).toMatchSnapshot();
-    });
+  it('renders without crashing', () => {
+    const { container } = render(
+      <Alert message="Invalid credendials" isVisible onHideAlert={jest.fn()} />
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

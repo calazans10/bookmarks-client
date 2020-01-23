@@ -2,39 +2,38 @@
 
 exports[`NotFound renders without crashing 1`] = `
 <div
-  class="sc-AykKC kTkcGl"
+  class="sc-AykKG Aoinl"
 >
   <div
-    class="alert"
+    class="sc-AykKC bqSBMb"
   >
     <p
-      class="alert__message"
+      class="sc-AykKD dfbIIS"
     >
       <span
-        class="alert__icon"
+        class="sc-AykKE ejbGjx"
       />
+       
       
     </p>
     <button
       aria-label="Close alert"
-      class="alert__trigger"
+      class="sc-AykKF ejyTDJ"
       type="button"
     >
-      <span
-        class="sr-only"
-      >
-        x
+      <span>
+        Close
       </span>
     </button>
   </div>
   <main
-    class="sc-AykKD fzsJwv"
+    class="sc-AykKH jpDfT"
   >
     <section
-      class="sc-AykKE dQxTTk"
+      class="sc-AykKI kxPQqI"
     >
       <h1
-        class="sc-AykKF ckqTDc"
+        class="sc-AykKJ cLvMks"
       >
         404 - Page not found
       </h1>
@@ -45,7 +44,7 @@ exports[`NotFound renders without crashing 1`] = `
         Do you want to go back to where you were?
          
         <button
-          class="sc-AykKG bjZSXe"
+          class="sc-AykKK fQLElG"
           type="button"
         >
           Click here

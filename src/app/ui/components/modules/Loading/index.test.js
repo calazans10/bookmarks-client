@@ -1,26 +1,19 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import { Loading } from './index';
 
 describe('Loading', () => {
   describe('when is visible', () => {
     it('renders without crashing', () => {
-      const props = {
-        isVisible: true,
-      };
-      const wrapper = shallow(<Loading {...props} />);
-      expect(toJson(wrapper)).toMatchSnapshot();
+      const { container } = render(<Loading isVisible />);
+      expect(container.firstChild).toMatchSnapshot();
     });
   });
 
   describe('when is not visible', () => {
     it('renders nothing', () => {
-      const props = {
-        isVisible: false,
-      };
-      const wrapper = shallow(<Loading {...props} />);
-      expect(toJson(wrapper)).toMatchSnapshot();
+      const { container } = render(<Loading isVisible={false} />);
+      expect(container.firstChild).toMatchSnapshot();
     });
   });
 });

@@ -2,36 +2,35 @@
 
 exports[`Home renders without crashing 1`] = `
 <div
-  class="sc-AykKE cbnKn"
+  class="sc-AykKI YBcQj"
 >
   <div
-    class="alert"
+    class="sc-AykKE hCFLrN"
   >
     <p
-      class="alert__message"
+      class="sc-AykKF fuZbRQ"
     >
       <span
-        class="alert__icon"
+        class="sc-AykKG cIAidr"
       />
+       
       
     </p>
     <button
       aria-label="Close alert"
-      class="alert__trigger"
+      class="sc-AykKH dAUBfL"
       type="button"
     >
-      <span
-        class="sr-only"
-      >
-        x
+      <span>
+        Close
       </span>
     </button>
   </div>
   <header
-    class="sc-AykKF gPfWA-d"
+    class="sc-AykKJ hHFgZt"
   >
     <div
-      class="sc-AykKG gQpYtq"
+      class="sc-AykKK kkZpLC"
     >
       <div
         class="sc-AykKC gagnNP"
@@ -44,11 +43,11 @@ exports[`Home renders without crashing 1`] = `
         </a>
       </div>
       <nav
-        class="sc-AykKH cNaBMr"
+        class="sc-fzXfLO exNOUc"
       >
         <ul>
           <li
-            class="sc-AykKI ebILbc"
+            class="sc-fzXfLP cgSmiN"
           >
             <a
               href="/sign_in"
@@ -61,13 +60,13 @@ exports[`Home renders without crashing 1`] = `
     </div>
   </header>
   <main
-    class="sc-AykKK eIQyZi"
+    class="sc-fzXfLR fAbZIT"
   >
     <section
-      class="sc-fzXfLO flqtiY"
+      class="sc-fzXfLS DmGhA"
     >
       <h1
-        class="sc-fzXfLP Zidlo"
+        class="sc-fzXfLT bAmVSE"
       >
         A smarter way to save your web pages
       </h1>

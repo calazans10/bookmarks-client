@@ -1,4 +1,6 @@
-.loading {
+import styled from 'styled-components';
+
+export const Container = styled.div`
   display: flex;
   position: fixed;
   top: 0;
@@ -10,4 +12,4 @@
   background: #fff;
   color: #333;
   z-index: 999;
-}
+`;

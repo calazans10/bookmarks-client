@@ -1,34 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classNames from 'classnames';
 import { doHideAlert } from '../../../actions';
 import { isAlertVisible, getAlertMessage } from '../../../selectors';
-import './index.scss';
+import { Container, Message, Icon, Button } from './style';
 
-export const Alert = ({ message, isVisible, onHideAlert }) => {
-  const divClass = classNames({
-    alert: true,
-    'alert--visible': isVisible,
-  });
-
-  return (
-    <div className={divClass}>
-      <p className="alert__message">
-        <span className="alert__icon" />
-        {message}
-      </p>
-      <button
-        className="alert__trigger"
-        type="button"
-        aria-label="Close alert"
-        onClick={onHideAlert}
-      >
-        <span className="sr-only">x</span>
-      </button>
-    </div>
-  );
-};
+export const Alert = ({ message, isVisible, onHideAlert }) => (
+  <Container isVisible={isVisible}>
+    <Message>
+      <Icon /> {message}
+    </Message>
+    <Button type="button" aria-label="Close alert" onClick={onHideAlert}>
+      <span>Close</span>
+    </Button>
+  </Container>
+);
 
 Alert.propTypes = {
   message: PropTypes.string.isRequired,

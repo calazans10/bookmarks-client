@@ -15,7 +15,8 @@ const FormGroup = ({ input, meta, label, type, mask, formatChars, autoFocus, dis
     <Container>
       <Label htmlFor={input.name}>{label}</Label>
       <Input
-        input={input}
+        {...input}
+        id={input.name}
         type={type}
         mask={mask}
         formatChars={formatChars}
