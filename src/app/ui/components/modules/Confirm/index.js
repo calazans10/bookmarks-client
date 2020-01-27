@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classNames from 'classnames';
 import Portal from '../../../../core/components/modules/Portal';
 import { doHideConfirm } from '../../../actions';
 import { isConfirmVisible } from '../../../selectors';
-import './index.scss';
+import { Container, Dialog, Wrapper, Title, Text, Footer, Button } from './style';
 
 export const Confirm = ({
   kind,
@@ -21,18 +20,7 @@ export const Confirm = ({
   const [isHidden, setIsHidden] = useState(true);
   const [prevIsVisible, setPrevIsVisible] = useState(null);
 
-  const divClass = classNames({
-    confirm: true,
-    'confirm--hidden': isHidden,
-    'confirm--visible': isVisible,
-    'confirm--tightened': isTightened,
-    [`confirm--${kind}`]: true,
-  });
-
-  const btnClass = classNames({
-    confirm__button: true,
-    [`confirm__button--${kind}`]: true,
-  });
+  const dialogKind = isTightened ? 'secondary' : 'primary';
 
   if (isVisible !== prevIsVisible) {
     setPrevIsVisible(isVisible);
@@ -41,32 +29,28 @@ export const Confirm = ({
 
   return (
     <Portal>
-      <div className={divClass} role="dialog">
-        <div className="confirm__dialog">
-          <div className="confirm__content">
-            <p className="confirm__title">{title}</p>
-            <p className="confirm__text">{text}</p>
-            <div className="confirm__footer">
-              <button
-                className="confirm__button confirm__button--secondary"
-                type="button"
-                onClick={onHideConfirm}
-              >
+      <Container isVisible={isVisible} role="dialog">
+        <Dialog theme={{ main: dialogKind }} isHidden={isHidden} isVisible={isVisible}>
+          <Wrapper>
+            <Title theme={{ main: kind }}>{title}</Title>
+            <Text theme={{ main: kind }}>{text}</Text>
+            <Footer>
+              <Button theme={{ main: 'secondary' }} type="button" onClick={onHideConfirm}>
                 {cancelAction}
-              </button>
-              <button className={btnClass} type="button" onClick={onClick}>
+              </Button>
+              <Button theme={{ main: kind }} type="button" onClick={onClick}>
                 {confirmAction}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+              </Button>
+            </Footer>
+          </Wrapper>
+        </Dialog>
+      </Container>
     </Portal>
   );
 };
 
 Confirm.propTypes = {
-  kind: PropTypes.oneOf(['primary', 'danger']),
+  kind: PropTypes.oneOf(['primary', 'secondary', 'danger']),
   title: PropTypes.node.isRequired,
   text: PropTypes.node.isRequired,
   cancelAction: PropTypes.string,
