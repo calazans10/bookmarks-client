@@ -19,7 +19,6 @@ export const Container = styled.form`
   a {
     margin-left: ${rem('10px')};
   }
-}
 `;
 
 export const Legend = styled.legend`

@@ -31,8 +31,8 @@ export const Button = styled.button`
   touch-action: manipulation;
   user-select: none;
 
-  &:hover {
-  &:focus,
+  &:hover,
+  &:focus {
     color: #7d7c7a;
   }
 `;

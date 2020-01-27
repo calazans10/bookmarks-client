@@ -28,7 +28,6 @@ export const Container = styled.div`
 
   li a {
     color: #2980b9;
-    font-family: 'Gilroy SemiBold';
     font-size: ${em('14px')};
     line-height: ${stripUnit(math('14px / 17px'))};
     cursor: pointer;
