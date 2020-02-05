@@ -1,65 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Confirm when is visible renders without crashing 1`] = `
-<Portal>
-  <styled.div
-    isVisible={true}
-    role="dialog"
+exports[`Confirm renders without crashing 1`] = `
+<div
+  class="sc-AykKC fUMZmq"
+  role="dialog"
+>
+  <div
+    class="sc-AykKD cXDnlB"
   >
-    <styled.div
-      isHidden={false}
-      isVisible={true}
-      theme={
-        Object {
-          "main": "primary",
-        }
-      }
+    <div
+      class="sc-AykKE fRQELM"
     >
-      <styled.div>
-        <styled.p
-          theme={
-            Object {
-              "main": "primary",
-            }
-          }
+      <p
+        class="sc-AykKF ebIPDd"
+      >
+        Solicitar bobina
+      </p>
+      <p
+        class="sc-AykKG ghMKZM"
+      >
+        Você confirma a solicitação de bobina?
+      </p>
+      <div
+        class="sc-AykKH ifFctr"
+      >
+        <button
+          class="sc-AykKI iihJbo"
+          type="button"
         >
-          Solicitar bobina
-        </styled.p>
-        <styled.p
-          theme={
-            Object {
-              "main": "primary",
-            }
-          }
+          Cancel
+        </button>
+        <button
+          class="sc-AykKI dSXbfH"
+          type="button"
         >
-          Você confirma a solicitação de bobina?
-        </styled.p>
-        <styled.div>
-          <styled.button
-            onClick={[MockFunction]}
-            theme={
-              Object {
-                "main": "secondary",
-              }
-            }
-            type="button"
-          >
-            Cancel
-          </styled.button>
-          <styled.button
-            onClick={[MockFunction]}
-            theme={
-              Object {
-                "main": "primary",
-              }
-            }
-            type="button"
-          >
-            Confirm
-          </styled.button>
-        </styled.div>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-</Portal>
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 `;

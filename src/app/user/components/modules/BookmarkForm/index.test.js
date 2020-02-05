@@ -6,9 +6,8 @@ import BookmarkForm from './index';
 describe('BookmarkForm', () => {
   it('renders without crashing', () => {
     const { container } = render(
-      <MemoryRouter>
-        <BookmarkForm legend="A legend" action="Save" onSubmit={jest.fn()} />
-      </MemoryRouter>
+      <BookmarkForm legend="A legend" action="Save" onSubmit={jest.fn()} />,
+      { wrapper: MemoryRouter }
     );
     expect(container.firstChild).toMatchSnapshot();
   });

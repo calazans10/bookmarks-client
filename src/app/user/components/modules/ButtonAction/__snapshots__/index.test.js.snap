@@ -2,7 +2,7 @@
 
 exports[`ButtonAction renders without crashing 1`] = `
 <button
-  class="sc-AykKC kTcdEt"
+  class="sc-AykKC cImhxF"
   type="button"
 >
   Edit

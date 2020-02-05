@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Portal from './index';
 
 describe('Portal', () => {
@@ -10,14 +10,12 @@ describe('Portal', () => {
     document.body.appendChild(modalRoot);
   }
 
-  afterEach(cleanup);
-
-  it('should render the Portal component', () => {
-    const { container } = render(
+  it('shows the children', () => {
+    const { getByTestId } = render(
       <Portal>
-        <div>test</div>
+        <div data-testid="test" />
       </Portal>
     );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('test')).toBeInTheDocument();
   });
 });

@@ -1,52 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BookmarkTable renders without crashing 1`] = `
-<Fragment>
-  <Table>
-    <tbody>
-      <TableRow
-        key="9b2bfb9a-3776-48ca-835a-2c17ccef44c6"
+<table
+  class="sc-AykKC bBOGGK"
+>
+  <tbody>
+    <tr
+      class="sc-AykKD gfykfH"
+    >
+      <td
+        class="sc-AykKE kOWvCN"
+        data-label="Title"
       >
-        <TableColumn
-          hasActions={false}
-          label="Title"
+        <a
+          href="https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html"
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            href="https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Introducing the React RFC Process
-          </a>
-        </TableColumn>
-        <TableColumn
-          hasActions={true}
-          label="Actions"
+          Introducing the React RFC Process
+        </a>
+      </td>
+      <td
+        class="sc-AykKE kUawdx"
+        data-label="Actions"
+      >
+        <button
+          class="sc-AykKF celqZI"
+          type="button"
         >
-          <ButtonAction
-            kind="success"
-            onClick={[Function]}
-          >
-            Edit
-          </ButtonAction>
-          <ButtonAction
-            kind="danger"
-            onClick={[Function]}
-          >
-            Delete
-          </ButtonAction>
-        </TableColumn>
-      </TableRow>
-    </tbody>
-  </Table>
-  <Connect(Confirm)
-    cancelAction="Close"
-    confirmAction="Delete"
-    isTightened={true}
-    kind="danger"
-    onClick={[Function]}
-    text="Are you sure you want to delete this bookmark?"
-    title="Delete bookmark"
-  />
-</Fragment>
+          Edit
+        </button>
+        <button
+          class="sc-AykKF tlpUk"
+          type="button"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;

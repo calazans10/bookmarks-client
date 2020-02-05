@@ -1,20 +1,25 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import { Confirm } from './index';
 
 describe('Confirm', () => {
-  describe('when is visible', () => {
-    it('renders without crashing', () => {
-      const props = {
-        title: 'Solicitar bobina',
-        text: 'Você confirma a solicitação de bobina?',
-        isVisible: true,
-        onClick: jest.fn(),
-        onHideConfirm: jest.fn(),
-      };
-      const wrapper = shallow(<Confirm {...props} />);
-      expect(toJson(wrapper)).toMatchSnapshot();
-    });
+  let modalRoot = document.getElementById('modal-root');
+  if (!modalRoot) {
+    modalRoot = document.createElement('div');
+    modalRoot.setAttribute('id', 'modal-root');
+    document.body.appendChild(modalRoot);
+  }
+
+  it('renders without crashing', () => {
+    const { getByRole } = render(
+      <Confirm
+        title="Solicitar bobina"
+        text="Você confirma a solicitação de bobina?"
+        isVisible
+        onClick={jest.fn()}
+        onHideConfirm={jest.fn()}
+      />
+    );
+    expect(getByRole('dialog')).toMatchSnapshot();
   });
 });
