@@ -5,8 +5,8 @@ export const GlobalStyle = createGlobalStyle`
   ${normalize()}
 
   html {
-    font-size: 100%;
     box-sizing: border-box;
+    font-size: 100%;
   }
 
   *,

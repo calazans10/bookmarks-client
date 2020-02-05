@@ -5,11 +5,11 @@ export const Container = styled.td`
   display: block;
 
   &:before {
+    content: attr(data-label);
     display: block;
     margin-bottom: ${rem('10px')};
     font-size: ${em('18px')};
     font-weight: 500;
-    content: attr(data-label);
   }
 
   &:not(:last-child) {

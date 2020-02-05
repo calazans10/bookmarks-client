@@ -9,8 +9,8 @@ const theme = {
 export const Button = styled.button`
   width: ${rem('100px')};
   padding: ${rem('8px')};
-  background-color: ${props => theme[props.theme.main]};
   border: none;
+  background-color: ${props => theme[props.theme.main]};
   color: #fff;
   font-size: ${em('10px')};
   font-weight: 500;

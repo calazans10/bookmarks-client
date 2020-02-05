@@ -41,10 +41,10 @@ const theme = {
 };
 
 export const Container = styled.div`
-  transition: opacity 0.3s ease-in;
-  background-color: rgba(0, 0, 24, 0.79);
-  opacity: 0;
   z-index: 1004;
+  transition: opacity 0.3s ease-in;
+  opacity: 0;
+  background-color: rgba(0, 0, 24, 0.79);
 
   ${props =>
     props.isVisible &&
@@ -60,12 +60,12 @@ export const Container = styled.div`
 
 export const Dialog = styled.div`
   position: fixed;
+  z-index: 1001;
   top: -100vh;
   left: calc(50% - 145px);
   width: ${rem('290px')};
   height: ${props => theme.dialog[props.theme.main].ht.sm};
   transition: all 0.3s ease-in;
-  z-index: 1001;
 
   @media (min-width: 750px) {
     left: calc(50% - 227px);

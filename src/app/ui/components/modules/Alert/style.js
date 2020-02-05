@@ -6,6 +6,7 @@ import closeIcon from '../../../../../images/closeicon.svg';
 export const Container = styled.div`
   display: flex;
   position: fixed;
+  z-index: 1004;
   top: ${props => (props.isVisible ? 0 : '-100%')};
   right: 0;
   left: 0;
@@ -17,9 +18,8 @@ export const Container = styled.div`
   padding-left: ${rem('40px')};
   transition: top 0.5s;
   background: #e74c3c;
-  color: #fff;
   box-shadow: 0 ${rem('1px')} ${rem('3px')} 0 rgba(0, 0, 0, 0.2);
-  z-index: 1004;
+  color: #fff;
 
   @media (min-width: 1044px) {
     width: 80%;
