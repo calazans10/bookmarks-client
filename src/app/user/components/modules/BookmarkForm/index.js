@@ -5,7 +5,7 @@ import { Form, Field } from 'react-final-form';
 import MainForm from '../../../../core/components/modules/MainForm';
 import FormGroup from '../../../../core/components/modules/FormGroup';
 import ButtonSubmit from '../../../../core/components/modules/ButtonSubmit';
-import { required } from '../../../../../lib/validators';
+import { required } from '../../../../../utils/validators';
 
 const BookmarkForm = ({ legend, action, title, url, onSubmit }) => (
   <Form

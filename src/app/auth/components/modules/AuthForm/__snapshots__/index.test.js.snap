@@ -3,7 +3,7 @@
 exports[`AuthForm when is not registration renders without crashing 1`] = `
 <form
   autocomplete="off"
-  class="sc-AykKC fCHCXg"
+  class="sc-AykKC hOQMpN"
   novalidate=""
 >
   <fieldset>
@@ -63,7 +63,7 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
 exports[`AuthForm when is registration renders without crashing 1`] = `
 <form
   autocomplete="off"
-  class="sc-AykKC fCHCXg"
+  class="sc-AykKC hOQMpN"
   novalidate=""
 >
   <fieldset>

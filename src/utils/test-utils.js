@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from '../reducers';
 
-function renderWithRedux(
+export function renderWithRedux(
   ui,
   { initialState, store = createStore(rootReducer, initialState) } = {}
 ) {
@@ -13,5 +13,3 @@ function renderWithRedux(
     store,
   };
 }
-
-export default renderWithRedux;

@@ -5,7 +5,7 @@ exports[`PageContent renders without crashing 1`] = `
   class="sc-AykKI YBcQj"
 >
   <div
-    class="sc-AykKE hCFLrN"
+    class="sc-AykKE gVtJAt"
   >
     <p
       class="sc-AykKF fuZbRQ"
@@ -50,7 +50,7 @@ exports[`PageContent renders without crashing 1`] = `
             class="sc-fzXfLP cgSmiN"
           >
             <button
-              class="sc-fzXfLQ cWQnUx"
+              class="sc-fzXfLQ kvxWQx"
               type="button"
             >
               Sign Out

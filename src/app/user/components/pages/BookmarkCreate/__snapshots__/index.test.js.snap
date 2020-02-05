@@ -5,7 +5,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
   class="sc-fzXfLS rWSAT"
 >
   <div
-    class="sc-fzXfLO fuJFRd"
+    class="sc-fzXfLO eNxDZJ"
   >
     <p
       class="sc-fzXfLP kvHAaA"
@@ -50,7 +50,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
             class="sc-fzXfLW czKXzQ"
           >
             <button
-              class="sc-fzXfLX lceogU"
+              class="sc-fzXfLX hlqnDY"
               type="button"
             >
               Sign Out
@@ -65,7 +65,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
   >
     <form
       autocomplete="off"
-      class="sc-AykKC fCHCXg"
+      class="sc-AykKC hOQMpN"
       novalidate=""
     >
       <fieldset>

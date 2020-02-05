@@ -5,7 +5,7 @@ exports[`SignIn renders without crashing 1`] = `
   class="sc-fzXfLS rWSAT"
 >
   <div
-    class="sc-fzXfLO fuJFRd"
+    class="sc-fzXfLO eNxDZJ"
   >
     <p
       class="sc-fzXfLP kvHAaA"
@@ -64,7 +64,7 @@ exports[`SignIn renders without crashing 1`] = `
   >
     <form
       autocomplete="off"
-      class="sc-AykKC fCHCXg"
+      class="sc-AykKC hOQMpN"
       novalidate=""
     >
       <fieldset>

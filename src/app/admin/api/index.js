@@ -1,5 +1,5 @@
 import AxiosMock from './index.mock';
-import axiosFactory from '../../../lib/axios';
+import axiosFactory from '../../../utils/axios';
 
 const axios = axiosFactory.createInstance(process.env.REACT_APP_API_URL);
 

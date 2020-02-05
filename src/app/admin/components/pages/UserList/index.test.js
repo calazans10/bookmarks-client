@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import renderWithRedux from '../../../../../lib/renderWithRedux';
+import { renderWithRedux } from 'test-utils';
 import { UserList } from './index';
 
 describe('UserList', () => {

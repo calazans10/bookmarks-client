@@ -3,7 +3,7 @@
 exports[`BookmarkForm renders without crashing 1`] = `
 <form
   autocomplete="off"
-  class="sc-AykKC fCHCXg"
+  class="sc-AykKC hOQMpN"
   novalidate=""
 >
   <fieldset>

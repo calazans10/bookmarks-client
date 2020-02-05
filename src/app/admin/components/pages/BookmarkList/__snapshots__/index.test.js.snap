@@ -5,7 +5,7 @@ exports[`BookmarkList renders without crashing 1`] = `
   class="sc-fzXfLO kKSMTT"
 >
   <div
-    class="sc-AykKH fEQQow"
+    class="sc-AykKH eXEOxc"
   >
     <p
       class="sc-AykKI dlkmSP"
@@ -50,7 +50,7 @@ exports[`BookmarkList renders without crashing 1`] = `
             class="sc-fzXfLS fANTMc"
           >
             <button
-              class="sc-fzXfLT gvsCSs"
+              class="sc-fzXfLT cEECpw"
               type="button"
             >
               Sign Out
@@ -77,7 +77,7 @@ exports[`BookmarkList renders without crashing 1`] = `
       </ul>
     </div>
     <table
-      class="sc-AykKC gpLFuK"
+      class="sc-AykKC bBOGGK"
     >
       <tbody />
     </table>

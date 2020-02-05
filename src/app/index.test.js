@@ -1,13 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { wait } from '@testing-library/react';
+import { renderWithRedux } from 'test-utils';
 import App from './index';
 import history from '../history';
 
-it('renders without crashing', () => {
-  const props = {
-    history,
-  };
-  const wrapper = shallow(<App {...props} />);
-  expect(toJson(wrapper)).toMatchSnapshot();
+it('renders without crashing', async () => {
+  const { container } = renderWithRedux(<App history={history} />);
+  await wait();
+  expect(container.firstChild).toMatchSnapshot();
 });

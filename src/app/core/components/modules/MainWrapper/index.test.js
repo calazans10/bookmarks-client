@@ -1,5 +1,5 @@
 import React from 'react';
-import renderWithRedux from '../../../../../lib/renderWithRedux';
+import { renderWithRedux } from 'test-utils';
 import MainWrapper from './index';
 
 describe('MainWrapper', () => {
