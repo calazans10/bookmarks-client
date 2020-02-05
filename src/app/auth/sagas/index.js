@@ -35,16 +35,11 @@ export function* handleRequestRegistration(action) {
   try {
     const { name, email, password } = action.payload;
     yield put(doShowLoading());
-    yield call(requestRegistration, { name, email, password });
+    const response = yield call(requestRegistration, { name, email, password });
     const { jwt: token } = yield call(requestLogin, { auth: { email, password } });
     yield call([sessionStorage, 'setItem'], 'token', token);
-    const response = yield call(requestGetCurrentUser);
     yield put(doSuccessLogin(response, token));
-    if (response.is_admin) {
-      yield put(push('/admin/bookmarks'));
-    } else {
-      yield put(push('/bookmarks'));
-    }
+    yield put(push('/bookmarks'));
   } catch (e) {
     const { message } = e.response.data;
     yield put(doShowAlert(message));

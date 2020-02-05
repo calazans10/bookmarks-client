@@ -93,28 +93,32 @@ describe('auth sagas', () => {
     const password = '1234';
     const token =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+    const response = {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      is_admin: false,
+    };
 
     const action = doRequestRegistration(name, email, password);
     const generator = cloneableGenerator(handleRequestRegistration)(action);
 
     expect(generator.next().value).toEqual(put(doShowLoading()));
     expect(generator.next().value).toEqual(call(requestRegistration, { name, email, password }));
-    expect(generator.next().value).toEqual(call(requestLogin, { auth: { email, password } }));
-    expect(generator.next({ jwt: token }).value).toEqual(
-      call([sessionStorage, 'setItem'], 'token', token)
+    expect(generator.next(response).value).toEqual(
+      call(requestLogin, { auth: { email, password } })
     );
-    expect(generator.next().value).toEqual(call(requestGetCurrentUser));
 
     describe('when is success', () => {
       const clone = generator.clone();
 
+      it('should call sessionStorage.setItem', () => {
+        expect(clone.next({ jwt: token }).value).toEqual(
+          call([sessionStorage, 'setItem'], 'token', token)
+        );
+      });
+
       it('should dispatch doSuccessLogin', () => {
-        const response = {
-          name: 'John Doe',
-          email: 'john.doe@example.com',
-          is_admin: false,
-        };
-        expect(clone.next(response).value).toEqual(put(doSuccessLogin(response, token)));
+        expect(clone.next().value).toEqual(put(doSuccessLogin(response, token)));
       });
 
       it('should redirect to "/bookmarks"', () => {
