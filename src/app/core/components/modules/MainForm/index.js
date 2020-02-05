@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import { Container, Legend } from './style';
 
 const MainForm = ({ legend, children, onSubmit }) => (
-  <form autoComplete="off" noValidate className="main-form" onSubmit={onSubmit}>
+  <Container autoComplete="off" noValidate onSubmit={onSubmit}>
     <fieldset>
-      <legend className="main-form__legend">{legend}</legend>
+      <Legend>{legend}</Legend>
       {children}
     </fieldset>
-  </form>
+  </Container>
 );
 
 MainForm.propTypes = {

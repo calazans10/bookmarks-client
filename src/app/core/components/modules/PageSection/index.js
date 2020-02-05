@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import { Container, Title } from './style';
 
 const PageSection = ({ title, children }) => (
-  <section className="page-section">
-    <h1 className="page-section__title">{title}</h1>
+  <Container>
+    <Title>{title}</Title>
     {children}
-  </section>
+  </Container>
 );
 
 PageSection.propTypes = {

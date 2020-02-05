@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import { Button } from './style';
 
 const ButtonLink = ({ children, onClick }) => (
-  <button type="button" className="button-link" onClick={onClick}>
+  <Button type="button" onClick={onClick}>
     {children}
-  </button>
+  </Button>
 );
 
 ButtonLink.propTypes = {

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageContent renders without crashing 1`] = `
+<div
+  class="sc-AykKI YBcQj"
+>
+  <div
+    class="sc-AykKE gVtJAt"
+  >
+    <p
+      class="sc-AykKF fuZbRQ"
+    >
+      <span
+        class="sc-AykKG cIAidr"
+      />
+       
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="sc-AykKH dAUBfL"
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+  <header
+    class="sc-AykKJ hHFgZt"
+  >
+    <div
+      class="sc-AykKK kkZpLC"
+    >
+      <div
+        class="sc-AykKC gagnNP"
+      >
+        <a
+          class="sc-AykKD inQTEp"
+          href="/home"
+        >
+          Bookmarks
+        </a>
+      </div>
+      <nav
+        class="sc-fzXfLO exNOUc"
+      >
+        <ul>
+          <li
+            class="sc-fzXfLP cgSmiN"
+          >
+            <button
+              class="sc-fzXfLQ kvxWQx"
+              type="button"
+            >
+              Sign Out
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-fzXfLR fAbZIT"
+  >
+    <p>
+      Lorem Ipsum
+    </p>
+  </main>
+</div>
+`;

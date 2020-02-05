@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookmarkForm renders without crashing 1`] = `
+<form
+  autocomplete="off"
+  class="sc-AykKC hOQMpN"
+  novalidate=""
+>
+  <fieldset>
+    <legend
+      class="sc-AykKD jWsEOj"
+    >
+      A legend
+    </legend>
+    <div
+      class="sc-AykKE dMuQNO"
+    >
+      <label
+        class="sc-AykKF fboVCh"
+        for="title"
+      >
+        Title
+      </label>
+      <input
+        class="sc-AykKG glNtFx"
+        id="title"
+        name="title"
+        placeholder="Title"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AykKE dMuQNO"
+    >
+      <label
+        class="sc-AykKF fboVCh"
+        for="url"
+      >
+        Url
+      </label>
+      <input
+        class="sc-AykKG glNtFx"
+        id="url"
+        name="url"
+        placeholder="Url"
+        type="url"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        class="sc-AykKI bmvfEn"
+        type="submit"
+      >
+        Save
+      </button>
+      <a
+        href="/bookmarks"
+      >
+        Cancel
+      </a>
+    </div>
+  </fieldset>
+</form>
+`;

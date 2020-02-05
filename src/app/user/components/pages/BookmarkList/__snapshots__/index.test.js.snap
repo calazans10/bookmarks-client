@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookmarkList renders without crashing 1`] = `
+<div
+  class="sc-fzXfLW bowHGP"
+>
+  <div
+    class="sc-fzXfLS fVCnMl"
+  >
+    <p
+      class="sc-fzXfLT dMgCTA"
+    >
+      <span
+        class="sc-fzXfLU bgCuCf"
+      />
+       
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="sc-fzXfLV hrUsKX"
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+  <header
+    class="sc-fzXfLX eda-DPZ"
+  >
+    <div
+      class="sc-fzXfMv MKSIU"
+    >
+      <div
+        class="sc-fzXfLQ cJlpIv"
+      >
+        <a
+          class="sc-fzXfLR FGTox"
+          href="/bookmarks"
+        >
+          Bookmarks
+        </a>
+      </div>
+      <nav
+        class="sc-fzXfMw hlhoGJ"
+      >
+        <ul>
+          <li
+            class="sc-fzXfMx jhtdaG"
+          >
+            <button
+              class="sc-fzXfMy eBsQru"
+              type="button"
+            >
+              Sign Out
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-fzXfMz bQgVdI"
+  >
+    <div
+      class="sc-fzXfMA wJsHN"
+    >
+      <ul>
+        <li>
+          <a
+            href="/bookmarks/new"
+          >
+            Add bookmark
+          </a>
+        </li>
+      </ul>
+    </div>
+    <table
+      class="sc-AykKC bBOGGK"
+    >
+      <tbody />
+    </table>
+  </main>
+</div>
+`;

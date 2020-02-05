@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import './index.scss';
+import { Container, StyledLink } from './style';
 
 const Logo = ({ to }) => (
-  <div className="logo">
-    <Link to={to}>Bookmarks</Link>
-  </div>
+  <Container>
+    <StyledLink to={to}>Bookmarks</StyledLink>
+  </Container>
 );
 
 Logo.propTypes = {

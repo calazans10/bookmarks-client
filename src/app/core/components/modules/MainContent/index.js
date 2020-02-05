@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import { Container } from './style';
 
-const MainContent = ({ children }) => <main className="main-content">{children}</main>;
+const MainContent = ({ children }) => <Container>{children}</Container>;
 
 MainContent.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainWrapper renders without crashing 1`] = `
+<div
+  class="sc-AykKG Aoinl"
+>
+  <div
+    class="sc-AykKC JGzUH"
+  >
+    <p
+      class="sc-AykKD dfbIIS"
+    >
+      <span
+        class="sc-AykKE ejbGjx"
+      />
+       
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="sc-AykKF ejyTDJ"
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+  <p>
+    Lorem Ipsum
+  </p>
+</div>
+`;

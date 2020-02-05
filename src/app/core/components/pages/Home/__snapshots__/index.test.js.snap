@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders without crashing 1`] = `
+<div
+  class="sc-AykKI YBcQj"
+>
+  <div
+    class="sc-AykKE gVtJAt"
+  >
+    <p
+      class="sc-AykKF fuZbRQ"
+    >
+      <span
+        class="sc-AykKG cIAidr"
+      />
+       
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="sc-AykKH dAUBfL"
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+  <header
+    class="sc-AykKJ hHFgZt"
+  >
+    <div
+      class="sc-AykKK kkZpLC"
+    >
+      <div
+        class="sc-AykKC gagnNP"
+      >
+        <a
+          class="sc-AykKD inQTEp"
+          href="/"
+        >
+          Bookmarks
+        </a>
+      </div>
+      <nav
+        class="sc-fzXfLO exNOUc"
+      >
+        <ul>
+          <li
+            class="sc-fzXfLP cgSmiN"
+          >
+            <a
+              href="/sign_in"
+            >
+              Sign In
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-fzXfLR fAbZIT"
+  >
+    <section
+      class="sc-fzXfLS DmGhA"
+    >
+      <h1
+        class="sc-fzXfLT bAmVSE"
+      >
+        A smarter way to save your web pages
+      </h1>
+      <p>
+        Bookmarks makes it simple to save web pages you find useful, interesting, or inspiring in a beautiful, easy-to-use web app.
+      </p>
+      <p>
+        Don't have an account? 
+        <a
+          href="/sign_up"
+        >
+          Sign up here
+        </a>
+        .
+      </p>
+    </section>
+  </main>
+</div>
+`;

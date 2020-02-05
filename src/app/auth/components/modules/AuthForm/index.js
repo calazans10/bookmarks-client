@@ -9,7 +9,7 @@ import {
   mustBeFullName,
   mustBeEmail,
   composeValidators,
-} from '../../../../../lib/validators';
+} from '../../../../../utils/validators';
 
 const AuthForm = ({ legend, action, isRegistration, onSubmit }) => (
   <Form

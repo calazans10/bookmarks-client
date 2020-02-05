@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound renders without crashing 1`] = `
+<div
+  class="sc-AykKG Aoinl"
+>
+  <div
+    class="sc-AykKC JGzUH"
+  >
+    <p
+      class="sc-AykKD dfbIIS"
+    >
+      <span
+        class="sc-AykKE ejbGjx"
+      />
+       
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="sc-AykKF ejyTDJ"
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+  <main
+    class="sc-AykKH jpDfT"
+  >
+    <section
+      class="sc-AykKI kxPQqI"
+    >
+      <h1
+        class="sc-AykKJ cLvMks"
+      >
+        404 - Page not found
+      </h1>
+      <p>
+        Sorry, the page you were looking for cannot be found!
+      </p>
+      <p>
+        Do you want to go back to where you were?
+         
+        <button
+          class="sc-AykKK fQLElG"
+          type="button"
+        >
+          Click here
+        </button>
+        .
+      </p>
+    </section>
+  </main>
+</div>
+`;

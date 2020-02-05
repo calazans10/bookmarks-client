@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm renders without crashing 1`] = `
+<div
+  class="sc-AykKC fUMZmq"
+  role="dialog"
+>
+  <div
+    class="sc-AykKD cXDnlB"
+  >
+    <div
+      class="sc-AykKE fRQELM"
+    >
+      <p
+        class="sc-AykKF ebIPDd"
+      >
+        Solicitar bobina
+      </p>
+      <p
+        class="sc-AykKG ghMKZM"
+      >
+        Você confirma a solicitação de bobina?
+      </p>
+      <div
+        class="sc-AykKH ifFctr"
+      >
+        <button
+          class="sc-AykKI iihJbo"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-AykKI dSXbfH"
+          type="button"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination renders without crashing 1`] = `
+<div
+  class="sc-AykKC hzjEwn"
+>
+  <ul
+    class="pagination"
+  >
+    <li
+      class="previous disabled"
+    >
+      <a
+        aria-disabled="true"
+        role="button"
+        tabindex="0"
+      >
+        &lt; Previous
+      </a>
+    </li>
+    <li
+      class="selected"
+    >
+      <a
+        aria-current="page"
+        aria-label="Page 1 is your current page"
+        role="button"
+        tabindex="0"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        aria-label="Page 2"
+        role="button"
+        tabindex="0"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        aria-label="Page 3"
+        role="button"
+        tabindex="0"
+      >
+        3
+      </a>
+    </li>
+    <li
+      class="break"
+    >
+      <a
+        role="button"
+        tabindex="0"
+      >
+        ...
+      </a>
+    </li>
+    <li>
+      <a
+        aria-label="Page 8"
+        role="button"
+        tabindex="0"
+      >
+        8
+      </a>
+    </li>
+    <li>
+      <a
+        aria-label="Page 9"
+        role="button"
+        tabindex="0"
+      >
+        9
+      </a>
+    </li>
+    <li>
+      <a
+        aria-label="Page 10"
+        role="button"
+        tabindex="0"
+      >
+        10
+      </a>
+    </li>
+    <li
+      class="next"
+    >
+      <a
+        aria-disabled="false"
+        role="button"
+        tabindex="0"
+      >
+        Next &gt;
+      </a>
+    </li>
+  </ul>
+</div>
+`;

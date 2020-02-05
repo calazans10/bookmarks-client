@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp renders without crashing 1`] = `
+<div
+  class="sc-fzXfLS rWSAT"
+>
+  <div
+    class="sc-fzXfLO eNxDZJ"
+  >
+    <p
+      class="sc-fzXfLP kvHAaA"
+    >
+      <span
+        class="sc-fzXfLQ ehFqOr"
+      />
+       
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="sc-fzXfLR iJddGT"
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+  <header
+    class="sc-fzXfLT dkBtqJ"
+  >
+    <div
+      class="sc-fzXfLU biEnOK"
+    >
+      <div
+        class="sc-AykKJ yuoou"
+      >
+        <a
+          class="sc-AykKK BJsjk"
+          href="/"
+        >
+          Bookmarks
+        </a>
+      </div>
+      <nav
+        class="sc-fzXfLV kVucXT"
+      >
+        <ul>
+          <li
+            class="sc-fzXfLW czKXzQ"
+          >
+            <a
+              href="/sign_in"
+            >
+              Sign In
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-fzXfMv hgkbuk"
+  >
+    <form
+      autocomplete="off"
+      class="sc-AykKC hOQMpN"
+      novalidate=""
+    >
+      <fieldset>
+        <legend
+          class="sc-AykKD jWsEOj"
+        >
+          Sign up for free
+        </legend>
+        <div
+          class="sc-AykKE dMuQNO"
+        >
+          <label
+            class="sc-AykKF fboVCh"
+            for="name"
+          >
+            Name
+          </label>
+          <input
+            class="sc-AykKG glNtFx"
+            id="name"
+            name="name"
+            placeholder="Name"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-AykKE dMuQNO"
+        >
+          <label
+            class="sc-AykKF fboVCh"
+            for="email"
+          >
+            Email
+          </label>
+          <input
+            class="sc-AykKG glNtFx"
+            id="email"
+            name="email"
+            placeholder="Email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-AykKE dMuQNO"
+        >
+          <label
+            class="sc-AykKF fboVCh"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="sc-AykKG glNtFx"
+            id="password"
+            name="password"
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div>
+          <button
+            class="sc-AykKI bmvfEn"
+            type="submit"
+          >
+            Register
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+</div>
+`;

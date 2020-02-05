@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FallbackLoading renders without crashing 1`] = `
+<div
+  class="sc-AykKC gtfOAm"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;

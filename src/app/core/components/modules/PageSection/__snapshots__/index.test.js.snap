@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageSection renders without crashing 1`] = `
+<section
+  class="sc-AykKC ghzNtW"
+>
+  <h1
+    class="sc-AykKD bWOxmu"
+  >
+    A title
+  </h1>
+  <p>
+    Lorem Ipsum
+  </p>
+</section>
+`;

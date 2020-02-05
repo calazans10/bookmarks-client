@@ -1,18 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import './index.scss';
+import { Button } from './style';
 
 const ButtonAction = ({ kind, onClick, children }) => {
-  const btnClass = classNames({
-    'button-action': true,
-    [`button-action--${kind}`]: true,
-  });
-
   return (
-    <button type="button" className={btnClass} onClick={onClick}>
+    <Button theme={{ main: kind }} type="button" onClick={onClick}>
       {children}
-    </button>
+    </Button>
   );
 };
 

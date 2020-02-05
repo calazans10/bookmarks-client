@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Alert from '../../../../ui/components/modules/Alert';
-import './index.scss';
+import { Container } from './style';
 
 const MainWrapper = ({ children }) => (
-  <div className="main-wrapper">
+  <Container>
     <Alert />
     {children}
-  </div>
+  </Container>
 );
 
 MainWrapper.propTypes = {

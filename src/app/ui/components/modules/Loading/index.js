@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { isLoadingVisible } from '../../../selectors';
-import './index.scss';
+import { Container } from './style';
 
 export const Loading = ({ isVisible }) => {
   if (!isVisible) {
@@ -10,9 +10,9 @@ export const Loading = ({ isVisible }) => {
   }
 
   return (
-    <div className="loading">
+    <Container>
       <p>Loading...</p>
-    </div>
+    </Container>
   );
 };
 

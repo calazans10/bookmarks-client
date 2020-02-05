@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserList renders without crashing 1`] = `
+<div
+  class="sc-fzXfLO kKSMTT"
+>
+  <div
+    class="sc-AykKH eXEOxc"
+  >
+    <p
+      class="sc-AykKI dlkmSP"
+    >
+      <span
+        class="sc-AykKJ gcvPGG"
+      />
+       
+      
+    </p>
+    <button
+      aria-label="Close alert"
+      class="sc-AykKK iiLRim"
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+  <header
+    class="sc-fzXfLP csciRt"
+  >
+    <div
+      class="sc-fzXfLQ jdqFVu"
+    >
+      <div
+        class="sc-AykKF dGPZgG"
+      >
+        <a
+          class="sc-AykKG drDgzg"
+          href="/admin/bookmarks"
+        >
+          Bookmarks
+        </a>
+      </div>
+      <nav
+        class="sc-fzXfLR kxwINX"
+      >
+        <ul>
+          <li
+            class="sc-fzXfLS fANTMc"
+          >
+            <button
+              class="sc-fzXfLT cEECpw"
+              type="button"
+            >
+              Sign Out
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-fzXfLU jZCVCi"
+  >
+    <div
+      class="sc-fzXfLV ixNDVt"
+    >
+      <ul>
+        <li>
+          <a
+            href="/admin/bookmarks"
+          >
+            Bookmarks list
+          </a>
+        </li>
+      </ul>
+    </div>
+    <table
+      class="sc-AykKC bBOGGK"
+    >
+      <tbody />
+    </table>
+  </main>
+</div>
+`;

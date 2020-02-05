@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import { Container, Wrapper } from './style';
 
 const MainHeader = ({ children }) => (
-  <header className="main-header">
-    <div className="main-header__container">{children}</div>
-  </header>
+  <Container>
+    <Wrapper>{children}</Wrapper>
+  </Container>
 );
 
 MainHeader.propTypes = {

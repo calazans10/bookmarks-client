@@ -7,7 +7,7 @@ import PageNavigation from '../../../../core/components/modules/PageNavigation';
 import Pagination from '../../../../core/components/modules/Pagination';
 import { doRequestGetUsers } from '../../../actions';
 import { getUsersCount, getUsersLimit, getUsersOffset, getUsersTotal } from '../../../selectors';
-import { isPaginationVisible } from '../../../../../lib/utils';
+import { isPaginationVisible } from '../../../../../utils/pagination';
 
 export const UserList = ({ count, offset, limit, total, onRequestGetUsers }) => {
   useEffect(() => {

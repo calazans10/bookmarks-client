@@ -12,7 +12,7 @@ import {
   getBookmarksOffset,
   getBookmarksTotal,
 } from '../../../selectors';
-import { isPaginationVisible } from '../../../../../lib/utils';
+import { isPaginationVisible } from '../../../../../utils/pagination';
 
 export const BookmarkList = ({ count, offset, limit, total, onRequestGetBookmarks }) => {
   useEffect(() => {
