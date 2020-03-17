@@ -1,3 +1,4 @@
+import { AxiosInstance } from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 const adminToken =
@@ -6,7 +7,9 @@ const userToken =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODEwMjA4OTgsInN1YiI6IjdlZGVjYzVhLTc3YWUtNDcxOC05NDczLTg2MjAxOTAzNzVhMSJ9.PYt94X2TTxMmzRRa_8R0wWCETlyuPf2CEDKJutu-P3M';
 
 class AxiosMock {
-  constructor(axios) {
+  mock: MockAdapter;
+
+  constructor(axios: AxiosInstance) {
     this.mock = new MockAdapter(axios);
   }
 

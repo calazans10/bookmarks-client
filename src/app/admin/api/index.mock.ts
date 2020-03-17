@@ -1,17 +1,20 @@
+import { AxiosInstance } from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 class AxiosMock {
-  constructor(axios) {
+  mock: MockAdapter;
+
+  constructor(axios: AxiosInstance) {
     this.mock = new MockAdapter(axios);
   }
 
   registerUrls() {
-    this.mock.onGet('/v1/bookmarks?offset=1&limit=10').reply(200, {
+    this.mock.onGet('/v1/admin/bookmarks?offset=1&limit=10').reply(200, {
       meta: {
-        count: 4,
+        count: 6,
         offset: 1,
         limit: 10,
-        total: 4,
+        total: 6,
       },
       data: [
         {
@@ -46,14 +49,53 @@ class AxiosMock {
           created_at: '2017-01-19T15:04:05.862Z',
           updated_at: '2017-01-20T17:26:06.892Z',
         },
+        {
+          id: 'b9b3b470-d41c-4e7c-bf1b-8e584734582a',
+          title: 'DOM Attributes in React 16',
+          url: 'https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html',
+          user_id: '6e44fb34-594e-49d2-8e30-20bb6a062033',
+          created_at: '2016-12-05T15:04:05.862Z',
+          updated_at: '2016-12-10T17:26:06.892Z',
+        },
+        {
+          id: 'ddd8ffd1-fe0b-488e-af3c-8c773e9c9500',
+          title: 'Error Handling in React 16',
+          url: 'https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html',
+          user_id: '6e44fb34-594e-49d2-8e30-20bb6a062033',
+          created_at: '2016-10-10T15:04:05.862Z',
+          updated_at: '2016-10-10T17:26:06.892Z',
+        },
       ],
     });
 
-    this.mock.onPost('/v1/bookmarks').reply(201);
-
-    this.mock.onPut(/\/v1\/bookmarks\/\d+/).reply(204);
-
-    this.mock.onDelete(/\/v1\/bookmarks\/\d+/).reply(204);
+    this.mock.onGet('/v1/admin/users?offset=1&limit=10').reply(200, {
+      meta: {
+        count: 2,
+        offset: 1,
+        limit: 10,
+        total: 2,
+      },
+      data: [
+        {
+          id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+          name: 'John Doe',
+          email: 'john.doe@example.com',
+          is_admin: false,
+          created_at: '2020-02-05T20:29:06.031Z',
+          updated_at: '2020-02-05T20:29:06.031Z',
+          bookmarks_count: 4,
+        },
+        {
+          id: '6e44fb34-594e-49d2-8e30-20bb6a062033',
+          name: 'Joane Doe',
+          email: 'joane.doe@example.com',
+          is_admin: false,
+          created_at: '2020-02-03T15:27:33.056Z',
+          updated_at: '2020-02-03T15:27:33.056Z',
+          bookmarks_count: 2,
+        },
+      ],
+    });
   }
 }
 

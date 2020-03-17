@@ -11,6 +11,10 @@ import { doChangeLocation } from '../../../../router/actions';
 import { doShowConfirm } from '../../../../ui/actions';
 import { getBookmarks } from '../../../selectors';
 
+interface Bookmark {
+  id?: string;
+}
+
 export const BookmarkTable = ({
   bookmarks,
   onChangeLocation,
@@ -18,7 +22,7 @@ export const BookmarkTable = ({
   onChangeSelectedBookmark,
   onRequestDeleteBookmark,
 }) => {
-  const [selectedBookmark, setSelectedBookmark] = useState({});
+  const [selectedBookmark, setSelectedBookmark] = useState<Bookmark>({});
 
   return (
     <>

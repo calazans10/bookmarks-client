@@ -10,7 +10,7 @@ const NotFound = () => {
 
   return (
     <MainWrapper>
-      <MainContent title="Page not found">
+      <MainContent>
         <PageSection title="404 - Page not found">
           <p>Sorry, the page you were looking for cannot be found!</p>
           <p>
