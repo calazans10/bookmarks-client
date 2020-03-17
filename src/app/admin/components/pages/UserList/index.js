@@ -5,17 +5,17 @@ import UserTable from '../../modules/UserTable';
 import PageContent from '../../../../core/components/modules/PageContent';
 import PageNavigation from '../../../../core/components/modules/PageNavigation';
 import Pagination from '../../../../core/components/modules/Pagination';
-import { doRequestGetUsers } from '../../../actions';
+import { doChangeUsersMeta, doRequestGetUsers } from '../../../actions';
 import { getUsersCount, getUsersLimit, getUsersOffset, getUsersTotal } from '../../../selectors';
 
-export const UserList = ({ count, offset, limit, total, onRequestGetUsers }) => {
+export const UserList = ({ count, offset, limit, total, onChangeUsersMeta, onRequestGetUsers }) => {
   useEffect(() => {
     onRequestGetUsers(offset, limit);
   }, [offset, limit, onRequestGetUsers]);
 
   const onChange = data => {
     const { selected } = data;
-    onRequestGetUsers(selected + 1, limit);
+    onChangeUsersMeta(count, selected + 1, limit, total);
   };
 
   return (
@@ -38,6 +38,7 @@ UserList.propTypes = {
   offset: PropTypes.number.isRequired,
   limit: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
+  onChangeUsersMeta: PropTypes.func.isRequired,
   onRequestGetUsers: PropTypes.func.isRequired,
 };
 
@@ -49,6 +50,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
+  onChangeUsersMeta: doChangeUsersMeta,
   onRequestGetUsers: doRequestGetUsers,
 };
 

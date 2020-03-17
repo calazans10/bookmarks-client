@@ -2,23 +2,23 @@
 
 exports[`BookmarkCreate renders without crashing 1`] = `
 <div
-  class="sc-fzXfLS rWSAT"
+  class="sc-fznyAO gzScre"
 >
   <div
-    class="sc-fzXfLO eNxDZJ"
+    class="sc-fzozJi hjZFMJ"
   >
     <p
-      class="sc-fzXfLP kvHAaA"
+      class="sc-fzoLsD gkprAF"
     >
       <span
-        class="sc-fzXfLQ ehFqOr"
+        class="sc-fzpans itZSub"
       />
        
       
     </p>
     <button
       aria-label="Close alert"
-      class="sc-fzXfLR iJddGT"
+      class="sc-fzplWN cbPIzc"
       type="button"
     >
       <span>
@@ -27,30 +27,30 @@ exports[`BookmarkCreate renders without crashing 1`] = `
     </button>
   </div>
   <header
-    class="sc-fzXfLT dkBtqJ"
+    class="sc-fznKkj hAVTOU"
   >
     <div
-      class="sc-fzXfLU biEnOK"
+      class="sc-fznZeY eQbmXQ"
     >
       <div
-        class="sc-AykKJ yuoou"
+        class="sc-Axmtr gOKCDz"
       >
         <a
-          class="sc-AykKK BJsjk"
+          class="sc-AxmLO fpwXlv"
           href="/bookmarks"
         >
           Bookmarks
         </a>
       </div>
       <nav
-        class="sc-fzXfLV kVucXT"
+        class="sc-fzokOt bbGngf"
       >
         <ul>
           <li
-            class="sc-fzXfLW czKXzQ"
+            class="sc-fzqBZW cJRSnq"
           >
             <button
-              class="sc-fzXfLX hlqnDY"
+              class="sc-fzqNJr tYlxI"
               type="button"
             >
               Sign Out
@@ -61,30 +61,30 @@ exports[`BookmarkCreate renders without crashing 1`] = `
     </div>
   </header>
   <main
-    class="sc-fzXfMv hgkbuk"
+    class="sc-fzoyAV hNheMF"
   >
     <form
       autocomplete="off"
-      class="sc-AykKC hOQMpN"
+      class="sc-AxjAm hYYXIy"
       novalidate=""
     >
       <fieldset>
         <legend
-          class="sc-AykKD jWsEOj"
+          class="sc-AxirZ dBtpcc"
         >
           Add bookmark
         </legend>
         <div
-          class="sc-AykKE dMuQNO"
+          class="sc-AxiKw bLDZyO"
         >
           <label
-            class="sc-AykKF fboVCh"
+            class="sc-AxhCb ieTFEo"
             for="title"
           >
             Title
           </label>
           <input
-            class="sc-AykKG glNtFx"
+            class="sc-AxhUy ePtFHq"
             id="title"
             name="title"
             placeholder="Title"
@@ -93,16 +93,16 @@ exports[`BookmarkCreate renders without crashing 1`] = `
           />
         </div>
         <div
-          class="sc-AykKE dMuQNO"
+          class="sc-AxiKw bLDZyO"
         >
           <label
-            class="sc-AykKF fboVCh"
+            class="sc-AxhCb ieTFEo"
             for="url"
           >
             Url
           </label>
           <input
-            class="sc-AykKG glNtFx"
+            class="sc-AxhUy ePtFHq"
             id="url"
             name="url"
             placeholder="Url"
@@ -112,7 +112,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
         </div>
         <div>
           <button
-            class="sc-AykKI bmvfEn"
+            class="sc-AxheI dSQsuG"
             type="submit"
           >
             Save

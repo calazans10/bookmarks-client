@@ -5,7 +5,7 @@ import BookmarkTable from '../../modules/BookmarkTable';
 import PageContent from '../../../../core/components/modules/PageContent';
 import PageNavigation from '../../../../core/components/modules/PageNavigation';
 import Pagination from '../../../../core/components/modules/Pagination';
-import { doRequestGetBookmarks } from '../../../actions';
+import { doChangeBookmarksMeta, doRequestGetBookmarks } from '../../../actions';
 import {
   getBookmarksCount,
   getBookmarksLimit,
@@ -13,14 +13,21 @@ import {
   getBookmarksTotal,
 } from '../../../selectors';
 
-export const BookmarkList = ({ count, offset, limit, total, onRequestGetBookmarks }) => {
+export const BookmarkList = ({
+  count,
+  offset,
+  limit,
+  total,
+  onChangeBookmarksMeta,
+  onRequestGetBookmarks,
+}) => {
   useEffect(() => {
     onRequestGetBookmarks(offset, limit);
   }, [offset, limit, onRequestGetBookmarks]);
 
   const onChange = data => {
     const { selected } = data;
-    onRequestGetBookmarks(selected + 1, limit);
+    onChangeBookmarksMeta(count, selected + 1, limit, total);
   };
 
   return (
@@ -43,6 +50,7 @@ BookmarkList.propTypes = {
   offset: PropTypes.number.isRequired,
   limit: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
+  onChangeBookmarksMeta: PropTypes.func.isRequired,
   onRequestGetBookmarks: PropTypes.func.isRequired,
 };
 
@@ -54,6 +62,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
+  onChangeBookmarksMeta: doChangeBookmarksMeta,
   onRequestGetBookmarks: doRequestGetBookmarks,
 };
 

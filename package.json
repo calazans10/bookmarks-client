@@ -58,7 +58,7 @@
       "src/**/*.js",
       "!src/index.js",
       "!src/style.js",
-      "!src/app/index.js",
+      "!src/app/routes.js",
       "!src/app/{admin,auth,router,ui,user}/index.js",
       "!src/app/**/api/*.js",
       "!src/history/index.js",

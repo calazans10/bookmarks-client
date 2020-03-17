@@ -2,23 +2,23 @@
 
 exports[`MainWrapper renders without crashing 1`] = `
 <div
-  class="sc-AykKG Aoinl"
+  class="sc-AxhUy jsxOVu"
 >
   <div
-    class="sc-AykKC JGzUH"
+    class="sc-AxjAm gVcqXk"
   >
     <p
-      class="sc-AykKD dfbIIS"
+      class="sc-AxirZ dQMFuN"
     >
       <span
-        class="sc-AykKE ejbGjx"
+        class="sc-AxiKw cGiMxH"
       />
        
       
     </p>
     <button
       aria-label="Close alert"
-      class="sc-AykKF ejyTDJ"
+      class="sc-AxhCb fbaVap"
       type="button"
     >
       <span>

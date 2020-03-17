@@ -3,6 +3,7 @@ import {
   GET_MY_BOOKMARKS_SUCCESS,
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
+  MY_BOOKMARKS_META_CHANGE,
 } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
@@ -34,10 +35,15 @@ const applyChangeSelectedBookmark = (state, action) => {
   state.selectedBookmark = bookmark;
 };
 
+const applyChangeMyBookmarksMeta = (state, action) => {
+  state.bookmarks.meta = action.payload;
+};
+
 const userReducer = createReducer(INITIAL_STATE, {
   [GET_MY_BOOKMARKS_SUCCESS]: (state, action) => applySuccessGetMyBookmarks(state, action),
   [DELETE_BOOKMARK_SUCCESS]: (state, action) => applySuccessDeleteBookmark(state, action),
   [SELECTED_BOOKMARK_CHANGE]: (state, action) => applyChangeSelectedBookmark(state, action),
+  [MY_BOOKMARKS_META_CHANGE]: (state, action) => applyChangeMyBookmarksMeta(state, action),
 });
 
 export default userReducer;

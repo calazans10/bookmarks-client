@@ -1,5 +1,10 @@
 import reducer from './index';
-import { doSuccessGetUsers, doSuccessGetBookmarks } from '../actions';
+import {
+  doSuccessGetUsers,
+  doSuccessGetBookmarks,
+  doChangeBookmarksMeta,
+  doChangeUsersMeta,
+} from '../actions';
 
 describe('admin reducer', () => {
   it('should return the initial state', () => {
@@ -96,6 +101,66 @@ describe('admin reducer', () => {
       users: {
         meta,
         data,
+      },
+    };
+    expect(reducer(undefined, action)).toEqual(expectedState);
+  });
+
+  it('should handle BOOKMARKS_META_CHANGE', () => {
+    const count = 1;
+    const limit = 10;
+    const offset = 1;
+    const total = 1;
+
+    const action = doChangeBookmarksMeta(count, offset, limit, total);
+    const expectedState = {
+      bookmarks: {
+        data: [],
+        meta: {
+          count,
+          offset,
+          limit,
+          total,
+        },
+      },
+      users: {
+        meta: {
+          count: 0,
+          limit: 10,
+          offset: 1,
+          total: 0,
+        },
+        data: [],
+      },
+    };
+    expect(reducer(undefined, action)).toEqual(expectedState);
+  });
+
+  it('should handle USERS_META_CHANGE', () => {
+    const count = 1;
+    const limit = 10;
+    const offset = 1;
+    const total = 1;
+
+    const action = doChangeUsersMeta(count, offset, limit, total);
+    const expectedState = {
+      bookmarks: {
+        data: [],
+        meta: {
+          count: 0,
+          limit: 10,
+          offset: 1,
+          total: 0,
+        },
+      },
+      users: {
+        meta: {
+          count,
+          offset,
+          limit,
+          total,
+        },
+        data: [],
       },
     };
     expect(reducer(undefined, action)).toEqual(expectedState);

@@ -19,6 +19,7 @@ describe('BookmarkList', () => {
           offset={1}
           limit={10}
           total={10}
+          onChangeMyBookmarksMeta={jest.fn()}
           onRequestGetMyBookmarks={jest.fn()}
         />
       </MemoryRouter>

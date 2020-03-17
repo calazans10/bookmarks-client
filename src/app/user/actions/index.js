@@ -7,6 +7,7 @@ import {
   DELETE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
+  MY_BOOKMARKS_META_CHANGE,
 } from '../constants/actionTypes';
 
 export const doRequestGetMyBookmarks = createAction(GET_MY_BOOKMARKS_REQUEST, (offset, limit) => ({
@@ -56,3 +57,15 @@ export const doChangeSelectedBookmark = createAction(SELECTED_BOOKMARK_CHANGE, b
     bookmark,
   },
 }));
+
+export const doChangeMyBookmarksMeta = createAction(
+  MY_BOOKMARKS_META_CHANGE,
+  (count, offset, limit, total) => ({
+    payload: {
+      count,
+      offset,
+      limit,
+      total,
+    },
+  })
+);

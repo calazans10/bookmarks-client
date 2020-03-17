@@ -3,12 +3,16 @@ import {
   doSuccessGetBookmarks,
   doRequestGetUsers,
   doSuccessGetUsers,
+  doChangeBookmarksMeta,
+  doChangeUsersMeta,
 } from './index';
 import {
   GET_BOOKMARKS_REQUEST,
   GET_BOOKMARKS_SUCCESS,
   GET_USERS_REQUEST,
   GET_USERS_SUCCESS,
+  BOOKMARKS_META_CHANGE,
+  USERS_META_CHANGE,
 } from '../constants/actionTypes';
 
 describe('admin actions', () => {
@@ -101,5 +105,43 @@ describe('admin actions', () => {
     };
 
     expect(doSuccessGetUsers(meta, data)).toEqual(expectedAction);
+  });
+
+  it('should create doChangeBookmarksMeta action', () => {
+    const count = 1;
+    const limit = 10;
+    const offset = 1;
+    const total = 1;
+
+    const expectedAction = {
+      type: BOOKMARKS_META_CHANGE,
+      payload: {
+        count,
+        offset,
+        limit,
+        total,
+      },
+    };
+
+    expect(doChangeBookmarksMeta(count, offset, limit, total)).toEqual(expectedAction);
+  });
+
+  it('should create doChangeUsersMeta action', () => {
+    const count = 1;
+    const limit = 10;
+    const offset = 1;
+    const total = 1;
+
+    const expectedAction = {
+      type: USERS_META_CHANGE,
+      payload: {
+        count,
+        offset,
+        limit,
+        total,
+      },
+    };
+
+    expect(doChangeUsersMeta(count, offset, limit, total)).toEqual(expectedAction);
   });
 });

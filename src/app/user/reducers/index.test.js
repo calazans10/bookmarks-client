@@ -3,6 +3,7 @@ import {
   doSuccessGetMyBookmarks,
   doSuccessDeleteBookmark,
   doChangeSelectedBookmark,
+  doChangeMyBookmarksMeta,
 } from '../actions';
 
 describe('user reducer', () => {
@@ -164,5 +165,27 @@ describe('user reducer', () => {
       selectedBookmark: bookmark,
     };
     expect(reducer(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should handle MY_BOOKMARKS_META_CHANGE', () => {
+    const count = 1;
+    const limit = 10;
+    const offset = 1;
+    const total = 1;
+
+    const action = doChangeMyBookmarksMeta(count, offset, limit, total);
+    const expectedState = {
+      bookmarks: {
+        data: [],
+        meta: {
+          count,
+          offset,
+          limit,
+          total,
+        },
+      },
+      selectedBookmark: {},
+    };
+    expect(reducer(undefined, action)).toEqual(expectedState);
   });
 });

@@ -2,23 +2,23 @@
 
 exports[`PageContent renders without crashing 1`] = `
 <div
-  class="sc-AykKI YBcQj"
+  class="sc-AxheI iAQAMi"
 >
   <div
-    class="sc-AykKE gVtJAt"
+    class="sc-AxiKw bJCLjj"
   >
     <p
-      class="sc-AykKF fuZbRQ"
+      class="sc-AxhCb dvaKgx"
     >
       <span
-        class="sc-AykKG cIAidr"
+        class="sc-AxhUy funJuC"
       />
        
       
     </p>
     <button
       aria-label="Close alert"
-      class="sc-AykKH dAUBfL"
+      class="sc-AxgMl bMsCBu"
       type="button"
     >
       <span>
@@ -27,30 +27,30 @@ exports[`PageContent renders without crashing 1`] = `
     </button>
   </div>
   <header
-    class="sc-AykKJ hHFgZt"
+    class="sc-Axmtr eCCXJi"
   >
     <div
-      class="sc-AykKK kkZpLC"
+      class="sc-AxmLO hiBYtb"
     >
       <div
-        class="sc-AykKC gagnNP"
+        class="sc-AxjAm daLWxe"
       >
         <a
-          class="sc-AykKD inQTEp"
+          class="sc-AxirZ gHWAZY"
           href="/home"
         >
           Bookmarks
         </a>
       </div>
       <nav
-        class="sc-fzXfLO exNOUc"
+        class="sc-fzozJi jmrGBi"
       >
         <ul>
           <li
-            class="sc-fzXfLP cgSmiN"
+            class="sc-fzoLsD jBEMxY"
           >
             <button
-              class="sc-fzXfLQ kvxWQx"
+              class="sc-fzpans joGuf"
               type="button"
             >
               Sign Out
@@ -61,7 +61,7 @@ exports[`PageContent renders without crashing 1`] = `
     </div>
   </header>
   <main
-    class="sc-fzXfLR fAbZIT"
+    class="sc-fzplWN fiNEmJ"
   >
     <p>
       Lorem Ipsum

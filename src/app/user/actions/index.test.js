@@ -6,6 +6,7 @@ import {
   doRequestDeleteBookmark,
   doSuccessDeleteBookmark,
   doChangeSelectedBookmark,
+  doChangeMyBookmarksMeta,
 } from './index';
 import {
   GET_MY_BOOKMARKS_REQUEST,
@@ -15,6 +16,7 @@ import {
   DELETE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
+  MY_BOOKMARKS_META_CHANGE,
 } from '../constants/actionTypes';
 
 describe('user actions', () => {
@@ -144,4 +146,23 @@ describe('user actions', () => {
     };
     expect(doChangeSelectedBookmark(bookmark)).toEqual(expectedAction);
   });
+});
+
+it('should create doChangeMyBookmarksMeta action', () => {
+  const count = 1;
+  const limit = 10;
+  const offset = 1;
+  const total = 1;
+
+  const expectedAction = {
+    type: MY_BOOKMARKS_META_CHANGE,
+    payload: {
+      count,
+      offset,
+      limit,
+      total,
+    },
+  };
+
+  expect(doChangeMyBookmarksMeta(count, offset, limit, total)).toEqual(expectedAction);
 });

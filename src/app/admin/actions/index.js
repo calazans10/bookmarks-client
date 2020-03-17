@@ -4,6 +4,8 @@ import {
   GET_BOOKMARKS_SUCCESS,
   GET_USERS_REQUEST,
   GET_USERS_SUCCESS,
+  BOOKMARKS_META_CHANGE,
+  USERS_META_CHANGE,
 } from '../constants/actionTypes';
 
 export const doRequestGetBookmarks = createAction(GET_BOOKMARKS_REQUEST, (offset, limit) => ({
@@ -31,5 +33,26 @@ export const doSuccessGetUsers = createAction(GET_USERS_SUCCESS, (meta, data) =>
   payload: {
     meta,
     data,
+  },
+}));
+
+export const doChangeBookmarksMeta = createAction(
+  BOOKMARKS_META_CHANGE,
+  (count, offset, limit, total) => ({
+    payload: {
+      count,
+      offset,
+      limit,
+      total,
+    },
+  })
+);
+
+export const doChangeUsersMeta = createAction(USERS_META_CHANGE, (count, offset, limit, total) => ({
+  payload: {
+    count,
+    offset,
+    limit,
+    total,
   },
 }));
