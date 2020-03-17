@@ -2,87 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  class="sc-AykKK bwNXth"
+  class="sc-AxjAm foMttB"
 >
-  <div
-    class="sc-AykKG bRLjHj"
-  >
-    <p
-      class="sc-AykKH hKWvaO"
-    >
-      <span
-        class="sc-AykKI bhYJXl"
-      />
-       
-      
-    </p>
-    <button
-      aria-label="Close alert"
-      class="sc-AykKJ cSqiHN"
-      type="button"
-    >
-      <span>
-        Close
-      </span>
-    </button>
-  </div>
-  <header
-    class="sc-fzXfLO kFzgQM"
-  >
-    <div
-      class="sc-fzXfLP ilhODR"
-    >
-      <div
-        class="sc-AykKE evVvrJ"
-      >
-        <a
-          class="sc-AykKF bljhJT"
-          href="/"
-        >
-          Bookmarks
-        </a>
-      </div>
-      <nav
-        class="sc-fzXfLQ eJMyZa"
-      >
-        <ul>
-          <li
-            class="sc-fzXfLR GqOcH"
-          >
-            <a
-              href="/sign_in"
-            >
-              Sign In
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main
-    class="sc-fzXfLT izLond"
-  >
-    <section
-      class="sc-fzXfLU jBGwfK"
-    >
-      <h1
-        class="sc-fzXfLV bNPsjm"
-      >
-        A smarter way to save your web pages
-      </h1>
-      <p>
-        Bookmarks makes it simple to save web pages you find useful, interesting, or inspiring in a beautiful, easy-to-use web app.
-      </p>
-      <p>
-        Don't have an account? 
-        <a
-          href="/sign_up"
-        >
-          Sign up here
-        </a>
-        .
-      </p>
-    </section>
-  </main>
+  <p>
+    Loading...
+  </p>
 </div>
 `;
