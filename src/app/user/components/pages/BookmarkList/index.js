@@ -12,7 +12,6 @@ import {
   getBookmarksOffset,
   getBookmarksTotal,
 } from '../../../selectors';
-import { isPaginationVisible } from '../../../../../utils/pagination';
 
 export const BookmarkList = ({ count, offset, limit, total, onRequestGetMyBookmarks }) => {
   useEffect(() => {
@@ -28,9 +27,13 @@ export const BookmarkList = ({ count, offset, limit, total, onRequestGetMyBookma
     <PageContent to="/bookmarks">
       <PageNavigation pathname="/bookmarks/new" title="Add bookmark" />
       <BookmarkTable hasActions />
-      {isPaginationVisible(count, limit, total) && (
-        <Pagination initialPage={offset - 1} pageCount={total / limit} onChange={onChange} />
-      )}
+      <Pagination
+        initialPage={offset - 1}
+        count={count}
+        limit={limit}
+        total={total}
+        onChange={onChange}
+      />
     </PageContent>
   );
 };

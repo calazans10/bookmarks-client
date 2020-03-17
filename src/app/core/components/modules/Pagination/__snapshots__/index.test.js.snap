@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pagination renders without crashing 1`] = `
+exports[`Pagination when is not visible renders nothing 1`] = `null`;
+
+exports[`Pagination when is visible renders without crashing 1`] = `
 <div
-  class="sc-AykKC hzjEwn"
+  class="sc-AxjAm dIlKGO"
 >
   <ul
     class="pagination"
@@ -37,52 +39,6 @@ exports[`Pagination renders without crashing 1`] = `
         tabindex="0"
       >
         2
-      </a>
-    </li>
-    <li>
-      <a
-        aria-label="Page 3"
-        role="button"
-        tabindex="0"
-      >
-        3
-      </a>
-    </li>
-    <li
-      class="break"
-    >
-      <a
-        role="button"
-        tabindex="0"
-      >
-        ...
-      </a>
-    </li>
-    <li>
-      <a
-        aria-label="Page 8"
-        role="button"
-        tabindex="0"
-      >
-        8
-      </a>
-    </li>
-    <li>
-      <a
-        aria-label="Page 9"
-        role="button"
-        tabindex="0"
-      >
-        9
-      </a>
-    </li>
-    <li>
-      <a
-        aria-label="Page 10"
-        role="button"
-        tabindex="0"
-      >
-        10
       </a>
     </li>
     <li

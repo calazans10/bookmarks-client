@@ -2,23 +2,23 @@
 
 exports[`UserList renders without crashing 1`] = `
 <div
-  class="sc-fzXfLO kKSMTT"
+  class="sc-fzozJi kczcXd"
 >
   <div
-    class="sc-AykKH eXEOxc"
+    class="sc-AxgMl iQhmZI"
   >
     <p
-      class="sc-AykKI dlkmSP"
+      class="sc-AxheI eKvuUQ"
     >
       <span
-        class="sc-AykKJ gcvPGG"
+        class="sc-Axmtr ckrvSZ"
       />
        
       
     </p>
     <button
       aria-label="Close alert"
-      class="sc-AykKK iiLRim"
+      class="sc-AxmLO fnYaFm"
       type="button"
     >
       <span>
@@ -27,30 +27,30 @@ exports[`UserList renders without crashing 1`] = `
     </button>
   </div>
   <header
-    class="sc-fzXfLP csciRt"
+    class="sc-fzoLsD gmsxLA"
   >
     <div
-      class="sc-fzXfLQ jdqFVu"
+      class="sc-fzpans hEccRE"
     >
       <div
-        class="sc-AykKF dGPZgG"
+        class="sc-AxhCb gwjmIx"
       >
         <a
-          class="sc-AykKG drDgzg"
+          class="sc-AxhUy inKelV"
           href="/admin/bookmarks"
         >
           Bookmarks
         </a>
       </div>
       <nav
-        class="sc-fzXfLR kxwINX"
+        class="sc-fzplWN fEYjxB"
       >
         <ul>
           <li
-            class="sc-fzXfLS fANTMc"
+            class="sc-fznyAO iwBLJN"
           >
             <button
-              class="sc-fzXfLT cEECpw"
+              class="sc-fznKkj gJPLj"
               type="button"
             >
               Sign Out
@@ -61,10 +61,10 @@ exports[`UserList renders without crashing 1`] = `
     </div>
   </header>
   <main
-    class="sc-fzXfLU jZCVCi"
+    class="sc-fznZeY gRLPyU"
   >
     <div
-      class="sc-fzXfLV ixNDVt"
+      class="sc-fzokOt bjpPnv"
     >
       <ul>
         <li>
@@ -77,7 +77,7 @@ exports[`UserList renders without crashing 1`] = `
       </ul>
     </div>
     <table
-      class="sc-AykKC bBOGGK"
+      class="sc-AxjAm doFumh"
     >
       <tbody />
     </table>

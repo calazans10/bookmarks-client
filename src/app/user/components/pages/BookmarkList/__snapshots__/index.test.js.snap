@@ -2,23 +2,23 @@
 
 exports[`BookmarkList renders without crashing 1`] = `
 <div
-  class="sc-fzXfLW bowHGP"
+  class="sc-fzqBZW gLzUFZ"
 >
   <div
-    class="sc-fzXfLS fVCnMl"
+    class="sc-fznyAO jHNXDq"
   >
     <p
-      class="sc-fzXfLT dMgCTA"
+      class="sc-fznKkj cKeVvZ"
     >
       <span
-        class="sc-fzXfLU bgCuCf"
+        class="sc-fznZeY jTWNcD"
       />
        
       
     </p>
     <button
       aria-label="Close alert"
-      class="sc-fzXfLV hrUsKX"
+      class="sc-fzokOt iQjNdG"
       type="button"
     >
       <span>
@@ -27,30 +27,30 @@ exports[`BookmarkList renders without crashing 1`] = `
     </button>
   </div>
   <header
-    class="sc-fzXfLX eda-DPZ"
+    class="sc-fzqNJr eWEomT"
   >
     <div
-      class="sc-fzXfMv MKSIU"
+      class="sc-fzoyAV kKLbAF"
     >
       <div
-        class="sc-fzXfLQ cJlpIv"
+        class="sc-fzpans ywShZ"
       >
         <a
-          class="sc-fzXfLR FGTox"
+          class="sc-fzplWN dPJMtt"
           href="/bookmarks"
         >
           Bookmarks
         </a>
       </div>
       <nav
-        class="sc-fzXfMw hlhoGJ"
+        class="sc-fzoLag hJjPwp"
       >
         <ul>
           <li
-            class="sc-fzXfMx jhtdaG"
+            class="sc-fzoXzr jsayvX"
           >
             <button
-              class="sc-fzXfMy eBsQru"
+              class="sc-fzpjYC bgWwfv"
               type="button"
             >
               Sign Out
@@ -61,10 +61,10 @@ exports[`BookmarkList renders without crashing 1`] = `
     </div>
   </header>
   <main
-    class="sc-fzXfMz bQgVdI"
+    class="sc-fznxsB btECRv"
   >
     <div
-      class="sc-fzXfMA wJsHN"
+      class="sc-fznJRM fxdAnj"
     >
       <ul>
         <li>
@@ -77,7 +77,7 @@ exports[`BookmarkList renders without crashing 1`] = `
       </ul>
     </div>
     <table
-      class="sc-AykKC bBOGGK"
+      class="sc-AxjAm doFumh"
     >
       <tbody />
     </table>
