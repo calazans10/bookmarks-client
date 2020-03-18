@@ -17,7 +17,7 @@ import {
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
   MY_BOOKMARKS_META_CHANGE,
-} from '../constants/actionTypes';
+} from '../types';
 
 describe('user actions', () => {
   it('should create doRequestGetMyBookmarks action', () => {
@@ -48,12 +48,9 @@ describe('user actions', () => {
         id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
         url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
         title: 'Introducing the React RFC Process',
-        user: {
-          id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-          name: 'John Doe',
-          email: 'john.doe@example.com',
-          is_admin: false,
-        },
+        user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+        created_at: '2020-01-21T01:31:19.489Z',
+        updated_at: '2020-01-21T01:31:19.489Z',
       },
     ];
 
@@ -130,12 +127,9 @@ describe('user actions', () => {
       id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
       url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
       title: 'Introducing the React RFC Process',
-      user: {
-        id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        is_admin: false,
-      },
+      user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+      created_at: '2020-01-21T01:31:19.489Z',
+      updated_at: '2020-01-21T01:31:19.489Z',
     };
 
     const expectedAction = {

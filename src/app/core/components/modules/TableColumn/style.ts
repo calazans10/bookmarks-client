@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 import { em, rem } from 'polished';
 
-export const Container = styled.td`
+type ContainerProps = {
+  hasActions: boolean;
+};
+
+export const Container = styled.td<ContainerProps>`
   display: block;
 
   &:before {

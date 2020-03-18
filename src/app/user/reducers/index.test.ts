@@ -5,6 +5,7 @@ import {
   doChangeSelectedBookmark,
   doChangeMyBookmarksMeta,
 } from '../actions';
+import { Bookmark, UserActionTypes } from '../types';
 
 describe('user reducer', () => {
   it('should return the initial state', () => {
@@ -20,7 +21,7 @@ describe('user reducer', () => {
       },
       selectedBookmark: {},
     };
-    expect(reducer(undefined, {})).toEqual(expectedState);
+    expect(reducer(undefined, {} as UserActionTypes)).toEqual(expectedState);
   });
 
   it('should handle GET_MY_BOOKMARKS_SUCCESS', () => {
@@ -35,12 +36,9 @@ describe('user reducer', () => {
         id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
         url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
         title: 'Introducing the React RFC Process',
-        user: {
-          id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-          name: 'John Doe',
-          email: 'john.doe@example.com',
-          is_admin: false,
-        },
+        user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+        created_at: '2020-01-21T01:31:19.489Z',
+        updated_at: '2020-01-21T01:31:19.489Z',
       },
     ];
 
@@ -73,16 +71,13 @@ describe('user reducer', () => {
             id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
             url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
             title: 'Introducing the React RFC Process',
-            user: {
-              id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-              name: 'John Doe',
-              email: 'john.doe@example.com',
-              is_admin: false,
-            },
+            user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+            created_at: '2020-01-21T01:31:19.489Z',
+            updated_at: '2020-01-21T01:31:19.489Z',
           },
         ],
       },
-      selectedBookmark: {},
+      selectedBookmark: {} as Bookmark,
     };
 
     const expectedState = {
@@ -105,12 +100,9 @@ describe('user reducer', () => {
       id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
       url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
       title: 'Introducing the React RFC Process',
-      user: {
-        id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        is_admin: false,
-      },
+      user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+      created_at: '2020-01-21T01:31:19.489Z',
+      updated_at: '2020-01-21T01:31:19.489Z',
     };
 
     const action = doChangeSelectedBookmark(bookmark);
@@ -128,16 +120,13 @@ describe('user reducer', () => {
             id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
             url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
             title: 'Introducing the React RFC Process',
-            user: {
-              id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-              name: 'John Doe',
-              email: 'john.doe@example.com',
-              is_admin: false,
-            },
+            user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+            created_at: '2020-01-21T01:31:19.489Z',
+            updated_at: '2020-01-21T01:31:19.489Z',
           },
         ],
       },
-      selectedBookmark: {},
+      selectedBookmark: {} as Bookmark,
     };
 
     const expectedState = {
@@ -153,12 +142,9 @@ describe('user reducer', () => {
             id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
             url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
             title: 'Introducing the React RFC Process',
-            user: {
-              id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-              name: 'John Doe',
-              email: 'john.doe@example.com',
-              is_admin: false,
-            },
+            user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+            created_at: '2020-01-21T01:31:19.489Z',
+            updated_at: '2020-01-21T01:31:19.489Z',
           },
         ],
       },

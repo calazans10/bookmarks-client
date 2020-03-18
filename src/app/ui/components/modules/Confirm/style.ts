@@ -40,7 +40,37 @@ const theme = {
   },
 };
 
-export const Container = styled.div`
+type DialogTheme = {
+  main: 'primary' | 'secondary';
+};
+
+type ParagraphTheme = {
+  main: 'primary' | 'danger';
+};
+
+type ButtonTheme = {
+  main: 'primary' | 'secondary' | 'danger';
+};
+
+type ContainerProps = {
+  isVisible: boolean;
+};
+
+type DialogProps = {
+  isHidden: boolean;
+  isVisible: boolean;
+  theme: DialogTheme;
+};
+
+type ParagraphProps = {
+  theme: ParagraphTheme;
+};
+
+type ButtonProps = {
+  theme: ButtonTheme;
+};
+
+export const Container = styled.div<ContainerProps>`
   z-index: 1004;
   transition: opacity 0.3s ease-in;
   opacity: 0;
@@ -58,7 +88,7 @@ export const Container = styled.div`
     `}
 `;
 
-export const Dialog = styled.div`
+export const Dialog = styled.div<DialogProps>`
   position: fixed;
   z-index: 1001;
   top: -100vh;
@@ -106,7 +136,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.p<ParagraphProps>`
   margin-bottom: ${rem('18px')};
   color: ${props => theme.title[props.theme.main]};
   font-size: ${em('20px')};
@@ -120,7 +150,7 @@ export const Title = styled.p`
   }
 `;
 
-export const Text = styled.p`
+export const Text = styled.p<ParagraphProps>`
   width: 100%;
   color: ${props => theme.text[props.theme.main]};
   font-size: ${em('14px')};
@@ -142,7 +172,7 @@ export const Footer = styled.div`
   justify-content: flex-end;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
   height: ${rem('50px')};
   border: none;
   border-color: transparent;

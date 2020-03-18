@@ -3,7 +3,11 @@ import { em, rem, math, stripUnit, hideVisually } from 'polished';
 import alertIcon from '../../../../../images/alerticon.svg';
 import closeIcon from '../../../../../images/closeicon.svg';
 
-export const Container = styled.div`
+type ContainerProps = {
+  isVisible: boolean;
+};
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   position: fixed;
   z-index: 1004;

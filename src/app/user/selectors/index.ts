@@ -1,11 +1,13 @@
-export const getBookmarks = ({ user }) => user.bookmarks.data;
+import { UserSelector } from '../types';
 
-export const getBookmarksCount = ({ user }) => user.bookmarks.meta.count;
+export const getBookmarks = ({ user }: UserSelector) => user.bookmarks.data;
 
-export const getBookmarksOffset = ({ user }) => user.bookmarks.meta.offset;
+export const getBookmarksCount = ({ user }: UserSelector) => user.bookmarks.meta.count;
 
-export const getBookmarksLimit = ({ user }) => user.bookmarks.meta.limit;
+export const getBookmarksOffset = ({ user }: UserSelector) => user.bookmarks.meta.offset;
 
-export const getBookmarksTotal = ({ user }) => user.bookmarks.meta.total;
+export const getBookmarksLimit = ({ user }: UserSelector) => user.bookmarks.meta.limit;
 
-export const getSelectedBookmark = ({ user }) => user.selectedBookmark;
+export const getBookmarksTotal = ({ user }: UserSelector) => user.bookmarks.meta.total;
+
+export const getSelectedBookmark = ({ user }: UserSelector) => user.selectedBookmark;

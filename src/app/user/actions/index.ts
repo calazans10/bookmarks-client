@@ -1,5 +1,7 @@
-import { createAction } from '@reduxjs/toolkit';
 import {
+  Bookmark,
+  Meta,
+  BookmarkData,
   GET_MY_BOOKMARKS_REQUEST,
   GET_MY_BOOKMARKS_SUCCESS,
   CREATE_BOOKMARK_REQUEST,
@@ -8,64 +10,75 @@ import {
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
   MY_BOOKMARKS_META_CHANGE,
-} from '../constants/actionTypes';
+  UserActionTypes,
+} from '../types';
 
-export const doRequestGetMyBookmarks = createAction(GET_MY_BOOKMARKS_REQUEST, (offset, limit) => ({
+export const doRequestGetMyBookmarks = (offset: number, limit: number): UserActionTypes => ({
+  type: GET_MY_BOOKMARKS_REQUEST,
   payload: {
     offset,
     limit,
   },
-}));
+});
 
-export const doSuccessGetMyBookmarks = createAction(GET_MY_BOOKMARKS_SUCCESS, (meta, data) => ({
+export const doSuccessGetMyBookmarks = (meta: Meta, data: Bookmark[]): UserActionTypes => ({
+  type: GET_MY_BOOKMARKS_SUCCESS,
   payload: {
     meta,
     data,
   },
-}));
+});
 
-export const doRequestCreateBookmark = createAction(CREATE_BOOKMARK_REQUEST, data => ({
+export const doRequestCreateBookmark = (data: BookmarkData): UserActionTypes => ({
+  type: CREATE_BOOKMARK_REQUEST,
   payload: {
     data,
   },
-}));
+});
 
-export const doRequestUpdateBookmark = createAction(
-  UPDATE_BOOKMARK_REQUEST,
-  (bookmarkId, data) => ({
-    payload: {
-      bookmarkId,
-      data,
-    },
-  })
-);
+export const doRequestUpdateBookmark = (
+  bookmarkId: string,
+  data: BookmarkData
+): UserActionTypes => ({
+  type: UPDATE_BOOKMARK_REQUEST,
+  payload: {
+    bookmarkId,
+    data,
+  },
+});
 
-export const doRequestDeleteBookmark = createAction(DELETE_BOOKMARK_REQUEST, bookmarkId => ({
+export const doRequestDeleteBookmark = (bookmarkId: string): UserActionTypes => ({
+  type: DELETE_BOOKMARK_REQUEST,
   payload: {
     bookmarkId,
   },
-}));
+});
 
-export const doSuccessDeleteBookmark = createAction(DELETE_BOOKMARK_SUCCESS, bookmarkId => ({
+export const doSuccessDeleteBookmark = (bookmarkId: string): UserActionTypes => ({
+  type: DELETE_BOOKMARK_SUCCESS,
   payload: {
     bookmarkId,
   },
-}));
+});
 
-export const doChangeSelectedBookmark = createAction(SELECTED_BOOKMARK_CHANGE, bookmark => ({
+export const doChangeSelectedBookmark = (bookmark: Bookmark): UserActionTypes => ({
+  type: SELECTED_BOOKMARK_CHANGE,
   payload: {
     bookmark,
   },
-}));
+});
 
-export const doChangeMyBookmarksMeta = createAction(
-  MY_BOOKMARKS_META_CHANGE,
-  (count, offset, limit, total) => ({
-    payload: {
-      count,
-      offset,
-      limit,
-      total,
-    },
-  })
-);
+export const doChangeMyBookmarksMeta = (
+  count: number,
+  offset: number,
+  limit: number,
+  total: number
+): UserActionTypes => ({
+  type: MY_BOOKMARKS_META_CHANGE,
+  payload: {
+    count,
+    offset,
+    limit,
+    total,
+  },
+});

@@ -13,7 +13,7 @@ import {
   CREATE_BOOKMARK_REQUEST,
   UPDATE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_REQUEST,
-} from '../constants/actionTypes';
+} from '../types';
 
 export function* handleRequestGetMyBookmarks(action) {
   try {

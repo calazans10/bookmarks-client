@@ -1,12 +1,15 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 import {
+  Bookmark,
+  Meta,
+  UserState,
   GET_MY_BOOKMARKS_SUCCESS,
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
   MY_BOOKMARKS_META_CHANGE,
-} from '../constants/actionTypes';
+} from '../types';
 
-const INITIAL_STATE = {
+const initialState: UserState = {
   bookmarks: {
     meta: {
       count: 0,
@@ -16,7 +19,7 @@ const INITIAL_STATE = {
     },
     data: [],
   },
-  selectedBookmark: {},
+  selectedBookmark: {} as Bookmark,
 };
 
 const applySuccessGetMyBookmarks = (state, action) => {
@@ -39,11 +42,15 @@ const applyChangeMyBookmarksMeta = (state, action) => {
   state.bookmarks.meta = action.payload;
 };
 
-const userReducer = createReducer(INITIAL_STATE, {
-  [GET_MY_BOOKMARKS_SUCCESS]: (state, action) => applySuccessGetMyBookmarks(state, action),
-  [DELETE_BOOKMARK_SUCCESS]: (state, action) => applySuccessDeleteBookmark(state, action),
-  [SELECTED_BOOKMARK_CHANGE]: (state, action) => applyChangeSelectedBookmark(state, action),
-  [MY_BOOKMARKS_META_CHANGE]: (state, action) => applyChangeMyBookmarksMeta(state, action),
+const userReducer = createReducer(initialState, {
+  [GET_MY_BOOKMARKS_SUCCESS]: (state, action: PayloadAction<{ meta: Meta; data: Bookmark[] }>) =>
+    applySuccessGetMyBookmarks(state, action),
+  [DELETE_BOOKMARK_SUCCESS]: (state, action: PayloadAction<{ bookmarkId: string }>) =>
+    applySuccessDeleteBookmark(state, action),
+  [SELECTED_BOOKMARK_CHANGE]: (state, action: PayloadAction<{ bookmark: Bookmark }>) =>
+    applyChangeSelectedBookmark(state, action),
+  [MY_BOOKMARKS_META_CHANGE]: (state, action: PayloadAction<Meta>) =>
+    applyChangeMyBookmarksMeta(state, action),
 });
 
 export default userReducer;
