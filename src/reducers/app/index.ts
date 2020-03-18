@@ -4,7 +4,7 @@ import adminReducer from '../../app/admin/reducers';
 import authReducer from '../../app/auth/reducers';
 import uiReducer from '../../app/ui/reducers';
 import userReducer from '../../app/user/reducers';
-import history from '../../history';
+import history from '../../history/browserHistory';
 
 const appReducer = combineReducers({
   admin: adminReducer,

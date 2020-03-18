@@ -3,26 +3,26 @@
 exports[`BookmarkForm renders without crashing 1`] = `
 <form
   autocomplete="off"
-  class="sc-AykKC hOQMpN"
+  class="sc-AxjAm hYYXIy"
   novalidate=""
 >
   <fieldset>
     <legend
-      class="sc-AykKD jWsEOj"
+      class="sc-AxirZ dBtpcc"
     >
       A legend
     </legend>
     <div
-      class="sc-AykKE dMuQNO"
+      class="sc-AxiKw bLDZyO"
     >
       <label
-        class="sc-AykKF fboVCh"
+        class="sc-AxhCb ieTFEo"
         for="title"
       >
         Title
       </label>
       <input
-        class="sc-AykKG glNtFx"
+        class="sc-AxhUy ePtFHq"
         id="title"
         name="title"
         placeholder="Title"
@@ -31,16 +31,16 @@ exports[`BookmarkForm renders without crashing 1`] = `
       />
     </div>
     <div
-      class="sc-AykKE dMuQNO"
+      class="sc-AxiKw bLDZyO"
     >
       <label
-        class="sc-AykKF fboVCh"
+        class="sc-AxhCb ieTFEo"
         for="url"
       >
         Url
       </label>
       <input
-        class="sc-AykKG glNtFx"
+        class="sc-AxhUy ePtFHq"
         id="url"
         name="url"
         placeholder="Url"
@@ -50,7 +50,7 @@ exports[`BookmarkForm renders without crashing 1`] = `
     </div>
     <div>
       <button
-        class="sc-AykKI bmvfEn"
+        class="sc-AxheI dSQsuG"
         type="submit"
       >
         Save

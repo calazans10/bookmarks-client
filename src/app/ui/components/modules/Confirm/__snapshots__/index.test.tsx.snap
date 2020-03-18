@@ -2,36 +2,36 @@
 
 exports[`Confirm renders without crashing 1`] = `
 <div
-  class="sc-AykKC fUMZmq"
+  class="sc-AxjAm hUlsBR"
   role="dialog"
 >
   <div
-    class="sc-AykKD cXDnlB"
+    class="sc-AxirZ imtMWy"
   >
     <div
-      class="sc-AykKE fRQELM"
+      class="sc-AxiKw coukEk"
     >
       <p
-        class="sc-AykKF ebIPDd"
+        class="sc-AxhCb fbzjSQ"
       >
         Solicitar bobina
       </p>
       <p
-        class="sc-AykKG ghMKZM"
+        class="sc-AxhUy eOxxXR"
       >
         Você confirma a solicitação de bobina?
       </p>
       <div
-        class="sc-AykKH ifFctr"
+        class="sc-AxgMl iILWop"
       >
         <button
-          class="sc-AykKI iihJbo"
+          class="sc-AxheI bZUiir"
           type="button"
         >
           Cancel
         </button>
         <button
-          class="sc-AykKI dSXbfH"
+          class="sc-AxheI jHXtSs"
           type="button"
         >
           Confirm

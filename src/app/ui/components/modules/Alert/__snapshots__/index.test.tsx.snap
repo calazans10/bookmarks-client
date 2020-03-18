@@ -2,20 +2,20 @@
 
 exports[`Alert renders without crashing 1`] = `
 <div
-  class="sc-AykKC jcMGTs"
+  class="sc-AxjAm berjDd"
 >
   <p
-    class="sc-AykKD dfbIIS"
+    class="sc-AxirZ dQMFuN"
   >
     <span
-      class="sc-AykKE ejbGjx"
+      class="sc-AxiKw cGiMxH"
     />
      
     Invalid credendials
   </p>
   <button
     aria-label="Close alert"
-    class="sc-AykKF ejyTDJ"
+    class="sc-AxhCb fbaVap"
     type="button"
   >
     <span>

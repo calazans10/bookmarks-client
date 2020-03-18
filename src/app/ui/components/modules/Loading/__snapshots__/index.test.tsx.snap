@@ -4,7 +4,7 @@ exports[`Loading when is not visible renders nothing 1`] = `null`;
 
 exports[`Loading when is visible renders without crashing 1`] = `
 <div
-  class="sc-AykKC gtfOAm"
+  class="sc-AxjAm foMttB"
 >
   <p>
     Loading...

@@ -2,20 +2,20 @@
 
 exports[`UserTable renders without crashing 1`] = `
 <table
-  class="sc-AykKC bBOGGK"
+  class="sc-AxjAm doFumh"
 >
   <tbody>
     <tr
-      class="sc-AykKD gfykfH"
+      class="sc-AxirZ dPZPVA"
     >
       <td
-        class="sc-AykKE kOWvCN"
+        class="sc-AxiKw cyHeZF"
         data-label="Name"
       >
         John Doe
       </td>
       <td
-        class="sc-AykKE kOWvCN"
+        class="sc-AxiKw cyHeZF"
         data-label="Email"
       >
         john.doe@example.com

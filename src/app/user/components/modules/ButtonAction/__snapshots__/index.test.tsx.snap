@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ButtonLink renders without crashing 1`] = `
+exports[`ButtonAction renders without crashing 1`] = `
 <button
-  class="sc-AykKC hSJRhy"
+  class="sc-AxjAm yDUIS"
   type="button"
 >
   Edit

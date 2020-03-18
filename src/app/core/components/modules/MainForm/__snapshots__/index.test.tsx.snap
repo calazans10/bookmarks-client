@@ -3,12 +3,12 @@
 exports[`MainForm renders without crashing 1`] = `
 <form
   autocomplete="off"
-  class="sc-AykKC hOQMpN"
+  class="sc-AxjAm hYYXIy"
   novalidate=""
 >
   <fieldset>
     <legend
-      class="sc-AykKD jWsEOj"
+      class="sc-AxirZ dBtpcc"
     >
       A legend
     </legend>

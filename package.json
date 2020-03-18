@@ -42,7 +42,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
-    "lint:css": "stylelint './src/**/*.js'"
+    "lint:css": "stylelint './src/**/*.ts'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,16 +61,16 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/index.js",
-      "!src/style.js",
-      "!src/app/routes.js",
-      "!src/app/{admin,auth,router,ui,user}/index.js",
-      "!src/app/**/api/*.js",
-      "!src/history/index.js",
-      "!src/sagas/index.js",
-      "!src/store/*.js",
-      "!src/utils/axios.js"
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx",
+      "!src/style.ts",
+      "!src/app/routes.ts",
+      "!src/app/{admin,auth,router,ui,user}/index.ts",
+      "!src/app/**/api/*.ts",
+      "!src/history/browserHistory.ts",
+      "!src/sagas/index.ts",
+      "!src/store/*.ts",
+      "!src/utils/axios.ts"
     ]
   },
   "devDependencies": {

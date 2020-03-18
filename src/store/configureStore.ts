@@ -4,7 +4,7 @@ import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'connected-react-router';
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
-import history from '../history';
+import history from '../history/browserHistory';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
 

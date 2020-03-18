@@ -2,10 +2,10 @@
 
 exports[`PageSection renders without crashing 1`] = `
 <section
-  class="sc-AykKC ghzNtW"
+  class="sc-AxjAm inGCDL"
 >
   <h1
-    class="sc-AykKD bWOxmu"
+    class="sc-AxirZ eDrklV"
   >
     A title
   </h1>

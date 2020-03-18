@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import App from './app';
 import { GlobalStyle } from './style';
-import history from './history';
+import history from './history/browserHistory';
 import { store, persistor } from './store';
 
 ReactDOM.render(

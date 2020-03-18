@@ -2,7 +2,7 @@
 
 exports[`ButtonSubmit renders without crashing 1`] = `
 <button
-  class="sc-AykKC dUTulZ"
+  class="sc-AxjAm hNPono"
   type="submit"
 >
   Save

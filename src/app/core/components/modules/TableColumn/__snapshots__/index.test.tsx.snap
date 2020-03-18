@@ -2,7 +2,7 @@
 
 exports[`TableColumn renders without crashing 1`] = `
 <td
-  class="sc-AykKC gJhcTH"
+  class="sc-AxjAm ePbalm"
   data-label="Name"
 >
   John Doe

@@ -2,11 +2,11 @@
 
 exports[`MainNavigation renders without crashing 1`] = `
 <nav
-  class="sc-AykKC hQOHmu"
+  class="sc-AxjAm llwbHT"
 >
   <ul>
     <li
-      class="sc-AykKD cioBDT"
+      class="sc-AxirZ bIIUiU"
     >
       <a
         href="/home"

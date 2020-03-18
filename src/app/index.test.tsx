@@ -2,7 +2,7 @@ import React from 'react';
 import { waitFor } from '@testing-library/react';
 import { renderWithRedux } from 'test-utils';
 import App from './index';
-import history from '../history';
+import history from '../history/browserHistory';
 
 it('renders without crashing', async () => {
   const { container } = renderWithRedux(<App history={history} />);

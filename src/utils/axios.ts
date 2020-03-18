@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 const enhanceError = error => {
   const defaultMessage = 'The operation could not be completed. Please try again later.';
@@ -18,11 +18,13 @@ const enhanceError = error => {
 };
 
 class AxiosFactory {
+  instance: AxiosInstance;
+
   createInstance(url) {
     const source = axios.CancelToken.source();
     this.instance = axios.create({
       baseURL: url,
-      timeout: process.env.REACT_APP_TIMEOUT,
+      timeout: +process.env.REACT_APP_TIMEOUT,
       cancelToken: source.token,
     });
 
@@ -35,7 +37,7 @@ class AxiosFactory {
 
         setTimeout(() => {
           source.cancel();
-        }, process.env.REACT_APP_TIMEOUT + 1000);
+        }, +process.env.REACT_APP_TIMEOUT + 1000);
 
         return config;
       },

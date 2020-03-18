@@ -3,26 +3,26 @@
 exports[`AuthForm when is not registration renders without crashing 1`] = `
 <form
   autocomplete="off"
-  class="sc-AykKC hOQMpN"
+  class="sc-AxjAm hYYXIy"
   novalidate=""
 >
   <fieldset>
     <legend
-      class="sc-AykKD jWsEOj"
+      class="sc-AxirZ dBtpcc"
     >
       A legend
     </legend>
     <div
-      class="sc-AykKE dMuQNO"
+      class="sc-AxiKw bLDZyO"
     >
       <label
-        class="sc-AykKF fboVCh"
+        class="sc-AxhCb ieTFEo"
         for="email"
       >
         Email
       </label>
       <input
-        class="sc-AykKG glNtFx"
+        class="sc-AxhUy ePtFHq"
         id="email"
         name="email"
         placeholder="Email"
@@ -31,16 +31,16 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
       />
     </div>
     <div
-      class="sc-AykKE dMuQNO"
+      class="sc-AxiKw bLDZyO"
     >
       <label
-        class="sc-AykKF fboVCh"
+        class="sc-AxhCb ieTFEo"
         for="password"
       >
         Password
       </label>
       <input
-        class="sc-AykKG glNtFx"
+        class="sc-AxhUy ePtFHq"
         id="password"
         name="password"
         placeholder="Password"
@@ -50,7 +50,7 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
     </div>
     <div>
       <button
-        class="sc-AykKI bmvfEn"
+        class="sc-AxheI dSQsuG"
         type="submit"
       >
         Save
@@ -63,26 +63,26 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
 exports[`AuthForm when is registration renders without crashing 1`] = `
 <form
   autocomplete="off"
-  class="sc-AykKC hOQMpN"
+  class="sc-AxjAm hYYXIy"
   novalidate=""
 >
   <fieldset>
     <legend
-      class="sc-AykKD jWsEOj"
+      class="sc-AxirZ dBtpcc"
     >
       A legend
     </legend>
     <div
-      class="sc-AykKE dMuQNO"
+      class="sc-AxiKw bLDZyO"
     >
       <label
-        class="sc-AykKF fboVCh"
+        class="sc-AxhCb ieTFEo"
         for="name"
       >
         Name
       </label>
       <input
-        class="sc-AykKG glNtFx"
+        class="sc-AxhUy ePtFHq"
         id="name"
         name="name"
         placeholder="Name"
@@ -91,16 +91,16 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
       />
     </div>
     <div
-      class="sc-AykKE dMuQNO"
+      class="sc-AxiKw bLDZyO"
     >
       <label
-        class="sc-AykKF fboVCh"
+        class="sc-AxhCb ieTFEo"
         for="email"
       >
         Email
       </label>
       <input
-        class="sc-AykKG glNtFx"
+        class="sc-AxhUy ePtFHq"
         id="email"
         name="email"
         placeholder="Email"
@@ -109,16 +109,16 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
       />
     </div>
     <div
-      class="sc-AykKE dMuQNO"
+      class="sc-AxiKw bLDZyO"
     >
       <label
-        class="sc-AykKF fboVCh"
+        class="sc-AxhCb ieTFEo"
         for="password"
       >
         Password
       </label>
       <input
-        class="sc-AykKG glNtFx"
+        class="sc-AxhUy ePtFHq"
         id="password"
         name="password"
         placeholder="Password"
@@ -128,7 +128,7 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
     </div>
     <div>
       <button
-        class="sc-AykKI bmvfEn"
+        class="sc-AxheI dSQsuG"
         type="submit"
       >
         Save

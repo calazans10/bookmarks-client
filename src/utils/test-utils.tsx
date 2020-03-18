@@ -1,13 +1,29 @@
-import React from 'react';
-import { createStore } from 'redux';
+import React, { ReactNode } from 'react';
+import { AnyAction, Action, createStore, Store } from 'redux';
 import { Provider } from 'react-redux';
-import { render } from '@testing-library/react';
+import { render, RenderResult } from '@testing-library/react';
 import rootReducer from '../reducers';
 
-export function renderWithRedux(
+interface RenderWithRedux<
+  S = any,
+  A extends Action = AnyAction,
+  I extends S = any
+> {
+  (
+    ui: ReactNode,
+    reduxOptions: {
+      store?: Store<S, A>
+      initialState?: I
+    }
+  ): RenderResult & {
+    store: Store<S, A>
+  }
+}
+
+export const renderWithRedux: RenderWithRedux = (
   ui,
   { initialState, store = createStore(rootReducer, initialState) } = {}
-) {
+) => {
   return {
     ...render(<Provider store={store}>{ui}</Provider>),
     store,
