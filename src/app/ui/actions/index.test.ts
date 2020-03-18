@@ -17,7 +17,7 @@ import {
   LOADING_HIDE,
   LOADING_REQUEST,
 } from '../types';
-import { LOGOUT_REQUEST } from '../../auth/constants/actionTypes';
+import { LOGOUT_REQUEST } from '../../auth/types';
 
 describe('ui actions', () => {
   it('should create doShowAlert action', () => {

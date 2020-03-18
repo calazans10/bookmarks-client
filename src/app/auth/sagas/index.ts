@@ -3,7 +3,7 @@ import { push } from 'connected-react-router';
 import { doSuccessLogin, doSuccessLogout } from '../actions';
 import { requestLogin, requestRegistration, requestGetCurrentUser } from '../api';
 import { doShowAlert, doShowLoading, doHideLoading } from '../../ui/actions';
-import { LOGIN_REQUEST, LOGOUT_REQUEST, REGISTRATION_REQUEST } from '../constants/actionTypes';
+import { LOGIN_REQUEST, LOGOUT_REQUEST, REGISTRATION_REQUEST } from '../types';
 
 export function* handleRequestLogin(action) {
   try {

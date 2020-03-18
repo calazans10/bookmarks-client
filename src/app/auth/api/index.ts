@@ -8,14 +8,26 @@ if (process.env.REACT_APP_API_MOCK === 'on') {
   mock.registerUrls();
 }
 
-export const requestLogin = payload => {
-  return axios.post('/v1/session', payload).then(response => response.data);
+export const requestLogin = async (payload: {
+  auth: {
+    email: string;
+    password: string;
+  };
+}) => {
+  const response = await axios.post('/v1/session', payload);
+  return response.data;
 };
 
-export const requestRegistration = payload => {
-  return axios.post('/v1/registration', payload).then(response => response.data);
+export const requestRegistration = async (payload: {
+  name: string;
+  email: string;
+  password: string;
+}) => {
+  const response = await axios.post('/v1/registration', payload);
+  return response.data;
 };
 
-export const requestGetCurrentUser = () => {
-  return axios.get('/v1/me').then(response => response.data);
+export const requestGetCurrentUser = async () => {
+  const response = await axios.get('/v1/me');
+  return response.data;
 };
