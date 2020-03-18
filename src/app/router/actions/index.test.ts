@@ -1,5 +1,5 @@
 import { doChangeLocation } from './index';
-import { LOCATION_CHANGE } from '../constants/actionTypes';
+import { LOCATION_CHANGE } from '../types';
 
 describe('router actions', () => {
   it('should create doChangeLocation action', () => {

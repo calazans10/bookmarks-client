@@ -1,7 +1,6 @@
 import { put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { push } from 'connected-react-router';
-
 import { handleChangeLocation } from './index';
 import { doChangeLocation } from '../actions';
 

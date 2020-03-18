@@ -1,8 +1,8 @@
-import { createAction } from '@reduxjs/toolkit';
-import { LOCATION_CHANGE } from '../constants/actionTypes';
+import { LOCATION_CHANGE, RouterActionTypes } from '../types';
 
-export const doChangeLocation = createAction(LOCATION_CHANGE, pathname => ({
+export const doChangeLocation = (pathname: string): RouterActionTypes => ({
+  type: LOCATION_CHANGE,
   payload: {
     pathname,
   },
-}));
+});
