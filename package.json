@@ -64,6 +64,7 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/index.tsx",
+      "!src/react-app-env.d.ts",
       "!src/style.ts",
       "!src/app/routes.ts",
       "!src/app/{admin,auth,router,ui,user}/index.ts",

@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { LOADING_SHOW, LOADING_HIDE } from '../../constants/actionTypes';
+import { LoadingState, LOADING_SHOW, LOADING_HIDE } from '../../types';
 
-const INITIAL_STATE = {
+const initialState: LoadingState = {
   isVisible: false,
 };
 
@@ -13,7 +13,7 @@ const applyHideLoading = () => ({
   isVisible: false,
 });
 
-const loadingReducer = createReducer(INITIAL_STATE, {
+const loadingReducer = createReducer(initialState, {
   [LOADING_SHOW]: () => applyShowLoading(),
   [LOADING_HIDE]: () => applyHideLoading(),
 });

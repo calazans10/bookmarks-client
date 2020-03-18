@@ -16,7 +16,7 @@ import {
   LOADING_SHOW,
   LOADING_HIDE,
   LOADING_REQUEST,
-} from '../constants/actionTypes';
+} from '../types';
 import { LOGOUT_REQUEST } from '../../auth/constants/actionTypes';
 
 describe('ui actions', () => {

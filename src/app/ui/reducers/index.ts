@@ -9,4 +9,6 @@ const uiReducer = combineReducers({
   loading: loadingReducer,
 });
 
+export type UIState = ReturnType<typeof uiReducer>;
+
 export default uiReducer;

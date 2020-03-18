@@ -1,4 +1,5 @@
 import reducer from './index';
+import { UIActionTypes } from '../types';
 
 describe('ui reducer', () => {
   it('should return the initial state', () => {
@@ -14,6 +15,6 @@ describe('ui reducer', () => {
         isVisible: false,
       },
     };
-    expect(reducer(undefined, {})).toEqual(expectedState);
+    expect(reducer(undefined, {} as UIActionTypes)).toEqual(expectedState);
   });
 });

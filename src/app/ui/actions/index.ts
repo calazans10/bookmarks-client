@@ -1,4 +1,4 @@
-import { createAction } from '@reduxjs/toolkit';
+import { AxiosError } from 'axios';
 import {
   ALERT_SHOW,
   ALERT_HIDE,
@@ -7,47 +7,50 @@ import {
   LOADING_SHOW,
   LOADING_HIDE,
   LOADING_REQUEST,
-} from '../constants/actionTypes';
+  UIActionTypes,
+} from '../types';
 import { doRequestLogout } from '../../auth/actions';
 
-export const doShowAlert = createAction(ALERT_SHOW, message => ({
+export const doShowAlert = (message: string): UIActionTypes => ({
+  type: ALERT_SHOW,
   payload: {
     message,
   },
-}));
+});
 
-export const doHideAlert = createAction(ALERT_HIDE);
+export const doHideAlert = (): UIActionTypes => ({
+  type: ALERT_HIDE,
+});
 
-export const doShowConfirm = createAction(CONFIRM_SHOW);
+export const doShowConfirm = (): UIActionTypes => ({
+  type: CONFIRM_SHOW,
+});
 
-export const doHideConfirm = createAction(CONFIRM_HIDE);
+export const doHideConfirm = (): UIActionTypes => ({
+  type: CONFIRM_HIDE,
+});
 
-export const doShowLoading = createAction(LOADING_SHOW);
+export const doShowLoading = (): UIActionTypes => ({
+  type: LOADING_SHOW,
+});
 
-export const doHideLoading = createAction(LOADING_HIDE);
+export const doHideLoading = (): UIActionTypes => ({
+  type: LOADING_HIDE,
+});
 
-export const doRequestLoading = createAction(LOADING_REQUEST);
+export const doRequestLoading = (): UIActionTypes => ({
+  type: LOADING_REQUEST,
+});
 
-export const doHandleError = error => {
+export const doHandleError = (error: AxiosError) => {
   let statusCode = 500;
   let errorMessage = 'The operation could not be completed. Please try again later.';
 
-  if (error) {
-    if (error.response) {
-      if (error.response.status) {
-        statusCode = error.response.status;
-      }
-
-      if (error.response.data) {
-        if (error.response.data.message) {
-          errorMessage = error.response.data.message;
-        } else {
-          errorMessage = error.response.data;
-        }
-      }
-    } else if (error.message) {
-      errorMessage = error.message;
-    }
+  if (error.response) {
+    statusCode = error.response.status;
+    errorMessage = error.response?.data?.message || error.response?.data;
+  } else {
+    errorMessage = error.message;
   }
 
   if (statusCode === 401) {

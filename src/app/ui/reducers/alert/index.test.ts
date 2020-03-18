@@ -1,5 +1,6 @@
 import reducer from './index';
 import { doShowAlert, doHideAlert } from '../../actions';
+import { UIActionTypes } from '../../types';
 
 describe('alert reducer', () => {
   it('should return the initial state', () => {
@@ -7,7 +8,7 @@ describe('alert reducer', () => {
       message: '',
       isVisible: false,
     };
-    expect(reducer(undefined, {})).toEqual(expectedState);
+    expect(reducer(undefined, {} as UIActionTypes)).toEqual(expectedState);
   });
 
   it('should handle ALERT_SHOW', () => {

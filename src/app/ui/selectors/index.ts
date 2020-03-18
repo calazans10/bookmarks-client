@@ -1,7 +1,9 @@
-export const isAlertVisible = ({ ui }) => ui.alert.isVisible;
+import { UISelector } from '../types';
 
-export const getAlertMessage = ({ ui }) => ui.alert.message;
+export const isAlertVisible = ({ ui }: UISelector) => ui.alert.isVisible;
 
-export const isLoadingVisible = ({ ui }) => ui.loading.isVisible;
+export const getAlertMessage = ({ ui }: UISelector) => ui.alert.message;
 
-export const isConfirmVisible = ({ ui }) => ui.confirm.isVisible;
+export const isLoadingVisible = ({ ui }: UISelector) => ui.loading.isVisible;
+
+export const isConfirmVisible = ({ ui }: UISelector) => ui.confirm.isVisible;

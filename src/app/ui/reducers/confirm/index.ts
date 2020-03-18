@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { CONFIRM_SHOW, CONFIRM_HIDE } from '../../constants/actionTypes';
+import { ConfirmState, CONFIRM_SHOW, CONFIRM_HIDE } from '../../types';
 
-const INITIAL_STATE = {
+const initialState: ConfirmState = {
   isVisible: false,
 };
 
@@ -13,7 +13,7 @@ const applyHideConfirm = () => ({
   isVisible: false,
 });
 
-const confirmReducer = createReducer(INITIAL_STATE, {
+const confirmReducer = createReducer(initialState, {
   [CONFIRM_SHOW]: () => applyShowConfirm(),
   [CONFIRM_HIDE]: () => applyHideConfirm(),
 });

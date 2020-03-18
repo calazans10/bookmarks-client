@@ -1,7 +1,7 @@
-import { createReducer } from '@reduxjs/toolkit';
-import { ALERT_SHOW, ALERT_HIDE } from '../../constants/actionTypes';
+import { createReducer, PayloadAction } from '@reduxjs/toolkit';
+import { AlertState, ALERT_SHOW, ALERT_HIDE } from '../../types';
 
-const INITIAL_STATE = {
+const initialState: AlertState = {
   message: '',
   isVisible: false,
 };
@@ -17,8 +17,9 @@ const applyHideAlert = () => ({
   isVisible: false,
 });
 
-const alertReducer = createReducer(INITIAL_STATE, {
-  [ALERT_SHOW]: (state, action) => applyShowAlert(state, action),
+const alertReducer = createReducer(initialState, {
+  [ALERT_SHOW]: (state, action: PayloadAction<{ message: string }>) =>
+    applyShowAlert(state, action),
   [ALERT_HIDE]: () => applyHideAlert(),
 });
 
