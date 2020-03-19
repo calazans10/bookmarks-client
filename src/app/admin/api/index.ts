@@ -8,14 +8,12 @@ if (process.env.REACT_APP_API_MOCK === 'on') {
   mock.registerUrls();
 }
 
-export const requestGetBookmarks = (offset, limit) => {
-  return axios
-    .get(`/v1/admin/bookmarks?offset=${offset}&limit=${limit}`)
-    .then(response => response.data);
+export const requestGetBookmarks = async (offset: number, limit: number) => {
+  const response = await axios.get(`/v1/admin/bookmarks?offset=${offset}&limit=${limit}`);
+  return response.data;
 };
 
-export const requestGetUsers = (offset, limit) => {
-  return axios
-    .get(`/v1/admin/users?offset=${offset}&limit=${limit}`)
-    .then(response => response.data);
+export const requestGetUsers = async (offset: number, limit: number) => {
+  const response = await axios.get(`/v1/admin/users?offset=${offset}&limit=${limit}`);
+  return response.data;
 };

@@ -1,19 +1,21 @@
-export const getBookmarks = ({ admin }) => admin.bookmarks.data;
+import { AdminSelector } from '../types';
 
-export const getBookmarksCount = ({ admin }) => admin.bookmarks.meta.count;
+export const getBookmarks = ({ admin }: AdminSelector) => admin.bookmarks.data;
 
-export const getBookmarksOffset = ({ admin }) => admin.bookmarks.meta.offset;
+export const getBookmarksCount = ({ admin }: AdminSelector) => admin.bookmarks.meta.count;
 
-export const getBookmarksLimit = ({ admin }) => admin.bookmarks.meta.limit;
+export const getBookmarksOffset = ({ admin }: AdminSelector) => admin.bookmarks.meta.offset;
 
-export const getBookmarksTotal = ({ admin }) => admin.bookmarks.meta.total;
+export const getBookmarksLimit = ({ admin }: AdminSelector) => admin.bookmarks.meta.limit;
 
-export const getUsers = ({ admin }) => admin.users.data;
+export const getBookmarksTotal = ({ admin }: AdminSelector) => admin.bookmarks.meta.total;
 
-export const getUsersCount = ({ admin }) => admin.users.meta.count;
+export const getUsers = ({ admin }: AdminSelector) => admin.users.data;
 
-export const getUsersOffset = ({ admin }) => admin.users.meta.offset;
+export const getUsersCount = ({ admin }: AdminSelector) => admin.users.meta.count;
 
-export const getUsersLimit = ({ admin }) => admin.users.meta.limit;
+export const getUsersOffset = ({ admin }: AdminSelector) => admin.users.meta.offset;
 
-export const getUsersTotal = ({ admin }) => admin.users.meta.total;
+export const getUsersLimit = ({ admin }: AdminSelector) => admin.users.meta.limit;
+
+export const getUsersTotal = ({ admin }: AdminSelector) => admin.users.meta.total;

@@ -13,7 +13,7 @@ import {
   GET_USERS_SUCCESS,
   BOOKMARKS_META_CHANGE,
   USERS_META_CHANGE,
-} from '../constants/actionTypes';
+} from '../types';
 
 describe('admin actions', () => {
   it('should create doRequestGetBookmarks action', () => {
@@ -44,12 +44,9 @@ describe('admin actions', () => {
         id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
         url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
         title: 'Introducing the React RFC Process',
-        user: {
-          id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-          name: 'John Doe',
-          email: 'john.doe@example.com',
-          is_admin: false,
-        },
+        user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+        created_at: '2020-01-21T01:31:19.489Z',
+        updated_at: '2020-01-21T01:31:19.489Z',
       },
     ];
 
@@ -89,10 +86,14 @@ describe('admin actions', () => {
 
     const data = [
       {
-        id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
+        id: '194725c1-739a-46e4-9746-013da114c85c',
         name: 'John Doe',
-        email: 'john.doe@example.com',
+        email: 'john.doe@gmail.com',
+        password_digest: '$2a$12$oT4288118r77jU5NEBTN3e0heHXkfFPKwYxhyyVnTTgqoOy4fWO7q',
         is_admin: false,
+        created_at: '2020-01-20T20:00:39.614Z',
+        updated_at: '2020-01-20T20:00:39.614Z',
+        bookmarks_count: 3,
       },
     ];
 

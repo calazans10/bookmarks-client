@@ -1,12 +1,16 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 import {
+  Bookmark,
+  User,
+  Meta,
+  AdminState,
   GET_BOOKMARKS_SUCCESS,
   GET_USERS_SUCCESS,
   BOOKMARKS_META_CHANGE,
   USERS_META_CHANGE,
-} from '../constants/actionTypes';
+} from '../types';
 
-const INITIAL_STATE = {
+const initialState: AdminState = {
   bookmarks: {
     meta: {
       count: 0,
@@ -47,11 +51,14 @@ const applyChangeUsersMeta = (state, action) => {
   state.users.meta = action.payload;
 };
 
-const adminReducer = createReducer(INITIAL_STATE, {
-  [GET_BOOKMARKS_SUCCESS]: (state, action) => applySuccessGetBookmarks(state, action),
-  [GET_USERS_SUCCESS]: (state, action) => applySuccessGetUsers(state, action),
-  [BOOKMARKS_META_CHANGE]: (state, action) => applyChangeBookmarksMeta(state, action),
-  [USERS_META_CHANGE]: (state, action) => applyChangeUsersMeta(state, action),
+const adminReducer = createReducer(initialState, {
+  [GET_BOOKMARKS_SUCCESS]: (state, action: PayloadAction<{ meta: Meta; data: Bookmark[] }>) =>
+    applySuccessGetBookmarks(state, action),
+  [GET_USERS_SUCCESS]: (state, action: PayloadAction<{ meta: Meta; data: User[] }>) =>
+    applySuccessGetUsers(state, action),
+  [BOOKMARKS_META_CHANGE]: (state, action: PayloadAction<Meta>) =>
+    applyChangeBookmarksMeta(state, action),
+  [USERS_META_CHANGE]: (state, action: PayloadAction<Meta>) => applyChangeUsersMeta(state, action),
 });
 
 export default adminReducer;

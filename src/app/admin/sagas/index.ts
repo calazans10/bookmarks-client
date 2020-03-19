@@ -2,7 +2,7 @@ import { takeLatest, put, call } from 'redux-saga/effects';
 import { doSuccessGetBookmarks, doSuccessGetUsers } from '../actions';
 import { requestGetBookmarks, requestGetUsers } from '../api';
 import { doShowLoading, doHideLoading, doHandleError } from '../../ui/actions';
-import { GET_USERS_REQUEST, GET_BOOKMARKS_REQUEST } from '../constants/actionTypes';
+import { GET_USERS_REQUEST, GET_BOOKMARKS_REQUEST } from '../types';
 
 export function* handleRequestGetBookmarks(action) {
   try {
