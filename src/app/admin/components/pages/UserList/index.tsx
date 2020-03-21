@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import UserTable from '../../modules/UserTable';
 import PageContent from '../../../../core/components/modules/PageContent';
@@ -7,8 +6,30 @@ import PageNavigation from '../../../../core/components/modules/PageNavigation';
 import Pagination from '../../../../core/components/modules/Pagination';
 import { doChangeUsersMeta, doRequestGetUsers } from '../../../actions';
 import { getUsersCount, getUsersLimit, getUsersOffset, getUsersTotal } from '../../../selectors';
+import { AdminActionTypes } from '../../../types';
 
-export const UserList = ({ count, offset, limit, total, onChangeUsersMeta, onRequestGetUsers }) => {
+type UserListProps = {
+  count: number;
+  offset: number;
+  limit: number;
+  total: number;
+  onChangeUsersMeta: (
+    count: number,
+    offset: number,
+    limit: number,
+    total: number
+  ) => AdminActionTypes;
+  onRequestGetUsers: (offset: number, limit: number) => AdminActionTypes;
+};
+
+export const UserList = ({
+  count,
+  offset,
+  limit,
+  total,
+  onChangeUsersMeta,
+  onRequestGetUsers,
+}: UserListProps) => {
   useEffect(() => {
     onRequestGetUsers(offset, limit);
   }, [offset, limit, onRequestGetUsers]);
@@ -31,15 +52,6 @@ export const UserList = ({ count, offset, limit, total, onChangeUsersMeta, onReq
       />
     </PageContent>
   );
-};
-
-UserList.propTypes = {
-  count: PropTypes.number.isRequired,
-  offset: PropTypes.number.isRequired,
-  limit: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired,
-  onChangeUsersMeta: PropTypes.func.isRequired,
-  onRequestGetUsers: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

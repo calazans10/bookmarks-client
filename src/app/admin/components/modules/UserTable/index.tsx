@@ -1,12 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Table from '../../../../core/components/modules/Table';
 import TableRow from '../../../../core/components/modules/TableRow';
 import TableColumn from '../../../../core/components/modules/TableColumn';
 import { getUsers } from '../../../selectors';
+import { User } from '../../../types';
 
-export const UserTable = ({ users }) => (
+type UserTableProps = {
+  users: User[];
+};
+
+export const UserTable = ({ users }: UserTableProps) => (
   <Table>
     <tbody>
       {users.map(user => (
@@ -18,10 +22,6 @@ export const UserTable = ({ users }) => (
     </tbody>
   </Table>
 );
-
-UserTable.propTypes = {
-  users: PropTypes.array.isRequired,
-};
 
 const mapStateToProps = state => ({
   users: getUsers(state),

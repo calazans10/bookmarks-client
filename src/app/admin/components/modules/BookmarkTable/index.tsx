@@ -1,12 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Table from '../../../../core/components/modules/Table';
 import TableRow from '../../../../core/components/modules/TableRow';
 import TableColumn from '../../../../core/components/modules/TableColumn';
 import { getBookmarks } from '../../../selectors';
+import { Bookmark } from '../../../types';
 
-export const BookmarkTable = ({ bookmarks }) => (
+type BookmarkTableProps = {
+  bookmarks: Bookmark[];
+};
+
+export const BookmarkTable = ({ bookmarks }: BookmarkTableProps) => (
   <Table>
     <tbody>
       {bookmarks.map(bookmark => (
@@ -21,10 +25,6 @@ export const BookmarkTable = ({ bookmarks }) => (
     </tbody>
   </Table>
 );
-
-BookmarkTable.propTypes = {
-  bookmarks: PropTypes.array.isRequired,
-};
 
 const mapStateToProps = state => ({
   bookmarks: getBookmarks(state),
