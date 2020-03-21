@@ -33,7 +33,7 @@ export const BookmarkList = ({
   return (
     <PageContent to="/bookmarks">
       <PageNavigation pathname="/bookmarks/new" title="Add bookmark" />
-      <BookmarkTable hasActions />
+      <BookmarkTable />
       <Pagination
         initialPage={offset - 1}
         count={count}

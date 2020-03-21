@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Portal from '../../../../core/components/modules/Portal';
 import { doHideConfirm } from '../../../actions';
 import { isConfirmVisible } from '../../../selectors';
+import { UIActionTypes } from '../../../types';
 import { Container, Dialog, Wrapper, Title, Text, Footer, Button } from './style';
 
+type ConfirmProps = {
+  kind: 'primary' | 'secondary' | 'danger';
+  title: string;
+  text: string;
+  cancelAction: string;
+  confirmAction: string;
+  isVisible: boolean;
+  isTightened: boolean;
+  onClick: () => void;
+  onHideConfirm: () => UIActionTypes;
+};
+
 export const Confirm = ({
-  kind,
+  kind = 'primary',
   title,
   text,
-  cancelAction,
-  confirmAction,
+  cancelAction = 'Cancel',
+  confirmAction = 'Confirm',
   isVisible,
-  isTightened,
+  isTightened = false,
   onClick,
   onHideConfirm,
-}) => {
+}: ConfirmProps) => {
   const [isHidden, setIsHidden] = useState(true);
   const [prevIsVisible, setPrevIsVisible] = useState(null);
 
@@ -47,25 +59,6 @@ export const Confirm = ({
       </Container>
     </Portal>
   );
-};
-
-Confirm.propTypes = {
-  kind: PropTypes.oneOf(['primary', 'secondary', 'danger']),
-  title: PropTypes.node.isRequired,
-  text: PropTypes.node.isRequired,
-  cancelAction: PropTypes.string,
-  confirmAction: PropTypes.string,
-  isVisible: PropTypes.bool.isRequired,
-  isTightened: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-  onHideConfirm: PropTypes.func.isRequired,
-};
-
-Confirm.defaultProps = {
-  kind: 'primary',
-  cancelAction: 'Cancel',
-  confirmAction: 'Confirm',
-  isTightened: false,
 };
 
 const mapStateToProps = state => ({

@@ -1,11 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { doHideAlert } from '../../../actions';
 import { isAlertVisible, getAlertMessage } from '../../../selectors';
 import { Container, Message, Icon, Button } from './style';
+import { UIActionTypes } from 'app/ui/types';
 
-export const Alert = ({ message, isVisible, onHideAlert }) => (
+type AlertProps = {
+  message: string;
+  isVisible: boolean;
+  onHideAlert: () => UIActionTypes;
+};
+
+export const Alert = ({ message, isVisible, onHideAlert }: AlertProps) => (
   <Container isVisible={isVisible}>
     <Message>
       <Icon /> {message}
@@ -15,12 +21,6 @@ export const Alert = ({ message, isVisible, onHideAlert }) => (
     </Button>
   </Container>
 );
-
-Alert.propTypes = {
-  message: PropTypes.string.isRequired,
-  isVisible: PropTypes.bool.isRequired,
-  onHideAlert: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = state => ({
   message: getAlertMessage(state),

@@ -1,10 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { isLoadingVisible } from '../../../selectors';
 import { Container } from './style';
 
-export const Loading = ({ isVisible }) => {
+type LoadingProps = {
+  isVisible: boolean;
+};
+
+export const Loading = ({ isVisible }: LoadingProps) => {
   if (!isVisible) {
     return null;
   }
@@ -14,10 +17,6 @@ export const Loading = ({ isVisible }) => {
       <p>Loading...</p>
     </Container>
   );
-};
-
-Loading.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
