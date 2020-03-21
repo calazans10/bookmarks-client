@@ -1,19 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button } from './style';
 
-const ButtonAction = ({ kind, onClick, children }) => {
+type ButtonActionProps = {
+  kind: 'success' | 'danger';
+  onClick: () => void;
+  children: React.ReactNode;
+};
+
+const ButtonAction = ({ kind, onClick, children }: ButtonActionProps) => {
   return (
     <Button theme={{ main: kind }} type="button" onClick={onClick}>
       {children}
     </Button>
   );
-};
-
-ButtonAction.propTypes = {
-  kind: PropTypes.oneOf(['success', 'danger']).isRequired,
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
 };
 
 export default ButtonAction;

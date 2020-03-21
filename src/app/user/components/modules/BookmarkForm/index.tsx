@@ -5,9 +5,18 @@ import { Form, Field } from 'react-final-form';
 import MainForm from '../../../../core/components/modules/MainForm';
 import FormGroup from '../../../../core/components/modules/FormGroup';
 import ButtonSubmit from '../../../../core/components/modules/ButtonSubmit';
+import { BookmarkData } from '../../../types';
 import { required } from '../../../../../utils/validators';
 
-const BookmarkForm = ({ legend, action, title, url, onSubmit }) => (
+type BookmarkFormProps = {
+  legend: string;
+  action: string;
+  title?: string;
+  url?: string;
+  onSubmit: (values: BookmarkData) => Promise<void>;
+}
+
+const BookmarkForm = ({ legend, action, title = '', url = '', onSubmit }: BookmarkFormProps) => (
   <Form
     initialValues={{ title, url }}
     onSubmit={onSubmit}
@@ -42,11 +51,6 @@ BookmarkForm.propTypes = {
   title: PropTypes.string,
   url: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
-};
-
-BookmarkForm.defaultProps = {
-  title: '',
-  url: '',
 };
 
 export default BookmarkForm;

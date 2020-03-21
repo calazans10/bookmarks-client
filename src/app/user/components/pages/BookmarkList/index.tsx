@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BookmarkTable from '../../modules/BookmarkTable';
 import PageContent from '../../../../core/components/modules/PageContent';
@@ -12,6 +11,21 @@ import {
   getBookmarksOffset,
   getBookmarksTotal,
 } from '../../../selectors';
+import { UserActionTypes } from '../../../types';
+
+type BookmarkListProps = {
+  count: number;
+  offset: number;
+  limit: number;
+  total: number;
+  onChangeMyBookmarksMeta: (
+    count: number,
+    offset: number,
+    limit: number,
+    total: number
+  ) => UserActionTypes;
+  onRequestGetMyBookmarks: (offset: number, limit: number) => UserActionTypes;
+};
 
 export const BookmarkList = ({
   count,
@@ -20,7 +34,7 @@ export const BookmarkList = ({
   total,
   onChangeMyBookmarksMeta,
   onRequestGetMyBookmarks,
-}) => {
+}: BookmarkListProps) => {
   useEffect(() => {
     onRequestGetMyBookmarks(offset, limit);
   }, [offset, limit, onRequestGetMyBookmarks]);
@@ -43,15 +57,6 @@ export const BookmarkList = ({
       />
     </PageContent>
   );
-};
-
-BookmarkList.propTypes = {
-  count: PropTypes.number.isRequired,
-  offset: PropTypes.number.isRequired,
-  limit: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired,
-  onChangeMyBookmarksMeta: PropTypes.func.isRequired,
-  onRequestGetMyBookmarks: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

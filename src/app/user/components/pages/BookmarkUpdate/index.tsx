@@ -1,13 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BookmarkForm from '../../modules/BookmarkForm';
 import PageContent from '../../../../core/components/modules/PageContent';
 import { doRequestUpdateBookmark } from '../../../actions';
 import { getSelectedBookmark } from '../../../selectors';
+import { Bookmark, BookmarkData, UserActionTypes } from '../../../types';
 
-export const BookmarkUpdate = ({ bookmark, onRequestUpdateBookmark }) => {
-  const onSubmit = async values => {
+type BookmarkUpdateProps = {
+  bookmark: Bookmark;
+  onRequestUpdateBookmark: (bookmarkId: string, data: BookmarkData) => UserActionTypes;
+};
+
+export const BookmarkUpdate = ({ bookmark, onRequestUpdateBookmark }: BookmarkUpdateProps) => {
+  const onSubmit = async (values: BookmarkData) => {
     onRequestUpdateBookmark(bookmark.id, values);
   };
 
@@ -22,11 +27,6 @@ export const BookmarkUpdate = ({ bookmark, onRequestUpdateBookmark }) => {
       />
     </PageContent>
   );
-};
-
-BookmarkUpdate.propTypes = {
-  bookmark: PropTypes.object.isRequired,
-  onRequestUpdateBookmark: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

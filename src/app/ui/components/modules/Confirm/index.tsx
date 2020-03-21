@@ -7,13 +7,13 @@ import { UIActionTypes } from '../../../types';
 import { Container, Dialog, Wrapper, Title, Text, Footer, Button } from './style';
 
 type ConfirmProps = {
-  kind: 'primary' | 'secondary' | 'danger';
+  kind?: 'primary' | 'secondary' | 'danger';
   title: string;
   text: string;
-  cancelAction: string;
-  confirmAction: string;
+  cancelAction?: string;
+  confirmAction?: string;
   isVisible: boolean;
-  isTightened: boolean;
+  isTightened?: boolean;
   onClick: () => void;
   onHideConfirm: () => UIActionTypes;
 };

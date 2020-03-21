@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Table from '../../../../core/components/modules/Table';
 import TableRow from '../../../../core/components/modules/TableRow';
@@ -10,10 +9,17 @@ import { doRequestDeleteBookmark, doChangeSelectedBookmark } from '../../../acti
 import { doChangeLocation } from '../../../../router/actions';
 import { doShowConfirm } from '../../../../ui/actions';
 import { getBookmarks } from '../../../selectors';
+import { Bookmark, UserActionTypes } from '../../../types';
+import { RouterActionTypes } from '../../../../router/types';
+import { UIActionTypes } from '../../../../ui/types';
 
-interface Bookmark {
-  id?: string;
-}
+type BookmarkTableProps = {
+  bookmarks: Bookmark[];
+  onChangeLocation: (pathname: string) => RouterActionTypes;
+  onShowConfirm: () => UIActionTypes;
+  onChangeSelectedBookmark: (bookmark: Bookmark) => UserActionTypes;
+  onRequestDeleteBookmark: (bookmarkId: string) => UserActionTypes;
+};
 
 export const BookmarkTable = ({
   bookmarks,
@@ -21,8 +27,8 @@ export const BookmarkTable = ({
   onShowConfirm,
   onChangeSelectedBookmark,
   onRequestDeleteBookmark,
-}) => {
-  const [selectedBookmark, setSelectedBookmark] = useState<Bookmark>({});
+}: BookmarkTableProps) => {
+  const [selectedBookmark, setSelectedBookmark] = useState<Bookmark | null>(null);
 
   return (
     <>
@@ -70,14 +76,6 @@ export const BookmarkTable = ({
       />
     </>
   );
-};
-
-BookmarkTable.propTypes = {
-  bookmarks: PropTypes.array.isRequired,
-  onChangeLocation: PropTypes.func.isRequired,
-  onShowConfirm: PropTypes.func.isRequired,
-  onChangeSelectedBookmark: PropTypes.func.isRequired,
-  onRequestDeleteBookmark: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
