@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import AuthForm from '../../modules/AuthForm';
 import Logo from '../../../../core/components/modules/Logo';
@@ -31,10 +30,6 @@ export const SignUp = ({ onRequestRegistration }: SignUpProps) => {
       </MainContent>
     </MainWrapper>
   );
-};
-
-SignUp.propTypes = {
-  onRequestRegistration: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {

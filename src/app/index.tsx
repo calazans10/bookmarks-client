@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 import routes from './routes';
@@ -7,7 +6,11 @@ import PrivateRoute from './core/components/modules/PrivateRoute';
 import FallbackLoading from './core/components/modules/FallbackLoading';
 import Loading from './ui/components/modules/Loading';
 
-const App = ({ history }) => (
+type AppProps = {
+  history: any;
+};
+
+const App = ({ history }: AppProps) => (
   <>
     <Loading />
     <Suspense fallback={<FallbackLoading />}>
@@ -29,9 +32,5 @@ const App = ({ history }) => (
     </Suspense>
   </>
 );
-
-App.propTypes = {
-  history: PropTypes.object.isRequired,
-};
 
 export default App;

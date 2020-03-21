@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Form, Field } from 'react-final-form';
 import MainForm from '../../../../core/components/modules/MainForm';
@@ -44,13 +43,5 @@ const BookmarkForm = ({ legend, action, title = '', url = '', onSubmit }: Bookma
     )}
   />
 );
-
-BookmarkForm.propTypes = {
-  legend: PropTypes.string.isRequired,
-  action: PropTypes.string.isRequired,
-  title: PropTypes.string,
-  url: PropTypes.string,
-  onSubmit: PropTypes.func.isRequired,
-};
 
 export default BookmarkForm;
