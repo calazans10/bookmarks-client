@@ -39,7 +39,7 @@ export const BookmarkList = ({
     onRequestGetBookmarks(offset, limit);
   }, [offset, limit, onRequestGetBookmarks]);
 
-  const onChange = data => {
+  const onChange = (data: { selected: number }) => {
     const { selected } = data;
     onChangeBookmarksMeta(count, selected + 1, limit, total);
   };

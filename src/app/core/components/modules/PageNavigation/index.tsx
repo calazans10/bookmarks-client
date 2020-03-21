@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Container } from './style';
 
-const PageNavigation = ({ pathname, title }) => (
+type PageNavigationProps = {
+  pathname: string;
+  title: string;
+};
+
+const PageNavigation = ({ pathname, title }: PageNavigationProps) => (
   <Container>
     <ul>
       <li>
@@ -12,10 +16,5 @@ const PageNavigation = ({ pathname, title }) => (
     </ul>
   </Container>
 );
-
-PageNavigation.propTypes = {
-  pathname: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};
 
 export default PageNavigation;

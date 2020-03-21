@@ -1,19 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container, StyledLink } from './style';
 
-const Logo = ({ to }) => (
+type LogoProps = {
+  to?: string;
+};
+
+const Logo = ({ to = '/' }: LogoProps) => (
   <Container>
     <StyledLink to={to}>Bookmarks</StyledLink>
   </Container>
 );
-
-Logo.propTypes = {
-  to: PropTypes.string,
-};
-
-Logo.defaultProps = {
-  to: '/',
-};
 
 export default Logo;

@@ -1,11 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { doRequestLogout } from '../../../../auth/actions';
+import { AuthActionTypes } from '../../../../auth/types';
 import { Container, Item, Button } from './style';
 
-export const MainNavigation = ({ pathname, title, onRequestLogout }) => (
+type MainNavigationProps = {
+  pathname?: string;
+  title?: string;
+  onRequestLogout: () => AuthActionTypes;
+};
+
+export const MainNavigation = ({
+  pathname = '',
+  title = '',
+  onRequestLogout,
+}: MainNavigationProps) => (
   <Container>
     <ul>
       <Item>
@@ -20,17 +30,6 @@ export const MainNavigation = ({ pathname, title, onRequestLogout }) => (
     </ul>
   </Container>
 );
-
-MainNavigation.propTypes = {
-  pathname: PropTypes.string,
-  title: PropTypes.string,
-  onRequestLogout: PropTypes.func.isRequired,
-};
-
-MainNavigation.defaultProps = {
-  pathname: '',
-  title: '',
-};
 
 const mapDispatchToProps = {
   onRequestLogout: doRequestLogout,

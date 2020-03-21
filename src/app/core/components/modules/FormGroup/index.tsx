@@ -1,8 +1,27 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Container, Label, Input, ErrorMessage } from './style';
 
-const FormGroup = ({ input, meta, label, type, mask, formatChars, autoFocus, disabled }) => {
+type FormGroupProps = {
+  input: any;
+  meta: any;
+  label?: string;
+  type?: string;
+  mask?: string;
+  formatChars?: any;
+  autoFocus?: boolean;
+  disabled?: boolean;
+}
+
+const FormGroup = ({
+  input,
+  meta,
+  label = '',
+  type = 'tel',
+  mask = '',
+  formatChars = { 9: '[0-9]', '?': '[0-9]' },
+  autoFocus = false,
+  disabled = false,
+}: FormGroupProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const isInvalid = meta.touched && meta.error && !isFocused;
@@ -29,26 +48,6 @@ const FormGroup = ({ input, meta, label, type, mask, formatChars, autoFocus, dis
       {isInvalid && <ErrorMessage>{meta.error}</ErrorMessage>}
     </Container>
   );
-};
-
-FormGroup.propTypes = {
-  input: PropTypes.object.isRequired,
-  meta: PropTypes.object.isRequired,
-  label: PropTypes.string,
-  type: PropTypes.string,
-  mask: PropTypes.string,
-  formatChars: PropTypes.object,
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-};
-
-FormGroup.defaultProps = {
-  label: '',
-  type: 'tel',
-  mask: '',
-  formatChars: { 9: '[0-9]', '?': '[0-9]' },
-  autoFocus: false,
-  disabled: false,
 };
 
 export default FormGroup;

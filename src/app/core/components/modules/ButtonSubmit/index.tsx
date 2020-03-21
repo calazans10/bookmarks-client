@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button } from './style';
 
-const ButtonSubmit = ({ children }) => <Button type="submit">{children}</Button>;
-
-ButtonSubmit.propTypes = {
-  children: PropTypes.node.isRequired,
+type ButtonSubmitProps = {
+  children: React.ReactNode;
 };
+
+const ButtonSubmit = ({ children }: ButtonSubmitProps) => <Button type="submit">{children}</Button>;
 
 export default ButtonSubmit;

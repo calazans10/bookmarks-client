@@ -1,12 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Logo from '../Logo';
 import MainWrapper from '../MainWrapper';
 import MainHeader from '../MainHeader';
 import MainNavigation from '../MainNavigation';
 import MainContent from '../MainContent';
 
-const PageContent = ({ to, children }) => (
+type PageContentProps = {
+  to: string;
+  children: React.ReactNode;
+};
+
+const PageContent = ({ to, children }: PageContentProps) => (
   <MainWrapper>
     <MainHeader>
       <Logo to={to} />
@@ -15,10 +19,5 @@ const PageContent = ({ to, children }) => (
     <MainContent>{children}</MainContent>
   </MainWrapper>
 );
-
-PageContent.propTypes = {
-  to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-};
 
 export default PageContent;

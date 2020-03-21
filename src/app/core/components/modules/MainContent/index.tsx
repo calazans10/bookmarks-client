@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container } from './style';
 
-const MainContent = ({ children }) => <Container>{children}</Container>;
-
-MainContent.propTypes = {
-  children: PropTypes.node.isRequired,
+type MainContentProps = {
+  children: React.ReactNode;
 };
+
+const MainContent = ({ children }: MainContentProps) => <Container>{children}</Container>;
 
 export default MainContent;

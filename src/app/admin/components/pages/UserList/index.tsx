@@ -34,7 +34,7 @@ export const UserList = ({
     onRequestGetUsers(offset, limit);
   }, [offset, limit, onRequestGetUsers]);
 
-  const onChange = data => {
+  const onChange = (data: { selected: number }) => {
     const { selected } = data;
     onChangeUsersMeta(count, selected + 1, limit, total);
   };
