@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Form, Field } from 'react-final-form';
 import MainForm from '../../../../core/components/modules/MainForm';
 import FormGroup from '../../../../core/components/modules/FormGroup';
@@ -11,7 +10,14 @@ import {
   composeValidators,
 } from '../../../../../utils/validators';
 
-const AuthForm = ({ legend, action, isRegistration, onSubmit }) => (
+type AuthFormProps = {
+  legend: string;
+  action: string;
+  isRegistration?: boolean;
+  onSubmit: (values: { name?: string, email: string; password: string; }) => Promise<void>;
+};
+
+const AuthForm = ({ legend, action, isRegistration = false, onSubmit }: AuthFormProps) => (
   <Form
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
@@ -46,16 +52,5 @@ const AuthForm = ({ legend, action, isRegistration, onSubmit }) => (
     )}
   />
 );
-
-AuthForm.propTypes = {
-  legend: PropTypes.string.isRequired,
-  action: PropTypes.string.isRequired,
-  isRegistration: PropTypes.bool,
-  onSubmit: PropTypes.func.isRequired,
-};
-
-AuthForm.defaultProps = {
-  isRegistration: false,
-};
 
 export default AuthForm;

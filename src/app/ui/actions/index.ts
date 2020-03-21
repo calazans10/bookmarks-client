@@ -46,11 +46,22 @@ export const doHandleError = (error: AxiosError) => {
   let statusCode = 500;
   let errorMessage = 'The operation could not be completed. Please try again later.';
 
-  if (error.response) {
-    statusCode = error.response.status;
-    errorMessage = error.response?.data?.message || error.response?.data;
-  } else {
-    errorMessage = error.message;
+  if (error) {
+    if (error.response) {
+      if (error.response.status) {
+        statusCode = error.response.status;
+      }
+
+      if (error.response.data) {
+        if (error.response.data.message) {
+          errorMessage = error.response.data.message;
+        } else {
+          errorMessage = error.response.data;
+        }
+      }
+    } else if (error.message) {
+      errorMessage = error.message;
+    }
   }
 
   if (statusCode === 401) {

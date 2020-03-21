@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import AuthForm from '../../modules/AuthForm';
 import Logo from '../../../../core/components/modules/Logo';
@@ -8,9 +7,14 @@ import MainHeader from '../../../../core/components/modules/MainHeader';
 import MainNavigation from '../../../../core/components/modules/MainNavigation';
 import MainContent from '../../../../core/components/modules/MainContent';
 import { doRequestLogin } from '../../../actions';
+import { AuthActionTypes } from '../../../types';
 
-export const SignIn = ({ onRequestLogin }) => {
-  const onSubmit = async values => {
+type SignInProps = {
+  onRequestLogin: (email: string, password: string) => AuthActionTypes;
+};
+
+export const SignIn = ({ onRequestLogin }: SignInProps) => {
+  const onSubmit = async (values: { email: string; password: string }) => {
     const { email, password } = values;
     onRequestLogin(email, password);
   };
@@ -26,10 +30,6 @@ export const SignIn = ({ onRequestLogin }) => {
       </MainContent>
     </MainWrapper>
   );
-};
-
-SignIn.propTypes = {
-  onRequestLogin: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
