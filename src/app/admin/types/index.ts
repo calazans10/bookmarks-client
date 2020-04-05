@@ -47,7 +47,7 @@ export interface AdminSelector {
   admin: AdminState;
 }
 
-interface RequestGetBookmarksAction {
+export interface RequestGetBookmarksAction {
   type: typeof GET_BOOKMARKS_REQUEST;
   payload: {
     offset: number;
@@ -63,7 +63,7 @@ interface SuccessGetBookmarksAction {
   };
 }
 
-interface RequestGetUsersAction {
+export interface RequestGetUsersAction {
   type: typeof GET_USERS_REQUEST;
   payload: {
     offset: number;

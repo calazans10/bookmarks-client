@@ -13,13 +13,23 @@ import {
   CREATE_BOOKMARK_REQUEST,
   UPDATE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_REQUEST,
+  Bookmark,
+  Meta,
+  RequestGetMyBookmarksAction,
+  RequestCreateBookmarkAction,
+  RequestUpdateBookmarkAction,
+  RequestDeleteBookmarkAction,
 } from '../types';
 
-export function* handleRequestGetMyBookmarks(action) {
+export function* handleRequestGetMyBookmarks(action: RequestGetMyBookmarksAction) {
   try {
     const { offset, limit } = action.payload;
     yield put(doShowLoading());
-    const { meta, data } = yield call(requestGetMyBookmarks, offset, limit);
+    const { meta, data }: { meta: Meta; data: Bookmark[] } = yield call(
+      requestGetMyBookmarks,
+      offset,
+      limit
+    );
     yield put(doSuccessGetMyBookmarks(meta, data));
   } catch (e) {
     yield put(doHandleError(e));
@@ -28,7 +38,7 @@ export function* handleRequestGetMyBookmarks(action) {
   }
 }
 
-export function* handleRequestCreateBookmark(action) {
+export function* handleRequestCreateBookmark(action: RequestCreateBookmarkAction) {
   try {
     const { data } = action.payload;
     yield put(doShowLoading());
@@ -41,7 +51,7 @@ export function* handleRequestCreateBookmark(action) {
   }
 }
 
-export function* handleRequestUpdateBookmark(action) {
+export function* handleRequestUpdateBookmark(action: RequestUpdateBookmarkAction) {
   try {
     const { bookmarkId, data } = action.payload;
     yield put(doShowLoading());
@@ -54,7 +64,7 @@ export function* handleRequestUpdateBookmark(action) {
   }
 }
 
-export function* handleRequestDeleteBookmark(action) {
+export function* handleRequestDeleteBookmark(action: RequestDeleteBookmarkAction) {
   try {
     const { bookmarkId } = action.payload;
     yield put(doHideConfirm());

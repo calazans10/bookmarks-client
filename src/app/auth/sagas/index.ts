@@ -3,14 +3,21 @@ import { push } from 'connected-react-router';
 import { doSuccessLogin, doSuccessLogout } from '../actions';
 import { requestLogin, requestRegistration, requestGetCurrentUser } from '../api';
 import { doShowAlert, doShowLoading, doHideLoading } from '../../ui/actions';
-import { LOGIN_REQUEST, LOGOUT_REQUEST, REGISTRATION_REQUEST } from '../types';
+import {
+  LOGIN_REQUEST,
+  LOGOUT_REQUEST,
+  REGISTRATION_REQUEST,
+  User,
+  RequestLoginAction,
+  RequestRegistrationAction,
+} from '../types';
 
-export function* handleRequestLogin(action) {
+export function* handleRequestLogin(action: RequestLoginAction) {
   try {
     yield put(doShowLoading());
-    const { jwt: token } = yield call(requestLogin, action.payload);
+    const { jwt: token }: { jwt: string } = yield call(requestLogin, action.payload);
     yield call([sessionStorage, 'setItem'], 'token', token);
-    const response = yield call(requestGetCurrentUser);
+    const response: User = yield call(requestGetCurrentUser);
     yield put(doSuccessLogin(response, token));
     if (response.is_admin) {
       yield put(push('/admin/bookmarks'));
@@ -31,12 +38,12 @@ export function* handleRequestLogout() {
   yield put(doHideLoading());
 }
 
-export function* handleRequestRegistration(action) {
+export function* handleRequestRegistration(action: RequestRegistrationAction) {
   try {
     const { name, email, password } = action.payload;
     yield put(doShowLoading());
-    const response = yield call(requestRegistration, { name, email, password });
-    const { jwt: token } = yield call(requestLogin, { auth: { email, password } });
+    const response: User = yield call(requestRegistration, { name, email, password });
+    const { jwt: token }: { jwt: string } = yield call(requestLogin, { auth: { email, password } });
     yield call([sessionStorage, 'setItem'], 'token', token);
     yield put(doSuccessLogin(response, token));
     yield put(push('/bookmarks'));

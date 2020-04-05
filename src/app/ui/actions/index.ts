@@ -6,7 +6,6 @@ import {
   CONFIRM_HIDE,
   LOADING_SHOW,
   LOADING_HIDE,
-  LOADING_REQUEST,
   UIActionTypes,
 } from '../types';
 import { doRequestLogout } from '../../auth/actions';
@@ -36,10 +35,6 @@ export const doShowLoading = (): UIActionTypes => ({
 
 export const doHideLoading = (): UIActionTypes => ({
   type: LOADING_HIDE,
-});
-
-export const doRequestLoading = (): UIActionTypes => ({
-  type: LOADING_REQUEST,
 });
 
 export const doHandleError = (error: AxiosError) => {

@@ -5,7 +5,6 @@ import {
   doHideConfirm,
   doShowLoading,
   doHideLoading,
-  doRequestLoading,
   doHandleError,
 } from './index';
 import {
@@ -15,7 +14,6 @@ import {
   CONFIRM_HIDE,
   LOADING_SHOW,
   LOADING_HIDE,
-  LOADING_REQUEST,
 } from '../types';
 import { LOGOUT_REQUEST } from '../../auth/types';
 
@@ -64,13 +62,6 @@ describe('ui actions', () => {
       type: LOADING_HIDE,
     };
     expect(doHideLoading()).toEqual(expectedAction);
-  });
-
-  it('should create doRequestLoading action', () => {
-    const expectedAction = {
-      type: LOADING_REQUEST,
-    };
-    expect(doRequestLoading()).toEqual(expectedAction);
   });
 
   describe('doHandleError', () => {

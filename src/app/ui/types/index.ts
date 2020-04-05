@@ -4,7 +4,6 @@ export const CONFIRM_SHOW = 'CONFIRM_SHOW';
 export const CONFIRM_HIDE = 'CONFIRM_HIDE';
 export const LOADING_SHOW = 'LOADING_SHOW';
 export const LOADING_HIDE = 'LOADING_HIDE';
-export const LOADING_REQUEST = 'LOADING_REQUEST';
 
 export interface AlertState {
   message: string;
@@ -54,15 +53,10 @@ interface HideLoadingAction {
   type: typeof LOADING_HIDE;
 }
 
-interface RequestLoadingAction {
-  type: typeof LOADING_REQUEST;
-}
-
 export type UIActionTypes =
   | ShowAlertAction
   | HideAlertAction
   | ShowConfirmAction
   | HideConfirmAction
   | ShowLoadingAction
-  | HideLoadingAction
-  | RequestLoadingAction;
+  | HideLoadingAction;

@@ -40,7 +40,7 @@ export interface UserSelector {
   user: UserState;
 }
 
-interface RequestGetMyBookmarksAction {
+export interface RequestGetMyBookmarksAction {
   type: typeof GET_MY_BOOKMARKS_REQUEST;
   payload: {
     offset: number;
@@ -56,14 +56,14 @@ interface SuccessGetMyBookmarksAction {
   };
 }
 
-interface RequestCreateBookmarkAction {
+export interface RequestCreateBookmarkAction {
   type: typeof CREATE_BOOKMARK_REQUEST;
   payload: {
     data: BookmarkData;
   };
 }
 
-interface RequestUpdateBookmarkAction {
+export interface RequestUpdateBookmarkAction {
   type: typeof UPDATE_BOOKMARK_REQUEST;
   payload: {
     bookmarkId: string;
@@ -71,7 +71,7 @@ interface RequestUpdateBookmarkAction {
   };
 }
 
-interface RequestDeleteBookmarkAction {
+export interface RequestDeleteBookmarkAction {
   type: typeof DELETE_BOOKMARK_REQUEST;
   payload: {
     bookmarkId: string;

@@ -23,7 +23,7 @@ export interface AuthSelector {
   auth: AuthState;
 }
 
-interface RequestLoginAction {
+export interface RequestLoginAction {
   type: typeof LOGIN_REQUEST;
   payload: {
     auth: {
@@ -49,7 +49,7 @@ interface SuccessLogoutAction {
   type: typeof LOGOUT_SUCCESS;
 }
 
-interface RequestRegistrationAction {
+export interface RequestRegistrationAction {
   type: typeof REGISTRATION_REQUEST;
   payload: {
     name: string;
