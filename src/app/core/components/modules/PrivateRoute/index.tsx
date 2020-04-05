@@ -7,7 +7,7 @@ type PrivateRouteProps = {
   exact: boolean;
   path: string;
   isLoggedIn: boolean;
-  allowedPaths: Array<string>;
+  allowedPaths: string[];
   children?: React.ReactNode;
 };
 
