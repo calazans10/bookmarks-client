@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Portal from './index';
 
 describe('Portal', () => {
@@ -11,11 +11,12 @@ describe('Portal', () => {
   }
 
   it('shows the children', () => {
-    const { getByTestId } = render(
+    render(
       <Portal>
-        <div data-testid="test" />
+        <div>test</div>
       </Portal>
     );
-    expect(getByTestId('test')).toBeInTheDocument();
+
+    expect(screen.getByText('test')).toBeTruthy();
   });
 });
