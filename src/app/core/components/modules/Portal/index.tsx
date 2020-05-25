@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 type PortalProps = {
@@ -6,7 +6,7 @@ type PortalProps = {
 };
 
 const Portal = ({ children }: PortalProps) => {
-  let modalRoot = document.getElementById('modal-root');
+  let modalRoot = document.getElementById('modal-root') as HTMLElement;
 
   if (!modalRoot) {
     modalRoot = document.createElement('div');
