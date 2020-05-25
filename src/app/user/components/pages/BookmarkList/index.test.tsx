@@ -4,13 +4,6 @@ import { renderWithRedux } from 'test-utils';
 import { BookmarkList } from './index';
 
 describe('BookmarkList', () => {
-  let modalRoot = document.getElementById('modal-root');
-  if (!modalRoot) {
-    modalRoot = document.createElement('div');
-    modalRoot.setAttribute('id', 'modal-root');
-    document.body.appendChild(modalRoot);
-  }
-
   it('renders without crashing', () => {
     const { container } = renderWithRedux(
       <MemoryRouter>
