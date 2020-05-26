@@ -10,12 +10,17 @@ import { required } from '../../../../../utils/validators';
 type BookmarkFormProps = {
   legend: string;
   action: string;
-  title?: string;
-  url?: string;
+  title: string;
+  url: string;
   onSubmit: (values: BookmarkData) => Promise<void>;
-}
+} & typeof defaultProps;
 
-const BookmarkForm = ({ legend, action, title = '', url = '', onSubmit }: BookmarkFormProps) => (
+const defaultProps = {
+  title: '',
+  url: '',
+};
+
+const BookmarkForm = ({ legend, action, title, url, onSubmit }: BookmarkFormProps) => (
   <Form
     initialValues={{ title, url }}
     onSubmit={onSubmit}
@@ -43,5 +48,7 @@ const BookmarkForm = ({ legend, action, title = '', url = '', onSubmit }: Bookma
     )}
   />
 );
+
+BookmarkForm.defaultProps = defaultProps;
 
 export default BookmarkForm;

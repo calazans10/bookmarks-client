@@ -1,27 +1,28 @@
-import React, { useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-type PortalProps = {
-  children: React.ReactNode;
-};
+const modalRootId = 'modal-root';
+let modalRoot = document.getElementById(modalRootId) as HTMLElement;
+if (!modalRoot) {
+  modalRoot = document.createElement('div');
+  modalRoot.setAttribute('id', 'modal-root');
+  document.body.appendChild(modalRoot);
+}
 
-const Portal = ({ children }: PortalProps) => {
-  let modalRoot = document.getElementById('modal-root') as HTMLElement;
+class Portal extends React.Component {
+  el: HTMLElement = document.createElement("div");
 
-  if (!modalRoot) {
-    modalRoot = document.createElement('div');
-    modalRoot.setAttribute('id', 'modal-root');
-    document.body.appendChild(modalRoot);
+  componentDidMount() {
+    modalRoot.appendChild(this.el);
   }
 
-  const el: HTMLElement = document.createElement('div');
+  componentWillUnmount() {
+    modalRoot.removeChild(this.el);
+  }
 
-  useEffect(() => {
-    modalRoot.appendChild(el);
-    return () => modalRoot.removeChild(el);
-  });
-
-  return createPortal(children, el);
+  render() {
+    return ReactDOM.createPortal(this.props.children, this.el);
+  }
 }
 
 export default Portal;

@@ -3,6 +3,7 @@ import { Form, Field } from 'react-final-form';
 import MainForm from '../../../../core/components/modules/MainForm';
 import FormGroup from '../../../../core/components/modules/FormGroup';
 import ButtonSubmit from '../../../../core/components/modules/ButtonSubmit';
+import { AuthData } from '../../../types';
 import {
   required,
   mustBeFullName,
@@ -13,11 +14,15 @@ import {
 type AuthFormProps = {
   legend: string;
   action: string;
-  isRegistration?: boolean;
-  onSubmit: (values: { name?: string, email: string; password: string; }) => Promise<void>;
+  isRegistration: boolean;
+  onSubmit: (values: AuthData) => Promise<void>;
+} & typeof defaultProps;
+
+const defaultProps = {
+  isRegistration: false,
 };
 
-const AuthForm = ({ legend, action, isRegistration = false, onSubmit }: AuthFormProps) => (
+const AuthForm = ({ legend, action, isRegistration, onSubmit }: AuthFormProps) => (
   <Form
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
@@ -52,5 +57,7 @@ const AuthForm = ({ legend, action, isRegistration = false, onSubmit }: AuthForm
     )}
   />
 );
+
+AuthForm.defaultProps = defaultProps;
 
 export default AuthForm;

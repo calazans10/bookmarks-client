@@ -7,14 +7,14 @@ import MainHeader from '../../../../core/components/modules/MainHeader';
 import MainNavigation from '../../../../core/components/modules/MainNavigation';
 import MainContent from '../../../../core/components/modules/MainContent';
 import { doRequestLogin } from '../../../actions';
-import { AuthActionTypes } from '../../../types';
+import { AuthActionTypes, AuthData } from '../../../types';
 
 type SignInProps = {
   onRequestLogin: (email: string, password: string) => AuthActionTypes;
 };
 
 export const SignIn = ({ onRequestLogin }: SignInProps) => {
-  const onSubmit = async (values: { email: string; password: string }) => {
+  const onSubmit = async (values: AuthData) => {
     const { email, password } = values;
     onRequestLogin(email, password);
   };

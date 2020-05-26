@@ -30,7 +30,7 @@ export const Confirm = ({
   onHideConfirm,
 }: ConfirmProps) => {
   const [isHidden, setIsHidden] = useState(true);
-  const [prevIsVisible, setPrevIsVisible] = useState(null);
+  const [prevIsVisible, setPrevIsVisible] = useState<boolean | null>(null);
 
   const dialogKind = isTightened ? 'secondary' : 'primary';
 

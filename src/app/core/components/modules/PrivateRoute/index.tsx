@@ -11,6 +11,10 @@ type PrivateRouteProps = {
   children?: React.ReactNode;
 };
 
+const defaultProps = {
+  children: null,
+};
+
 export const PrivateRoute = ({
   isLoggedIn,
   allowedPaths,
@@ -32,8 +36,8 @@ export const PrivateRoute = ({
         isLoggedIn ? (
           renderChildrenOr404(match.path, location)
         ) : (
-          <Redirect to={{ pathname: '/', state: { from: location } }} />
-        )
+            <Redirect to={{ pathname: '/', state: { from: location } }} />
+          )
       }
     />
   );

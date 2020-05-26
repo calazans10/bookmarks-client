@@ -72,7 +72,7 @@ export const BookmarkTable = ({
         cancelAction="Close"
         confirmAction="Delete"
         isTightened
-        onClick={() => onRequestDeleteBookmark(selectedBookmark.id)}
+        onClick={() => onRequestDeleteBookmark(selectedBookmark!.id)}
       />
     </>
   );

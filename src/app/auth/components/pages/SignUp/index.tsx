@@ -7,16 +7,16 @@ import MainHeader from '../../../../core/components/modules/MainHeader';
 import MainNavigation from '../../../../core/components/modules/MainNavigation';
 import MainContent from '../../../../core/components/modules/MainContent';
 import { doRequestRegistration } from '../../../actions';
-import { AuthActionTypes } from '../../../types';
+import { AuthActionTypes, AuthData } from '../../../types';
 
 type SignUpProps = {
   onRequestRegistration: (name: string, email: string, password: string) => AuthActionTypes;
 };
 
 export const SignUp = ({ onRequestRegistration }: SignUpProps) => {
-  const onSubmit = async (values: { name: string, email: string, password: string }) => {
+  const onSubmit = async (values: AuthData) => {
     const { name, email, password } = values;
-    onRequestRegistration(name, email, password);
+    onRequestRegistration(name!, email, password);
   };
 
   return (
