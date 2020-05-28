@@ -4,9 +4,12 @@ import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'connected-react-router';
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
+import env from 'env-var';
 import history from '../history/browserHistory';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
+
+const APP_ENVIRONMENT = env.get('REACT_APP_ENVIRONMENT').required().asString();
 
 const persistConfig = {
   key: 'root',
@@ -24,7 +27,7 @@ const createAppMiddleware = sagaMiddleware => {
     sagaMiddleware,
   ];
 
-  if (process.env.REACT_APP_ENVIRONMENT === 'development') {
+  if (APP_ENVIRONMENT === 'development') {
     return [...appMiddleware, logger];
   }
 
@@ -40,7 +43,7 @@ export default () => {
   const store = configureStore({
     reducer: persistedReducer,
     middleware,
-    devTools: process.env.REACT_APP_ENVIRONMENT !== 'production',
+    devTools: APP_ENVIRONMENT !== 'production',
   });
   const persistor = persistStore(store);
   sagaMiddleware.run(rootSaga);

@@ -11,10 +11,6 @@ type PrivateRouteProps = {
   children?: React.ReactNode;
 };
 
-const defaultProps = {
-  children: null,
-};
-
 export const PrivateRoute = ({
   isLoggedIn,
   allowedPaths,

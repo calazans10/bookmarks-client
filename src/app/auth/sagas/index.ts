@@ -35,6 +35,7 @@ export function* handleRequestLogout() {
   yield put(doShowLoading());
   yield call([sessionStorage, 'clear']);
   yield put(doSuccessLogout());
+  yield put(push('/'));
   yield put(doHideLoading());
 }
 

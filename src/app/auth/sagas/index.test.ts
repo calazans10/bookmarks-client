@@ -82,6 +82,10 @@ describe('auth sagas', () => {
       expect(generator.next().value).toEqual(put(doSuccessLogout()));
     });
 
+    it('should redirect to "/"', () => {
+      expect(generator.next().value).toEqual(put(push('/')));
+    });
+
     it('should dispatch doHideLoading', () => {
       expect(generator.next().value).toEqual(put(doHideLoading()));
     });
