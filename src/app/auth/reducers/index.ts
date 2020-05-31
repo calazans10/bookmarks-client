@@ -1,5 +1,5 @@
 import { createReducer, PayloadAction } from '@reduxjs/toolkit';
-import { User, AuthState, LOGIN_SUCCESS } from '../types';
+import { User, AuthState, LOGIN_SUCCESS } from 'app/auth/types';
 
 const initialState: AuthState = {
   user: {} as User,

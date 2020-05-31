@@ -6,7 +6,7 @@ import {
   LOGOUT_SUCCESS,
   REGISTRATION_REQUEST,
   AuthActionTypes,
-} from '../types';
+} from 'app/auth/types';
 
 export const doRequestLogin = (email: string, password: string): AuthActionTypes => ({
   type: LOGIN_REQUEST,

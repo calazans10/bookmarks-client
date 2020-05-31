@@ -1,17 +1,17 @@
 import { call, put } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
-import { handleRequestLogin, handleRequestLogout, handleRequestRegistration } from './index';
+import { users } from 'fixtures';
 import {
   doRequestLogin,
   doSuccessLogin,
   doRequestLogout,
   doSuccessLogout,
   doRequestRegistration,
-} from '../actions';
-import { doShowAlert, doShowLoading, doHideLoading } from '../../ui/actions';
-import { requestLogin, requestRegistration, requestGetCurrentUser } from '../api';
-import { users } from '../../../fixtures';
+} from 'app/auth/actions';
+import { doShowAlert, doShowLoading, doHideLoading } from 'app/ui/actions';
+import { requestLogin, requestRegistration, requestGetCurrentUser } from 'app/auth/api';
+import { handleRequestLogin, handleRequestLogout, handleRequestRegistration } from './';
 
 describe('auth sagas', () => {
   describe('handleRequestLogin', () => {

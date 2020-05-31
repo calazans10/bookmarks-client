@@ -1,15 +1,15 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import MainForm from '../../../../core/components/modules/MainForm';
-import FormGroup from '../../../../core/components/modules/FormGroup';
-import ButtonSubmit from '../../../../core/components/modules/ButtonSubmit';
-import { AuthData } from '../../../types';
 import {
   required,
   mustBeFullName,
   mustBeEmail,
   composeValidators,
-} from '../../../../../utils/validators';
+} from 'utils/validators';
+import { AuthData } from 'app/auth/types';
+import MainForm from 'app/core/components/modules/MainForm';
+import FormGroup from 'app/core/components/modules/FormGroup';
+import ButtonSubmit from 'app/core/components/modules/ButtonSubmit';
 
 type AuthFormProps = {
   legend: string;

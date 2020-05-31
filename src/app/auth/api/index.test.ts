@@ -1,7 +1,7 @@
 import sinon from 'sinon';
-import { requestLogin, requestRegistration, requestGetCurrentUser } from './index';
-import ApiClient from '../../../client';
-import { users } from '../../../fixtures';
+import ApiClient from 'client';
+import { users } from 'fixtures';
+import { requestLogin, requestRegistration, requestGetCurrentUser } from './';
 
 describe('auth requests', () => {
   const sandbox = sinon.createSandbox();

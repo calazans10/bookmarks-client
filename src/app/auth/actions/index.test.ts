@@ -1,18 +1,18 @@
-import {
-  doRequestLogin,
-  doSuccessLogin,
-  doRequestLogout,
-  doSuccessLogout,
-  doRequestRegistration,
-} from './index';
+import { users } from 'fixtures';
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   REGISTRATION_REQUEST,
-} from '../types';
-import { users } from '../../../fixtures';
+} from 'app/auth/types';
+import {
+  doRequestLogin,
+  doSuccessLogin,
+  doRequestLogout,
+  doSuccessLogout,
+  doRequestRegistration,
+} from './';
 
 describe('auth actions', () => {
   it('should create doRequestLogin action', () => {

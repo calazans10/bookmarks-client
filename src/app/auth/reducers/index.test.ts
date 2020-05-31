@@ -1,7 +1,7 @@
-import reducer from './index';
-import { doSuccessLogin } from '../actions';
-import { AuthActionTypes } from '../types';
-import { users } from '../../../fixtures';
+import { users } from 'fixtures';
+import { doSuccessLogin } from 'app/auth/actions';
+import { AuthActionTypes } from 'app/auth/types';
+import reducer from './';
 
 describe('auth reducer', () => {
   it('should return the initial state', () => {
