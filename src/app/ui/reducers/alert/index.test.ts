@@ -1,6 +1,6 @@
-import reducer from './index';
-import { doShowAlert, doHideAlert } from '../../actions';
-import { UIActionTypes } from '../../types';
+import { doShowAlert, doHideAlert } from 'app/ui/actions';
+import { UIActionTypes } from 'app/ui/types';
+import reducer from './';
 
 describe('alert reducer', () => {
   it('should return the initial state', () => {
@@ -12,21 +12,32 @@ describe('alert reducer', () => {
   });
 
   it('should handle ALERT_SHOW', () => {
+    // Arrange
     const message = 'Invalid credentials';
-    const action = doShowAlert(message);
+
     const expectedState = {
       message,
       isVisible: true,
     };
+
+    // Act
+    const action = doShowAlert(message);
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 
   it('should handle ALERT_HIDE', () => {
-    const action = doHideAlert();
+    // Arrange
     const expectedState = {
       message: '',
       isVisible: false,
     };
+
+    // Act
+    const action = doHideAlert();
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 });

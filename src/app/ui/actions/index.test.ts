@@ -1,3 +1,13 @@
+
+import { LOGOUT_REQUEST } from 'app/auth/types';
+import {
+  ALERT_SHOW,
+  ALERT_HIDE,
+  CONFIRM_SHOW,
+  CONFIRM_HIDE,
+  LOADING_SHOW,
+  LOADING_HIDE,
+} from 'app/ui/types';
 import {
   doShowAlert,
   doHideAlert,
@@ -6,16 +16,7 @@ import {
   doShowLoading,
   doHideLoading,
   doHandleError,
-} from './index';
-import {
-  ALERT_SHOW,
-  ALERT_HIDE,
-  CONFIRM_SHOW,
-  CONFIRM_HIDE,
-  LOADING_SHOW,
-  LOADING_HIDE,
-} from '../types';
-import { LOGOUT_REQUEST } from '../../auth/types';
+} from './';
 
 describe('ui actions', () => {
   it('should create doShowAlert action', () => {

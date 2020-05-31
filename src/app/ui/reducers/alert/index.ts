@@ -1,5 +1,5 @@
 import { createReducer, PayloadAction } from '@reduxjs/toolkit';
-import { AlertState, ALERT_SHOW, ALERT_HIDE } from '../../types';
+import { AlertState, ALERT_SHOW, ALERT_HIDE } from 'app/ui/types';
 
 const initialState: AlertState = {
   message: '',

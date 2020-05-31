@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Confirm } from './index';
+import { Confirm } from './';
 
 describe('Confirm', () => {
   it('renders without crashing', () => {

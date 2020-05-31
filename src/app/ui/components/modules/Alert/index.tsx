@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { doHideAlert } from '../../../actions';
-import { isAlertVisible, getAlertMessage } from '../../../selectors';
-import { UIActionTypes } from '../../../types';
+import { doHideAlert } from 'app/ui/actions';
+import { isAlertVisible, getAlertMessage } from 'app/ui/selectors';
+import { UIActionTypes } from 'app/ui/types';
 import { Container, Message, Icon, Button } from './style';
 
 type AlertProps = {

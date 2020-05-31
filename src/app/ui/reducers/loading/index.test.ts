@@ -1,6 +1,6 @@
 import reducer from './index';
-import { doShowLoading, doHideLoading } from '../../actions';
-import { UIActionTypes } from '../../types';
+import { doShowLoading, doHideLoading } from 'app/ui/actions';
+import { UIActionTypes } from 'app/ui/types';
 
 describe('loading reducer', () => {
   it('should return the initial state', () => {
@@ -11,18 +11,28 @@ describe('loading reducer', () => {
   });
 
   it('should handle LOADING_SHOW', () => {
-    const action = doShowLoading();
+    // Arrange
     const expectedState = {
       isVisible: true,
     };
+
+    // Act
+    const action = doShowLoading();
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 
   it('should handle LOADING_HIDE', () => {
-    const action = doHideLoading();
+    // Arrange
     const expectedState = {
       isVisible: false,
     };
+
+    // Act
+    const action = doHideLoading();
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 });

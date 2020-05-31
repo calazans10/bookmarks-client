@@ -1,4 +1,4 @@
-import { isAlertVisible, getAlertMessage, isLoadingVisible, isConfirmVisible } from './index';
+import { isAlertVisible, getAlertMessage, isLoadingVisible, isConfirmVisible } from './';
 
 describe('ui selectors', () => {
   const state = {

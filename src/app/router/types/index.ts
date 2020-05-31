@@ -1,4 +1,4 @@
-export const LOCATION_CHANGE = 'LOCATION_CHANGE';
+export const LOCATION_CHANGE = 'router/LOCATION_CHANGE';
 
 export interface ChangeLocationAction {
   type: typeof LOCATION_CHANGE;
