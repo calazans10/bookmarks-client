@@ -25,16 +25,7 @@ describe('root reducer', () => {
     },
     auth: {
       token: '',
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        password_digest: '',
-        is_admin: false,
-        created_at: '',
-        updated_at: '',
-        bookmarks_count: 0,
-      },
+      user: {},
     },
     router: {
       action: 'POP',

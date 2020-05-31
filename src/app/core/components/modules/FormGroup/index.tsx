@@ -4,23 +4,32 @@ import { Container, Label, Input, ErrorMessage } from './style';
 type FormGroupProps = {
   input: any;
   meta: any;
-  label?: string;
-  type?: string;
-  mask?: string;
-  formatChars?: any;
-  autoFocus?: boolean;
-  disabled?: boolean;
-}
+  label: string;
+  type: string;
+  mask: string;
+  formatChars: object;
+  autoFocus: boolean;
+  disabled: boolean;
+} & typeof defaultProps;
+
+const defaultProps = {
+  label: '',
+  type: 'tel',
+  mask: '',
+  formatChars: { 9: '[0-9]', '?': '[0-9]' },
+  autoFocus: false,
+  disabled: false,
+};
 
 const FormGroup = ({
   input,
   meta,
-  label = '',
-  type = 'tel',
-  mask = '',
-  formatChars = { 9: '[0-9]', '?': '[0-9]' },
-  autoFocus = false,
-  disabled = false,
+  label,
+  type,
+  mask,
+  formatChars,
+  autoFocus,
+  disabled,
 }: FormGroupProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -49,5 +58,7 @@ const FormGroup = ({
     </Container>
   );
 };
+
+FormGroup.defaultProps = defaultProps;
 
 export default FormGroup;

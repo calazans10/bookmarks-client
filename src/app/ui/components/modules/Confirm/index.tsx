@@ -6,26 +6,35 @@ import { isConfirmVisible } from '../../../selectors';
 import { UIActionTypes } from '../../../types';
 import { Container, Dialog, Wrapper, Title, Text, Footer, Button } from './style';
 
+type Kind = 'primary' | 'secondary' | 'danger';
+
 type ConfirmProps = {
-  kind?: 'primary' | 'secondary' | 'danger';
+  kind: Kind;
   title: string;
   text: string;
-  cancelAction?: string;
-  confirmAction?: string;
+  cancelAction: string;
+  confirmAction: string;
   isVisible: boolean;
-  isTightened?: boolean;
+  isTightened: boolean;
   onClick: () => void;
   onHideConfirm: () => UIActionTypes;
+} & typeof defaultProps;
+
+const defaultProps = {
+  kind: 'primary' as Kind,
+  cancelAction: 'Cancel',
+  confirmAction: 'Confirm',
+  isTightened: false,
 };
 
 export const Confirm = ({
-  kind = 'primary',
+  kind,
   title,
   text,
-  cancelAction = 'Cancel',
-  confirmAction = 'Confirm',
+  cancelAction,
+  confirmAction,
   isVisible,
-  isTightened = false,
+  isTightened,
   onClick,
   onHideConfirm,
 }: ConfirmProps) => {
@@ -60,6 +69,8 @@ export const Confirm = ({
     </Portal>
   );
 };
+
+Confirm.defaultProps = defaultProps;
 
 const mapStateToProps = state => ({
   isVisible: isConfirmVisible(state),

@@ -2,8 +2,7 @@ import { Server, Model, Response, hasMany, belongsTo } from 'miragejs';
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
 import env from 'env-var';
-import bookmarks from './fixtures/bookmarks';
-import users from './fixtures/users';
+import { bookmarks, users } from '../fixtures';
 
 const API_URL: string = env.get('REACT_APP_API_URL').required().asString();
 
@@ -121,8 +120,7 @@ export const makeServer = () => {
       this.put('/v1/bookmarks/:id', (schema, request) => {
         const attrs = JSON.parse(request.requestBody);
         const { id } = request.params;
-        const date = new Date().toISOString();
-        schema.db.bookmarks.update(id, { ...attrs, updated_at: date });
+        schema.db.bookmarks.update(id, { ...attrs, updated_at: new Date().toISOString() });
         return new Response(204);
       });
 

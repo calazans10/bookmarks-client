@@ -2,16 +2,7 @@ import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 import { User, AuthState, LOGIN_SUCCESS } from '../types';
 
 const initialState: AuthState = {
-  user: {
-    id: '',
-    name: '',
-    email: '',
-    password_digest: '',
-    is_admin: false,
-    created_at: '',
-    updated_at: '',
-    bookmarks_count: 0,
-  },
+  user: {} as User,
   token: '',
 };
 

@@ -9,10 +9,11 @@ import {
 } from '../actions';
 import { doShowLoading, doHideLoading, doHandleError } from '../../ui/actions';
 import { requestGetBookmarks, requestGetUsers } from '../api';
+import { bookmarks, users } from '../../../fixtures';
 
 describe('admin sagas', () => {
   describe('handleRequestGetBookmarks', () => {
-    const offset = 0;
+    const offset = 1;
     const limit = 10;
 
     const action = doRequestGetBookmarks(offset, limit);
@@ -23,30 +24,20 @@ describe('admin sagas', () => {
 
     describe('when is success', () => {
       const meta = {
-        count: 1,
-        limit: 10,
-        offset: 1,
-        total: 1,
+        count: bookmarks.length,
+        offset,
+        limit,
+        total: bookmarks.length,
       };
-
-      const data = [
-        {
-          id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-          url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-          title: 'Introducing the React RFC Process',
-          user: {
-            id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-            name: 'John Doe',
-            email: 'john.doe@example.com',
-            is_admin: false,
-          },
-        },
-      ];
 
       const clone = generator.clone();
 
       it('should dispatch doSuccessGetBookmarks', () => {
-        expect(clone.next({ meta, data }).value).toEqual(put(doSuccessGetBookmarks(meta, data)));
+        const response = {
+          meta,
+          data: bookmarks,
+        };
+        expect(clone.next(response).value).toEqual(put(doSuccessGetBookmarks(meta, bookmarks)));
       });
 
       it('should dispatch doHideLoading', () => {
@@ -58,11 +49,8 @@ describe('admin sagas', () => {
       const clone = generator.clone();
 
       it('should display an error message', () => {
-        const message = 'Invalid credentials';
-
         const err = new Error('some error');
-        err.response = { data: { message } };
-
+        err.response = { data: { message: 'Invalid credendials' } };
         expect(clone.throw(err).value).toEqual(put(doHandleError(err)));
       });
 
@@ -73,8 +61,9 @@ describe('admin sagas', () => {
   });
 
   describe('handleRequestGetUsers', () => {
-    const offset = 0;
+    const offset = 1;
     const limit = 10;
+    const data = users.filter(user => !user.is_admin);
 
     const action = doRequestGetUsers(offset, limit);
     const generator = cloneableGenerator(handleRequestGetUsers)(action);
@@ -84,20 +73,11 @@ describe('admin sagas', () => {
 
     describe('when is success', () => {
       const meta = {
-        count: 1,
-        limit: 10,
-        offset: 1,
-        total: 1,
+        count: data.length,
+        offset,
+        limit,
+        total: data.length,
       };
-
-      const data = [
-        {
-          id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-          name: 'John Doe',
-          email: 'john.doe@example.com',
-          is_admin: false,
-        },
-      ];
 
       const clone = generator.clone();
 
@@ -114,11 +94,8 @@ describe('admin sagas', () => {
       const clone = generator.clone();
 
       it('should display an error message', () => {
-        const message = 'Invalid credentials';
-
         const err = new Error('some error');
-        err.response = { data: { message } };
-
+        err.response = { data: { message: 'Invalid credendials' } };
         expect(clone.throw(err).value).toEqual(put(doHandleError(err)));
       });
 

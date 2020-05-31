@@ -66,10 +66,10 @@
       "!src/app/routes.ts",
       "!src/app/{admin,auth,router,ui,user}/index.ts",
       "!src/client/index.ts",
+      "!src/fixtures/*.ts",
       "!src/history/browserHistory.ts",
       "!src/sagas/index.ts",
       "!src/server/index.ts",
-      "!src/server/fixtures/*.ts",
       "!src/store/*.ts"
     ]
   },

@@ -5,16 +5,7 @@ import { AuthActionTypes } from '../types';
 describe('auth reducer', () => {
   it('should return the initial state', () => {
     const expectedState = {
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        password_digest: '',
-        is_admin: false,
-        created_at: '',
-        updated_at: '',
-        bookmarks_count: 0,
-      },
+      user: {},
       token: '',
     };
     expect(reducer(undefined, {} as AuthActionTypes)).toEqual(expectedState);
