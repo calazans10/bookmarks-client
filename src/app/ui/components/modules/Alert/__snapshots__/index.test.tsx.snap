@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert renders without crashing 1`] = `
+<div
+  class="sc-AxjAm berjDd"
+>
+  <p
+    class="sc-AxirZ dQMFuN"
+  >
+    <span
+      class="sc-AxiKw cGiMxH"
+    />
+     
+    Invalid credendials
+  </p>
+  <button
+    aria-label="Close alert"
+    class="sc-AxhCb fbaVap"
+    type="button"
+  >
+    <span>
+      Close
+    </span>
+  </button>
+</div>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainForm renders without crashing 1`] = `
+<form
+  autocomplete="off"
+  class="sc-AxjAm hYYXIy"
+  novalidate=""
+>
+  <fieldset>
+    <legend
+      class="sc-AxirZ dBtpcc"
+    >
+      A legend
+    </legend>
+    <div>
+      <label
+        for="test"
+      >
+        A label
+      </label>
+      <input
+        id="test"
+        name="test"
+        type="text"
+      />
+    </div>
+  </fieldset>
+</form>
+`;

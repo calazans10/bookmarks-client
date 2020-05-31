@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserTable renders without crashing 1`] = `
+<table
+  class="sc-AxjAm doFumh"
+>
+  <tbody>
+    <tr
+      class="sc-AxirZ dPZPVA"
+    >
+      <td
+        class="sc-AxiKw cyHeZF"
+        data-label="Name"
+      >
+        John Doe
+      </td>
+      <td
+        class="sc-AxiKw cyHeZF"
+        data-label="Email"
+      >
+        john.doe@example.com
+      </td>
+    </tr>
+    <tr
+      class="sc-AxirZ dPZPVA"
+    >
+      <td
+        class="sc-AxiKw cyHeZF"
+        data-label="Name"
+      >
+        Joane Doe
+      </td>
+      <td
+        class="sc-AxiKw cyHeZF"
+        data-label="Email"
+      >
+        joane.doe@example.com
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

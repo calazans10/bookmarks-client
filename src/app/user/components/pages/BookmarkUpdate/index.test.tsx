@@ -1,0 +1,22 @@
+import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
+import { renderWithRedux } from 'test-utils';
+import { BookmarkUpdate } from './index';
+import { bookmarks, users } from '../../../../../fixtures';
+
+describe('BookmarkUpdate', () => {
+  it('renders without crashing', () => {
+    const user = users.find(user => !user.is_admin);
+    const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+
+    const { container } = renderWithRedux(
+      <MemoryRouter>
+        <BookmarkUpdate
+          bookmark={filteredBookmarks[0]}
+          onRequestUpdateBookmark={jest.fn()}
+        />
+      </MemoryRouter>
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});

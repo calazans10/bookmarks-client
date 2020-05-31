@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableRow renders without crashing 1`] = `
+<tr
+  class="sc-AxjAm dNBSeH"
+>
+  <td>
+    Test
+  </td>
+</tr>
+`;

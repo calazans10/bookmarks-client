@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading when is not visible renders nothing 1`] = `null`;
+
+exports[`Loading when is visible renders without crashing 1`] = `
+<div
+  class="sc-AxjAm foMttB"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;

@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthForm when is not registration renders without crashing 1`] = `
+<form
+  autocomplete="off"
+  class="sc-AxjAm hYYXIy"
+  novalidate=""
+>
+  <fieldset>
+    <legend
+      class="sc-AxirZ dBtpcc"
+    >
+      A legend
+    </legend>
+    <div
+      class="sc-AxiKw bLDZyO"
+    >
+      <label
+        class="sc-AxhCb ieTFEo"
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        class="sc-AxhUy ePtFHq"
+        id="email"
+        name="email"
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AxiKw bLDZyO"
+    >
+      <label
+        class="sc-AxhCb ieTFEo"
+        for="password"
+      >
+        Password
+      </label>
+      <input
+        class="sc-AxhUy ePtFHq"
+        id="password"
+        name="password"
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        class="sc-AxheI dSQsuG"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`AuthForm when is registration renders without crashing 1`] = `
+<form
+  autocomplete="off"
+  class="sc-AxjAm hYYXIy"
+  novalidate=""
+>
+  <fieldset>
+    <legend
+      class="sc-AxirZ dBtpcc"
+    >
+      A legend
+    </legend>
+    <div
+      class="sc-AxiKw bLDZyO"
+    >
+      <label
+        class="sc-AxhCb ieTFEo"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        class="sc-AxhUy ePtFHq"
+        id="name"
+        name="name"
+        placeholder="Name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AxiKw bLDZyO"
+    >
+      <label
+        class="sc-AxhCb ieTFEo"
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        class="sc-AxhUy ePtFHq"
+        id="email"
+        name="email"
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AxiKw bLDZyO"
+    >
+      <label
+        class="sc-AxhCb ieTFEo"
+        for="password"
+      >
+        Password
+      </label>
+      <input
+        class="sc-AxhUy ePtFHq"
+        id="password"
+        name="password"
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        class="sc-AxheI dSQsuG"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </fieldset>
+</form>
+`;

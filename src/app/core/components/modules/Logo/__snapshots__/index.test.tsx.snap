@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders without crashing 1`] = `
+<div
+  class="sc-AxjAm daLWxe"
+>
+  <a
+    class="sc-AxirZ gHWAZY"
+    href="/"
+  >
+    Bookmarks
+  </a>
+</div>
+`;

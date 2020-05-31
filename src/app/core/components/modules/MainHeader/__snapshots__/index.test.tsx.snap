@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainHeader renders without crashing 1`] = `
+<header
+  class="sc-AxjAm qmWqz"
+>
+  <div
+    class="sc-AxirZ bsKyFM"
+  >
+    <ul>
+      <li>
+        Test
+      </li>
+    </ul>
+  </div>
+</header>
+`;
