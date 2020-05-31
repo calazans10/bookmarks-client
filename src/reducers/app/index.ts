@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-import adminReducer from '../../app/admin/reducers';
-import authReducer from '../../app/auth/reducers';
-import uiReducer from '../../app/ui/reducers';
-import userReducer from '../../app/user/reducers';
-import history from '../../history/browserHistory';
+import history from 'history/browserHistory';
+import adminReducer from 'app/admin/reducers';
+import authReducer from 'app/auth/reducers';
+import uiReducer from 'app/ui/reducers';
+import userReducer from 'app/user/reducers';
 
 const appReducer = combineReducers({
   admin: adminReducer,

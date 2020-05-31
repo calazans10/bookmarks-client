@@ -9,7 +9,7 @@ import {
   minLength,
   maxLength,
   composeValidators,
-} from './validators';
+} from './';
 
 describe('validators', () => {
   describe('required', () => {
