@@ -12,14 +12,14 @@ exports[`Confirm renders without crashing 1`] = `
       class="sc-AxiKw coukEk"
     >
       <p
-        class="sc-AxhCb fbzjSQ"
+        class="sc-AxhCb kOQotW"
       >
-        Solicitar bobina
+        Delete bookmark
       </p>
       <p
-        class="sc-AxhUy eOxxXR"
+        class="sc-AxhUy bCkcaf"
       >
-        Você confirma a solicitação de bobina?
+        Are you sure you want to delete this bookmark?
       </p>
       <div
         class="sc-AxgMl iILWop"
@@ -31,7 +31,7 @@ exports[`Confirm renders without crashing 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxheI jHXtSs"
+          class="sc-AxheI eiypHs"
           type="button"
         >
           Confirm

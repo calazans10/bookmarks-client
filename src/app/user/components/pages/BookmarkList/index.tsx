@@ -4,7 +4,7 @@ import BookmarkTable from '../../modules/BookmarkTable';
 import PageContent from '../../../../core/components/modules/PageContent';
 import PageNavigation from '../../../../core/components/modules/PageNavigation';
 import Pagination from '../../../../core/components/modules/Pagination';
-import { doChangeMyBookmarksMeta, doRequestGetMyBookmarks } from '../../../actions';
+import { doChangeBookmarksMeta, doRequestGetBookmarks } from '../../../actions';
 import {
   getBookmarksCount,
   getBookmarksLimit,
@@ -18,13 +18,13 @@ type BookmarkListProps = {
   offset: number;
   limit: number;
   total: number;
-  onChangeMyBookmarksMeta: (
+  onChangeBookmarksMeta: (
     count: number,
     offset: number,
     limit: number,
     total: number
   ) => UserActionTypes;
-  onRequestGetMyBookmarks: (offset: number, limit: number) => UserActionTypes;
+  onRequestGetBookmarks: (offset: number, limit: number) => UserActionTypes;
 };
 
 export const BookmarkList = ({
@@ -32,16 +32,16 @@ export const BookmarkList = ({
   offset,
   limit,
   total,
-  onChangeMyBookmarksMeta,
-  onRequestGetMyBookmarks,
+  onChangeBookmarksMeta,
+  onRequestGetBookmarks,
 }: BookmarkListProps) => {
   useEffect(() => {
-    onRequestGetMyBookmarks(offset, limit);
-  }, [offset, limit, onRequestGetMyBookmarks]);
+    onRequestGetBookmarks(offset, limit);
+  }, [offset, limit, onRequestGetBookmarks]);
 
   const onChange = (data: { selected: number }) => {
     const { selected } = data;
-    onChangeMyBookmarksMeta(count, selected + 1, limit, total);
+    onChangeBookmarksMeta(count, selected + 1, limit, total);
   };
 
   return (
@@ -67,8 +67,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  onChangeMyBookmarksMeta: doChangeMyBookmarksMeta,
-  onRequestGetMyBookmarks: doRequestGetMyBookmarks,
+  onChangeBookmarksMeta: doChangeBookmarksMeta,
+  onRequestGetBookmarks: doRequestGetBookmarks,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookmarkList);

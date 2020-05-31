@@ -1,11 +1,11 @@
-export const GET_MY_BOOKMARKS_REQUEST = 'GET_MY_BOOKMARKS_REQUEST';
-export const GET_MY_BOOKMARKS_SUCCESS = 'GET_MY_BOOKMARKS_SUCCESS';
-export const CREATE_BOOKMARK_REQUEST = 'CREATE_BOOKMARK_REQUEST';
-export const UPDATE_BOOKMARK_REQUEST = 'UPDATE_BOOKMARK_REQUEST';
-export const DELETE_BOOKMARK_REQUEST = 'DELETE_BOOKMARK_REQUEST';
-export const DELETE_BOOKMARK_SUCCESS = 'DELETE_BOOKMARK_SUCCESS';
-export const SELECTED_BOOKMARK_CHANGE = 'SELECTED_BOOKMARK_CHANGE';
-export const MY_BOOKMARKS_META_CHANGE = 'MY_BOOKMARKS_META_CHANGE';
+export const GET_BOOKMARKS_REQUEST = 'user/GET_BOOKMARKS_REQUEST';
+export const GET_BOOKMARKS_SUCCESS = 'user/GET_BOOKMARKS_SUCCESS';
+export const CREATE_BOOKMARK_REQUEST = 'user/CREATE_BOOKMARK_REQUEST';
+export const UPDATE_BOOKMARK_REQUEST = 'user/UPDATE_BOOKMARK_REQUEST';
+export const DELETE_BOOKMARK_REQUEST = 'user/DELETE_BOOKMARK_REQUEST';
+export const DELETE_BOOKMARK_SUCCESS = 'user/DELETE_BOOKMARK_SUCCESS';
+export const SELECTED_BOOKMARK_CHANGE = 'user/SELECTED_BOOKMARK_CHANGE';
+export const BOOKMARKS_META_CHANGE = 'user/BOOKMARKS_META_CHANGE';
 
 export interface Bookmark {
   id: string;
@@ -40,16 +40,16 @@ export interface UserSelector {
   user: UserState;
 }
 
-export interface RequestGetMyBookmarksAction {
-  type: typeof GET_MY_BOOKMARKS_REQUEST;
+export interface RequestGetBookmarksAction {
+  type: typeof GET_BOOKMARKS_REQUEST;
   payload: {
     offset: number;
     limit: number;
   };
 }
 
-interface SuccessGetMyBookmarksAction {
-  type: typeof GET_MY_BOOKMARKS_SUCCESS;
+interface SuccessGetBookmarksAction {
+  type: typeof GET_BOOKMARKS_SUCCESS;
   payload: {
     data: Bookmark[];
     meta: Meta;
@@ -92,8 +92,8 @@ interface ChangeSelectedBookmarkAction {
   };
 }
 
-interface ChangeMyBookmarksMetaAction {
-  type: typeof MY_BOOKMARKS_META_CHANGE;
+interface ChangeBookmarksMetaAction {
+  type: typeof BOOKMARKS_META_CHANGE;
   payload: {
     count: number;
     offset: number;
@@ -103,11 +103,11 @@ interface ChangeMyBookmarksMetaAction {
 }
 
 export type UserActionTypes =
-  | RequestGetMyBookmarksAction
-  | SuccessGetMyBookmarksAction
+  | RequestGetBookmarksAction
+  | SuccessGetBookmarksAction
   | RequestCreateBookmarkAction
   | RequestUpdateBookmarkAction
   | RequestDeleteBookmarkAction
   | SuccessDeleteBookmarkAction
   | ChangeSelectedBookmarkAction
-  | ChangeMyBookmarksMetaAction;
+  | ChangeBookmarksMetaAction;

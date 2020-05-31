@@ -2,14 +2,14 @@ import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { push } from 'connected-react-router';
 import {
-  handleRequestGetMyBookmarks,
+  handleRequestGetBookmarks,
   handleRequestCreateBookmark,
   handleRequestUpdateBookmark,
   handleRequestDeleteBookmark,
 } from './index';
 import {
-  doRequestGetMyBookmarks,
-  doSuccessGetMyBookmarks,
+  doRequestGetBookmarks,
+  doSuccessGetBookmarks,
   doRequestCreateBookmark,
   doRequestUpdateBookmark,
   doRequestDeleteBookmark,
@@ -17,22 +17,22 @@ import {
 } from '../actions';
 import { doShowLoading, doHideLoading, doHideConfirm, doHandleError } from '../../ui/actions';
 import {
-  requestGetMyBookmarks,
+  requestGetBookmarks,
   requestCreateBookmark,
   requestUpdateBookmark,
   requestDeleteBookmark,
 } from '../api';
 
 describe('user sagas', () => {
-  describe('handleRequestGetMyBookmarks', () => {
+  describe('handleRequestGetBookmarks', () => {
     const offset = 0;
     const limit = 10;
 
-    const action = doRequestGetMyBookmarks(offset, limit);
-    const generator = cloneableGenerator(handleRequestGetMyBookmarks)(action);
+    const action = doRequestGetBookmarks(offset, limit);
+    const generator = cloneableGenerator(handleRequestGetBookmarks)(action);
 
     expect(generator.next().value).toEqual(put(doShowLoading()));
-    expect(generator.next().value).toEqual(call(requestGetMyBookmarks, offset, limit));
+    expect(generator.next().value).toEqual(call(requestGetBookmarks, offset, limit));
 
     describe('when is success', () => {
       const meta = {
@@ -58,8 +58,8 @@ describe('user sagas', () => {
 
       const clone = generator.clone();
 
-      it('should dispatch doSuccessGetMyBookmarks', () => {
-        expect(clone.next({ meta, data }).value).toEqual(put(doSuccessGetMyBookmarks(meta, data)));
+      it('should dispatch doSuccessGetBookmarks', () => {
+        expect(clone.next({ meta, data }).value).toEqual(put(doSuccessGetBookmarks(meta, data)));
       });
 
       it('should dispatch doHideLoading', () => {

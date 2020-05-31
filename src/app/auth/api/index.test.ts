@@ -1,6 +1,7 @@
 import sinon from 'sinon';
 import { requestLogin, requestRegistration, requestGetCurrentUser } from './index';
 import ApiClient from '../../../client';
+import { users } from '../../../fixtures';
 
 describe('auth requests', () => {
   const sandbox = sinon.createSandbox();
@@ -13,13 +14,13 @@ describe('auth requests', () => {
     // Arrange
     const payload = {
       auth: {
-        email: 'john.doe@example.com',
+        email: 'admin@example.com',
         password: '1234',
       }
     };
     const response = {
       data: {
-        jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhOTA3NTRiMy04NjdjLTRiNjQtODk2MS1kNjJhZGE2OTkxODciLCJpYXQiOjE1OTA5MjA1MzgsImV4cCI6MTU5MDkyNDEzOH0.4i_L4WntK16486UEIriaCCpYkTGs8vcHdQeeWIhnV1k',
+        jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhOTA3NTRiMy04NjdjLTRiNjQtODk2MS1kNjJhZGE2OTkxODciLCJpYXQiOjE1OTA5MzE1NjMsImV4cCI6MTU5MDkzNTE2M30.oEvybQBuSwwf2XLHlSaqwAQGRq9jZOLP5oJMj219ePQ',
       },
       status: 201,
       statusText: 'Created',
@@ -37,18 +38,19 @@ describe('auth requests', () => {
   it('should call requestRegistration', async () => {
     // Arrange
     const payload = {
-      name: "Justin Thomas",
-      email: "justin.thomas@example.com",
+      name: 'Justin Thomas',
+      email: 'justin.thomas@example.com',
       password: '1234',
     };
     const response = {
       data: {
-        id: "da20ff85-e58f-499c-8572-48479af0d10a",
-        name: "Justin Thomas",
-        email: "justin.thomas@example.com",
+        id: 'da20ff85-e58f-499c-8572-48479af0d10a',
+        name: 'Justin Thomas',
+        email: 'justin.thomas@example.com',
         is_admin: false,
-        created_at: "2020-02-05T22:29:33.031Z",
-        updated_at: "2020-02-05T22:29:33.031Z",
+        password_digest: '$2a$12$uI33eoOlnEiwMIVSiS8Ti.kfEYF.r9lfYfLY3Z6YjB/mQa0M8VF2a',
+        created_at: '2020-02-05T22:29:33.031Z',
+        updated_at: '2020-02-05T22:29:33.031Z',
         bookmarks_count: 0,
       },
       status: 201,
@@ -67,15 +69,7 @@ describe('auth requests', () => {
   it('should call requestGetCurrentUser', async () => {
     // Arrange
     const response = {
-      data: {
-        id: "da20ff85-e58f-499c-8572-48479af0d10a",
-        name: "Justin Thomas",
-        email: "justin.thomas@example.com",
-        is_admin: false,
-        created_at: "2020-02-05T22:29:33.031Z",
-        updated_at: "2020-02-05T22:29:33.031Z",
-        bookmarks_count: 0,
-      },
+      data: users[0],
       status: 200,
       statusText: 'OK',
     };

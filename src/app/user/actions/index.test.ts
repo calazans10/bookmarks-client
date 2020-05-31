@@ -1,68 +1,61 @@
 import {
-  doRequestGetMyBookmarks,
-  doSuccessGetMyBookmarks,
+  doRequestGetBookmarks,
+  doSuccessGetBookmarks,
   doRequestCreateBookmark,
   doRequestUpdateBookmark,
   doRequestDeleteBookmark,
   doSuccessDeleteBookmark,
   doChangeSelectedBookmark,
-  doChangeMyBookmarksMeta,
+  doChangeBookmarksMeta,
 } from './index';
 import {
-  GET_MY_BOOKMARKS_REQUEST,
-  GET_MY_BOOKMARKS_SUCCESS,
+  GET_BOOKMARKS_REQUEST,
+  GET_BOOKMARKS_SUCCESS,
   CREATE_BOOKMARK_REQUEST,
   UPDATE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
-  MY_BOOKMARKS_META_CHANGE,
+  BOOKMARKS_META_CHANGE,
 } from '../types';
+import { bookmarks, users } from '../../../fixtures';
 
 describe('user actions', () => {
-  it('should create doRequestGetMyBookmarks action', () => {
-    const offset = 0;
+  const user = users.find(user => !user.is_admin);
+  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+
+  it('should create doRequestGetBookmarks action', () => {
+    const offset = 1;
     const limit = 10;
 
     const expectedAction = {
-      type: GET_MY_BOOKMARKS_REQUEST,
+      type: GET_BOOKMARKS_REQUEST,
       payload: {
         offset,
         limit,
       },
     };
 
-    expect(doRequestGetMyBookmarks(offset, limit)).toEqual(expectedAction);
+    expect(doRequestGetBookmarks(offset, limit)).toEqual(expectedAction);
   });
 
-  it('should create doSuccessGetMyBookmarks action', () => {
+  it('should create doSuccessGetBookmarks action', () => {
     const meta = {
-      count: 1,
-      limit: 10,
+      count: filteredBookmarks.length,
       offset: 1,
-      total: 1,
+      limit: 10,
+      total: filteredBookmarks.length,
     };
-
-    const data = [
-      {
-        id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-        url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-        title: 'Introducing the React RFC Process',
-        user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-        created_at: '2020-01-21T01:31:19.489Z',
-        updated_at: '2020-01-21T01:31:19.489Z',
-      },
-    ];
 
     const expectedAction = {
-      type: GET_MY_BOOKMARKS_SUCCESS,
+      type: GET_BOOKMARKS_SUCCESS,
       payload: {
         meta,
-        data,
+        data: filteredBookmarks,
       },
     };
 
-    expect(doSuccessGetMyBookmarks(meta, data)).toEqual(expectedAction);
+    expect(doSuccessGetBookmarks(meta, filteredBookmarks)).toEqual(expectedAction);
   });
 
   it('should create doRequestCreateBookmark action', () => {
@@ -123,14 +116,7 @@ describe('user actions', () => {
   });
 
   it('should create doChangeSelectedBookmark action', () => {
-    const bookmark = {
-      id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-      url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-      title: 'Introducing the React RFC Process',
-      user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-      created_at: '2020-01-21T01:31:19.489Z',
-      updated_at: '2020-01-21T01:31:19.489Z',
-    };
+    const bookmark = filteredBookmarks[0];
 
     const expectedAction = {
       type: SELECTED_BOOKMARK_CHANGE,
@@ -142,14 +128,14 @@ describe('user actions', () => {
   });
 });
 
-it('should create doChangeMyBookmarksMeta action', () => {
+it('should create doChangeBookmarksMeta action', () => {
   const count = 1;
-  const limit = 10;
   const offset = 1;
+  const limit = 10;
   const total = 1;
 
   const expectedAction = {
-    type: MY_BOOKMARKS_META_CHANGE,
+    type: BOOKMARKS_META_CHANGE,
     payload: {
       count,
       offset,
@@ -158,5 +144,5 @@ it('should create doChangeMyBookmarksMeta action', () => {
     },
   };
 
-  expect(doChangeMyBookmarksMeta(count, offset, limit, total)).toEqual(expectedAction);
+  expect(doChangeBookmarksMeta(count, offset, limit, total)).toEqual(expectedAction);
 });

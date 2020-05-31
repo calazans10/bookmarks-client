@@ -1,13 +1,17 @@
 import reducer from './index';
 import {
-  doSuccessGetMyBookmarks,
+  doSuccessGetBookmarks,
   doSuccessDeleteBookmark,
   doChangeSelectedBookmark,
-  doChangeMyBookmarksMeta,
+  doChangeBookmarksMeta,
 } from '../actions';
 import { Bookmark, UserActionTypes } from '../types';
+import { bookmarks, users } from '../../../fixtures';
 
 describe('user reducer', () => {
+  const user = users.find(user => !user.is_admin);
+  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+
   it('should return the initial state', () => {
     const expectedState = {
       bookmarks: {
@@ -24,58 +28,44 @@ describe('user reducer', () => {
     expect(reducer(undefined, {} as UserActionTypes)).toEqual(expectedState);
   });
 
-  it('should handle GET_MY_BOOKMARKS_SUCCESS', () => {
+  it('should handle GET_BOOKMARKS_SUCCESS', () => {
+    // Arrange
     const meta = {
-      count: 1,
+      count: filteredBookmarks.length,
       limit: 10,
       offset: 1,
-      total: 1,
+      total: filteredBookmarks.length,
     };
-    const data = [
-      {
-        id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-        url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-        title: 'Introducing the React RFC Process',
-        user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-        created_at: '2020-01-21T01:31:19.489Z',
-        updated_at: '2020-01-21T01:31:19.489Z',
-      },
-    ];
 
-    const action = doSuccessGetMyBookmarks(meta, data);
     const expectedState = {
       bookmarks: {
         meta,
-        data,
+        data: filteredBookmarks,
       },
       selectedBookmark: {},
     };
+
+    // Act
+    const action = doSuccessGetBookmarks(meta, filteredBookmarks);
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 
   it('should handle DELETE_BOOKMARK_SUCCESS', () => {
-    const bookmarkId = '9b2bfb9a-3776-48ca-835a-2c17ccef44c6';
-
-    const action = doSuccessDeleteBookmark(bookmarkId);
+    // Arrange
+    const bookmarkId = filteredBookmarks[0].id;
+    const expectedBookmarks = filteredBookmarks.filter(bookmark => bookmark.id !== bookmarkId);
 
     const initialState = {
       bookmarks: {
         meta: {
-          count: 1,
+          count: filteredBookmarks.length,
           offset: 1,
           limit: 10,
-          total: 1,
+          total: filteredBookmarks.length,
         },
-        data: [
-          {
-            id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-            url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-            title: 'Introducing the React RFC Process',
-            user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-            created_at: '2020-01-21T01:31:19.489Z',
-            updated_at: '2020-01-21T01:31:19.489Z',
-          },
-        ],
+        data: filteredBookmarks,
       },
       selectedBookmark: {} as Bookmark,
     };
@@ -83,48 +73,36 @@ describe('user reducer', () => {
     const expectedState = {
       bookmarks: {
         meta: {
-          count: 1,
+          count: expectedBookmarks.length,
           offset: 1,
           limit: 10,
-          total: 1,
+          total: expectedBookmarks.length,
         },
-        data: [],
+        data: expectedBookmarks,
       },
       selectedBookmark: {},
     };
+
+    // Act
+    const action = doSuccessDeleteBookmark(bookmarkId);
+
+    // Assert
     expect(reducer(initialState, action)).toEqual(expectedState);
   });
 
   it('should handle SELECTED_BOOKMARK_CHANGE', () => {
-    const bookmark = {
-      id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-      url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-      title: 'Introducing the React RFC Process',
-      user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-      created_at: '2020-01-21T01:31:19.489Z',
-      updated_at: '2020-01-21T01:31:19.489Z',
-    };
-
-    const action = doChangeSelectedBookmark(bookmark);
+    // Arrange
+    const bookmark = filteredBookmarks[0];
 
     const initialState = {
       bookmarks: {
         meta: {
-          count: 1,
+          count: filteredBookmarks.length,
           offset: 1,
           limit: 10,
-          total: 1,
+          total: filteredBookmarks.length,
         },
-        data: [
-          {
-            id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-            url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-            title: 'Introducing the React RFC Process',
-            user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-            created_at: '2020-01-21T01:31:19.489Z',
-            updated_at: '2020-01-21T01:31:19.489Z',
-          },
-        ],
+        data: filteredBookmarks,
       },
       selectedBookmark: {} as Bookmark,
     };
@@ -132,46 +110,47 @@ describe('user reducer', () => {
     const expectedState = {
       bookmarks: {
         meta: {
-          count: 1,
+          count: filteredBookmarks.length,
           offset: 1,
           limit: 10,
-          total: 1,
+          total: filteredBookmarks.length,
         },
-        data: [
-          {
-            id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-            url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-            title: 'Introducing the React RFC Process',
-            user_id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
-            created_at: '2020-01-21T01:31:19.489Z',
-            updated_at: '2020-01-21T01:31:19.489Z',
-          },
-        ],
+        data: filteredBookmarks,
       },
       selectedBookmark: bookmark,
     };
+
+    // Act
+    const action = doChangeSelectedBookmark(bookmark);
+
+    // Assert
     expect(reducer(initialState, action)).toEqual(expectedState);
   });
 
-  it('should handle MY_BOOKMARKS_META_CHANGE', () => {
+  it('should handle BOOKMARKS_META_CHANGE', () => {
+    // Arrange
     const count = 1;
-    const limit = 10;
     const offset = 1;
+    const limit = 10;
     const total = 1;
 
-    const action = doChangeMyBookmarksMeta(count, offset, limit, total);
     const expectedState = {
       bookmarks: {
-        data: [],
         meta: {
           count,
           offset,
           limit,
           total,
         },
+        data: [],
       },
       selectedBookmark: {},
     };
+
+    // Act
+    const action = doChangeBookmarksMeta(count, offset, limit, total);
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 });

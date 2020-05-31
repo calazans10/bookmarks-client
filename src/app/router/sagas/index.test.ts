@@ -6,7 +6,7 @@ import { doChangeLocation } from '../actions';
 
 describe('router sagas', () => {
   describe('handleChangeLocation', () => {
-    const pathname = '/inicio';
+    const pathname = '/home';
 
     const action = doChangeLocation(pathname);
     const generator = cloneableGenerator(handleChangeLocation)(action);

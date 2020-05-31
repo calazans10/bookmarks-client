@@ -6,8 +6,9 @@ describe('Confirm', () => {
   it('renders without crashing', () => {
     const { getByRole } = render(
       <Confirm
-        title="Solicitar bobina"
-        text="Você confirma a solicitação de bobina?"
+        title="Delete bookmark"
+        text="Are you sure you want to delete this bookmark?"
+        kind="danger"
         isVisible
         onClick={jest.fn()}
         onHideConfirm={jest.fn()}

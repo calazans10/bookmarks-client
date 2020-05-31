@@ -1,18 +1,9 @@
 import { isUserLoggedIn, getUser, getUserAllowedPaths } from './index';
+import { users } from '../../../fixtures';
 
 describe('auth selectors', () => {
-  const user = {
-    id: '194725c1-739a-46e4-9746-013da114c85c',
-    name: 'John Doe',
-    email: 'john.doe@gmail.com',
-    password_digest: '$2a$12$oT4288118r77jU5NEBTN3e0heHXkfFPKwYxhyyVnTTgqoOy4fWO7q',
-    is_admin: false,
-    created_at: '2020-01-20T20:00:39.614Z',
-    updated_at: '2020-01-20T20:00:39.614Z',
-    bookmarks_count: 3,
-  };
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+  const user = users[0];
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhOTA3NTRiMy04NjdjLTRiNjQtODk2MS1kNjJhZGE2OTkxODciLCJpYXQiOjE1OTA5MzE1NjMsImV4cCI6MTU5MDkzNTE2M30.oEvybQBuSwwf2XLHlSaqwAQGRq9jZOLP5oJMj219ePQ';
 
   const state = {
     auth: {
@@ -30,19 +21,18 @@ describe('auth selectors', () => {
   });
 
   describe('getUserAllowedPaths', () => {
-    it('should returns the allowed paths for admin', () => {
-      const updatedUser = { ...user, is_admin: true };
-      const updatedState = { ...state, auth: { user: updatedUser, token } };
-
-      expect(getUserAllowedPaths(updatedState)).toEqual(['/admin/bookmarks', '/admin/users']);
-    });
-
     it('should returns the allowed paths for user', () => {
-      expect(getUserAllowedPaths(state)).toEqual([
+      const updatedState = { ...state, auth: { user: { ...user, is_admin: false }, token } };
+
+      expect(getUserAllowedPaths(updatedState)).toEqual([
         '/bookmarks',
         '/bookmarks/new',
         '/bookmarks/:id/edit',
       ]);
+    });
+
+    it('should returns the allowed paths for admin', () => {
+      expect(getUserAllowedPaths(state)).toEqual(['/admin/bookmarks', '/admin/users']);
     });
   });
 });

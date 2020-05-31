@@ -3,10 +3,10 @@ import {
   Bookmark,
   Meta,
   UserState,
-  GET_MY_BOOKMARKS_SUCCESS,
+  GET_BOOKMARKS_SUCCESS,
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
-  MY_BOOKMARKS_META_CHANGE,
+  BOOKMARKS_META_CHANGE,
 } from '../types';
 
 const initialState: UserState = {
@@ -22,7 +22,7 @@ const initialState: UserState = {
   selectedBookmark: {} as Bookmark,
 };
 
-const applySuccessGetMyBookmarks = (state, action) => {
+const applySuccessGetBookmarks = (state, action) => {
   const { meta, data } = action.payload;
   state.bookmarks.meta = meta;
   state.bookmarks.data = data;
@@ -31,6 +31,8 @@ const applySuccessGetMyBookmarks = (state, action) => {
 const applySuccessDeleteBookmark = (state, action) => {
   const { bookmarkId } = action.payload;
   state.bookmarks.data = state.bookmarks.data.filter(bookmark => bookmark.id !== bookmarkId);
+  state.bookmarks.meta.count--;
+  state.bookmarks.meta.total--;
 };
 
 const applyChangeSelectedBookmark = (state, action) => {
@@ -38,19 +40,19 @@ const applyChangeSelectedBookmark = (state, action) => {
   state.selectedBookmark = bookmark;
 };
 
-const applyChangeMyBookmarksMeta = (state, action) => {
+const applyChangeBookmarksMeta = (state, action) => {
   state.bookmarks.meta = action.payload;
 };
 
 const userReducer = createReducer(initialState, {
-  [GET_MY_BOOKMARKS_SUCCESS]: (state, action: PayloadAction<{ meta: Meta; data: Bookmark[] }>) =>
-    applySuccessGetMyBookmarks(state, action),
+  [GET_BOOKMARKS_SUCCESS]: (state, action: PayloadAction<{ meta: Meta; data: Bookmark[] }>) =>
+    applySuccessGetBookmarks(state, action),
   [DELETE_BOOKMARK_SUCCESS]: (state, action: PayloadAction<{ bookmarkId: string }>) =>
     applySuccessDeleteBookmark(state, action),
   [SELECTED_BOOKMARK_CHANGE]: (state, action: PayloadAction<{ bookmark: Bookmark }>) =>
     applyChangeSelectedBookmark(state, action),
-  [MY_BOOKMARKS_META_CHANGE]: (state, action: PayloadAction<Meta>) =>
-    applyChangeMyBookmarksMeta(state, action),
+  [BOOKMARKS_META_CHANGE]: (state, action: PayloadAction<Meta>) =>
+    applyChangeBookmarksMeta(state, action),
 });
 
 export default userReducer;

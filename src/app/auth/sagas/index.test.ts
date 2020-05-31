@@ -11,13 +11,14 @@ import {
 } from '../actions';
 import { doShowAlert, doShowLoading, doHideLoading } from '../../ui/actions';
 import { requestLogin, requestRegistration, requestGetCurrentUser } from '../api';
+import { users } from '../../../fixtures';
 
 describe('auth sagas', () => {
   describe('handleRequestLogin', () => {
-    const email = 'john.doe@example.com';
+    const email = 'admin@example.com';
     const password = '1234';
     const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhOTA3NTRiMy04NjdjLTRiNjQtODk2MS1kNjJhZGE2OTkxODciLCJpYXQiOjE1OTA5MzE1NjMsImV4cCI6MTU5MDkzNTE2M30.oEvybQBuSwwf2XLHlSaqwAQGRq9jZOLP5oJMj219ePQ';
 
     const action = doRequestLogin(email, password);
     const generator = cloneableGenerator(handleRequestLogin)(action);
@@ -30,24 +31,38 @@ describe('auth sagas', () => {
     expect(generator.next().value).toEqual(call(requestGetCurrentUser));
 
     describe('when is success', () => {
-      const clone = generator.clone();
+      describe('and user is admin', () => {
+        const clone = generator.clone();
 
-      it('should dispatch doSuccessLogin', () => {
-        const response = {
-          name: 'John Doe',
-          email: 'john.doe@example.com',
-          is_admin: false,
-        };
+        it('should dispatch doSuccessLogin', () => {
+          const response = users[0];
+          expect(clone.next(response).value).toEqual(put(doSuccessLogin(response, token)));
+        });
 
-        expect(clone.next(response).value).toEqual(put(doSuccessLogin(response, token)));
+        it('should redirect to "/admin/bookmarks"', () => {
+          expect(clone.next().value).toEqual(put(push('/admin/bookmarks')));
+        });
+
+        it('should dispatch doHideLoading', () => {
+          expect(clone.next().value).toEqual(put(doHideLoading()));
+        });
       });
 
-      it('should redirect to "/bookmarks"', () => {
-        expect(clone.next().value).toEqual(put(push('/bookmarks')));
-      });
+      describe('and user is not admin', () => {
+        const clone = generator.clone();
 
-      it('should dispatch doHideLoading', () => {
-        expect(clone.next().value).toEqual(put(doHideLoading()));
+        it('should dispatch doSuccessLogin', () => {
+          const response = users[1];
+          expect(clone.next(response).value).toEqual(put(doSuccessLogin(response, token)));
+        });
+
+        it('should redirect to "/bookmarks"', () => {
+          expect(clone.next().value).toEqual(put(push('/bookmarks')));
+        });
+
+        it('should dispatch doHideLoading', () => {
+          expect(clone.next().value).toEqual(put(doHideLoading()));
+        });
       });
     });
 
@@ -92,15 +107,21 @@ describe('auth sagas', () => {
   });
 
   describe('handleRequestRegistration', () => {
-    const name = 'John Doe';
-    const email = 'john.doe@example.com';
+    const name = 'Justin Thomas';
+    const email = 'justin.thomas@example.com';
     const password = '1234';
     const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhMTM5YjA3My03ZTBlLTQzZTMtYTViZC04ZDIzNWY2MWQ1NmMiLCJpYXQiOjE1OTA5MzY4NzcsImV4cCI6MTU5MDk0MDQ3N30.Op2j4SmQjBHtl13Vm_fb6pWgNK9i9agkMAqpTPuFIww';
+
     const response = {
-      name: 'John Doe',
-      email: 'john.doe@example.com',
+      id: 'da20ff85-e58f-499c-8572-48479af0d10a',
+      name: 'Justin Thomas',
+      email: 'justin.thomas@example.com',
       is_admin: false,
+      password_digest: '$2a$12$uI33eoOlnEiwMIVSiS8Ti.kfEYF.r9lfYfLY3Z6YjB/mQa0M8VF2a',
+      created_at: '2020-02-05T22:29:33.031Z',
+      updated_at: '2020-02-05T22:29:33.031Z',
+      bookmarks_count: 0,
     };
 
     const action = doRequestRegistration(name, email, password);

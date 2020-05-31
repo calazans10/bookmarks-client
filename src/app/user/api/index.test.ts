@@ -1,11 +1,12 @@
 import sinon from 'sinon';
 import {
-  requestGetMyBookmarks,
+  requestGetBookmarks,
   requestCreateBookmark,
   requestUpdateBookmark,
   requestDeleteBookmark,
 } from './index';
 import ApiClient from '../../../client';
+import { bookmarks, users } from '../../../fixtures';
 
 describe('user requests', () => {
   const sandbox = sinon.createSandbox();
@@ -14,29 +15,23 @@ describe('user requests', () => {
     sandbox.restore();
   });
 
-  it('should call requestGetMyBookmarks', async () => {
+  it('should call requestGetBookmarks', async () => {
     // Arrange
     const offset = 1;
     const limit = 10;
 
+    const user = users.find(user => !user.is_admin);
+    const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+
     const response = {
       data: {
         meta: {
-          count: 1,
-          limit: 10,
+          count: filteredBookmarks.length,
           offset: 1,
-          total: 1,
+          limit: 10,
+          total: filteredBookmarks.length,
         },
-        data: [
-          {
-            id: '9b2bfb9a-3776-48ca-835a-2c17ccef44c6',
-            url: 'https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html',
-            title: 'Introducing the React RFC Process',
-            user_id: 'da20ff85-e58f-499c-8572-48479af0d10a',
-            created_at: '2020-01-21T01:31:19.489Z',
-            updated_at: '2020-01-21T01:31:19.489Z',
-          },
-        ],
+        data: filteredBookmarks,
       },
       status: 200,
       statusText: 'OK',
@@ -45,7 +40,7 @@ describe('user requests', () => {
     sandbox.stub(ApiClient.prototype, 'get').returns(Promise.resolve(response));
 
     // Act
-    const result = await requestGetMyBookmarks(offset, limit);
+    const result = await requestGetBookmarks(offset, limit);
 
     // Assert
     expect(result).toEqual(response.data);

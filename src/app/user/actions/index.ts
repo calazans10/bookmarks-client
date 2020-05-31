@@ -2,27 +2,27 @@ import {
   Bookmark,
   Meta,
   BookmarkData,
-  GET_MY_BOOKMARKS_REQUEST,
-  GET_MY_BOOKMARKS_SUCCESS,
+  GET_BOOKMARKS_REQUEST,
+  GET_BOOKMARKS_SUCCESS,
   CREATE_BOOKMARK_REQUEST,
   UPDATE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
-  MY_BOOKMARKS_META_CHANGE,
+  BOOKMARKS_META_CHANGE,
   UserActionTypes,
 } from '../types';
 
-export const doRequestGetMyBookmarks = (offset: number, limit: number): UserActionTypes => ({
-  type: GET_MY_BOOKMARKS_REQUEST,
+export const doRequestGetBookmarks = (offset: number, limit: number): UserActionTypes => ({
+  type: GET_BOOKMARKS_REQUEST,
   payload: {
     offset,
     limit,
   },
 });
 
-export const doSuccessGetMyBookmarks = (meta: Meta, data: Bookmark[]): UserActionTypes => ({
-  type: GET_MY_BOOKMARKS_SUCCESS,
+export const doSuccessGetBookmarks = (meta: Meta, data: Bookmark[]): UserActionTypes => ({
+  type: GET_BOOKMARKS_SUCCESS,
   payload: {
     meta,
     data,
@@ -68,13 +68,13 @@ export const doChangeSelectedBookmark = (bookmark: Bookmark): UserActionTypes =>
   },
 });
 
-export const doChangeMyBookmarksMeta = (
+export const doChangeBookmarksMeta = (
   count: number,
   offset: number,
   limit: number,
   total: number
 ): UserActionTypes => ({
-  type: MY_BOOKMARKS_META_CHANGE,
+  type: BOOKMARKS_META_CHANGE,
   payload: {
     count,
     offset,

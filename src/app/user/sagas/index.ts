@@ -1,36 +1,36 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { doSuccessGetMyBookmarks, doSuccessDeleteBookmark } from '../actions';
+import { doSuccessGetBookmarks, doSuccessDeleteBookmark } from '../actions';
 import {
-  requestGetMyBookmarks,
+  requestGetBookmarks,
   requestCreateBookmark,
   requestUpdateBookmark,
   requestDeleteBookmark,
 } from '../api';
 import { doShowLoading, doHideLoading, doHideConfirm, doHandleError } from '../../ui/actions';
 import {
-  GET_MY_BOOKMARKS_REQUEST,
+  GET_BOOKMARKS_REQUEST,
   CREATE_BOOKMARK_REQUEST,
   UPDATE_BOOKMARK_REQUEST,
   DELETE_BOOKMARK_REQUEST,
   Bookmark,
   Meta,
-  RequestGetMyBookmarksAction,
+  RequestGetBookmarksAction,
   RequestCreateBookmarkAction,
   RequestUpdateBookmarkAction,
   RequestDeleteBookmarkAction,
 } from '../types';
 
-export function* handleRequestGetMyBookmarks(action: RequestGetMyBookmarksAction) {
+export function* handleRequestGetBookmarks(action: RequestGetBookmarksAction) {
   try {
     const { offset, limit } = action.payload;
     yield put(doShowLoading());
     const { meta, data }: { meta: Meta; data: Bookmark[] } = yield call(
-      requestGetMyBookmarks,
+      requestGetBookmarks,
       offset,
       limit
     );
-    yield put(doSuccessGetMyBookmarks(meta, data));
+    yield put(doSuccessGetBookmarks(meta, data));
   } catch (e) {
     yield put(doHandleError(e));
   } finally {
@@ -79,7 +79,7 @@ export function* handleRequestDeleteBookmark(action: RequestDeleteBookmarkAction
 }
 
 export default [
-  takeLatest(GET_MY_BOOKMARKS_REQUEST, handleRequestGetMyBookmarks),
+  takeLatest(GET_BOOKMARKS_REQUEST, handleRequestGetBookmarks),
   takeLatest(CREATE_BOOKMARK_REQUEST, handleRequestCreateBookmark),
   takeLatest(UPDATE_BOOKMARK_REQUEST, handleRequestUpdateBookmark),
   takeLatest(DELETE_BOOKMARK_REQUEST, handleRequestDeleteBookmark),

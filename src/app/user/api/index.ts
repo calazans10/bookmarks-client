@@ -3,7 +3,7 @@ import ApiClient from '../../../client';
 
 const client = new ApiClient();
 
-export const requestGetMyBookmarks = async (offset: number, limit: number) => {
+export const requestGetBookmarks = async (offset: number, limit: number) => {
   const response = await client.get(`/v1/bookmarks?offset=${offset}&limit=${limit}`);
   return response.data;
 };

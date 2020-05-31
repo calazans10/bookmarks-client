@@ -3,7 +3,7 @@ import { LOCATION_CHANGE } from '../types';
 
 describe('router actions', () => {
   it('should create doChangeLocation action', () => {
-    const pathname = '/inicio';
+    const pathname = '/home';
     const expectedAction = {
       type: LOCATION_CHANGE,
       payload: {
