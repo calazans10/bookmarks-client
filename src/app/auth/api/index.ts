@@ -1,12 +1,6 @@
-import AxiosMock from './index.mock';
-import axiosFactory from '../../../utils/axios';
+import ApiClient from '../../../client';
 
-const axios = axiosFactory.createInstance(process.env.REACT_APP_API_URL);
-
-if (process.env.REACT_APP_API_MOCK === 'on') {
-  const mock = new AxiosMock(axios);
-  mock.registerUrls();
-}
+const client = new ApiClient();
 
 export const requestLogin = async (payload: {
   auth: {
@@ -14,7 +8,7 @@ export const requestLogin = async (payload: {
     password: string;
   };
 }) => {
-  const response = await axios.post('/v1/session', payload);
+  const response = await client.post('/v1/session', payload);
   return response.data;
 };
 
@@ -23,11 +17,11 @@ export const requestRegistration = async (payload: {
   email: string;
   password: string;
 }) => {
-  const response = await axios.post('/v1/registration', payload);
+  const response = await client.post('/v1/registration', payload);
   return response.data;
 };
 
 export const requestGetCurrentUser = async () => {
-  const response = await axios.get('/v1/me');
+  const response = await client.get('/v1/me');
   return response.data;
 };
