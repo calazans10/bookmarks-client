@@ -9,7 +9,7 @@ import {
   BOOKMARKS_META_CHANGE,
   USERS_META_CHANGE,
   AdminActionTypes,
-} from '../types';
+} from 'app/admin/types';
 
 export const doRequestGetBookmarks = (offset: number, limit: number): AdminActionTypes => ({
   type: GET_BOOKMARKS_REQUEST,

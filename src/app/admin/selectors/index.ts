@@ -1,4 +1,4 @@
-import { AdminSelector } from '../types';
+import { AdminSelector } from 'app/admin/types';
 
 export const getBookmarks = ({ admin }: AdminSelector) => admin.bookmarks.data;
 

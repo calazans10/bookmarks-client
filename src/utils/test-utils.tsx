@@ -8,10 +8,10 @@ interface RenderWithRedux<
   S = any,
   A extends Action = AnyAction,
   I extends S = any
-> {
+  > {
   (
     ui: ReactNode,
-    reduxOptions: {
+    reduxOptions?: {
       store?: Store<S, A>
       initialState?: I
     }

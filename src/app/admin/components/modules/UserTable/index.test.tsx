@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { UserTable } from './index';
-import { users } from '../../../../../fixtures';
+import { users } from 'fixtures';
+import { UserTable } from './';
 
 describe('UserTable', () => {
   it('renders without crashing', () => {

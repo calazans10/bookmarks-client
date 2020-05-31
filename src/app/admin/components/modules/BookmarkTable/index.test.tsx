@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { BookmarkTable } from './index';
-import { bookmarks } from '../../../../../fixtures';
+import { bookmarks } from 'fixtures';
+import { BookmarkTable } from './';
 
 describe('BookmarkTable', () => {
   it('renders without crashing', () => {

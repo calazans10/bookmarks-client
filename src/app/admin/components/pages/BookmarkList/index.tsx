@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import BookmarkTable from '../../modules/BookmarkTable';
-import PageContent from '../../../../core/components/modules/PageContent';
-import PageNavigation from '../../../../core/components/modules/PageNavigation';
-import Pagination from '../../../../core/components/modules/Pagination';
-import { doChangeBookmarksMeta, doRequestGetBookmarks } from '../../../actions';
+import { doChangeBookmarksMeta, doRequestGetBookmarks } from 'app/admin/actions';
 import {
   getBookmarksCount,
   getBookmarksLimit,
   getBookmarksOffset,
   getBookmarksTotal,
-} from '../../../selectors';
-import { AdminActionTypes } from '../../../types';
+} from 'app/admin/selectors';
+import { AdminActionTypes } from 'app/admin/types';
+import BookmarkTable from 'app/admin/components/modules/BookmarkTable';
+import PageContent from 'app/core/components/modules/PageContent';
+import PageNavigation from 'app/core/components/modules/PageNavigation';
+import Pagination from 'app/core/components/modules/Pagination';
 
 type BookmarkListProps = {
   count: number;

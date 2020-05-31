@@ -1,15 +1,15 @@
 import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
-import { handleRequestGetBookmarks, handleRequestGetUsers } from './index';
+import { bookmarks, users } from 'fixtures';
 import {
   doRequestGetBookmarks,
   doSuccessGetBookmarks,
   doRequestGetUsers,
   doSuccessGetUsers,
-} from '../actions';
-import { doShowLoading, doHideLoading, doHandleError } from '../../ui/actions';
-import { requestGetBookmarks, requestGetUsers } from '../api';
-import { bookmarks, users } from '../../../fixtures';
+} from 'app/admin/actions';
+import { requestGetBookmarks, requestGetUsers } from 'app/admin/api';
+import { doShowLoading, doHideLoading, doHandleError } from 'app/ui/actions';
+import { handleRequestGetBookmarks, handleRequestGetUsers } from './';
 
 describe('admin sagas', () => {
   describe('handleRequestGetBookmarks', () => {
