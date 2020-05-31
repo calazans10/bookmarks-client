@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import PageSection from './index';
+import PageSection from './';
 
 describe('PageSection', () => {
   it('renders without crashing', () => {
