@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderWithRedux } from 'test-utils';
-import { BookmarkTable } from './index';
-import { bookmarks, users } from '../../../../../fixtures';
+import { bookmarks, users } from 'fixtures';
+import { BookmarkTable } from './';
 
 describe('BookmarkTable', () => {
   it('renders without crashing', () => {

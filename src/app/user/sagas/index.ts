@@ -1,13 +1,14 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { doSuccessGetBookmarks, doSuccessDeleteBookmark } from '../actions';
+
+import { doShowLoading, doHideLoading, doHideConfirm, doHandleError } from 'app/ui/actions';
+import { doSuccessGetBookmarks, doSuccessDeleteBookmark } from 'app/user/actions';
 import {
   requestGetBookmarks,
   requestCreateBookmark,
   requestUpdateBookmark,
   requestDeleteBookmark,
-} from '../api';
-import { doShowLoading, doHideLoading, doHideConfirm, doHandleError } from '../../ui/actions';
+} from 'app/user/api';
 import {
   GET_BOOKMARKS_REQUEST,
   CREATE_BOOKMARK_REQUEST,
@@ -19,7 +20,7 @@ import {
   RequestCreateBookmarkAction,
   RequestUpdateBookmarkAction,
   RequestDeleteBookmarkAction,
-} from '../types';
+} from 'app/user/types';
 
 export function* handleRequestGetBookmarks(action: RequestGetBookmarksAction) {
   try {

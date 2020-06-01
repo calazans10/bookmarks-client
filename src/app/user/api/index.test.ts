@@ -1,12 +1,12 @@
 import sinon from 'sinon';
+import ApiClient from 'client';
+import { bookmarks, users } from 'fixtures';
 import {
   requestGetBookmarks,
   requestCreateBookmark,
   requestUpdateBookmark,
   requestDeleteBookmark,
-} from './index';
-import ApiClient from '../../../client';
-import { bookmarks, users } from '../../../fixtures';
+} from './';
 
 describe('user requests', () => {
   const sandbox = sinon.createSandbox();

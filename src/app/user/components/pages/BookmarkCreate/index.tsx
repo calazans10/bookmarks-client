@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BookmarkForm from '../../modules/BookmarkForm';
-import PageContent from '../../../../core/components/modules/PageContent';
-import { doRequestCreateBookmark } from '../../../actions';
-import { BookmarkData, UserActionTypes } from '../../../types';
+import PageContent from 'app/core/components/modules/PageContent';
+import BookmarkForm from 'app/user/components/modules/BookmarkForm';
+import { doRequestCreateBookmark } from 'app/user/actions';
+import { BookmarkData, UserActionTypes } from 'app/user/types';
 
 type BookmarkCreateProps = {
   onRequestCreateBookmark: (data: BookmarkData) => UserActionTypes;

@@ -1,5 +1,5 @@
-import { BookmarkData } from '../types';
-import ApiClient from '../../../client';
+import ApiClient from 'client';
+import { BookmarkData } from 'app/user/types';
 
 const client = new ApiClient();
 

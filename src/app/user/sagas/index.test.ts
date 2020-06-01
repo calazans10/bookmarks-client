@@ -1,12 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { push } from 'connected-react-router';
-import {
-  handleRequestGetBookmarks,
-  handleRequestCreateBookmark,
-  handleRequestUpdateBookmark,
-  handleRequestDeleteBookmark,
-} from './index';
+import { doShowLoading, doHideLoading, doHideConfirm, doHandleError } from 'app/ui/actions';
 import {
   doRequestGetBookmarks,
   doSuccessGetBookmarks,
@@ -14,14 +9,19 @@ import {
   doRequestUpdateBookmark,
   doRequestDeleteBookmark,
   doSuccessDeleteBookmark,
-} from '../actions';
-import { doShowLoading, doHideLoading, doHideConfirm, doHandleError } from '../../ui/actions';
+} from 'app/user/actions';
 import {
   requestGetBookmarks,
   requestCreateBookmark,
   requestUpdateBookmark,
   requestDeleteBookmark,
-} from '../api';
+} from 'app/user/api';
+import {
+  handleRequestGetBookmarks,
+  handleRequestCreateBookmark,
+  handleRequestUpdateBookmark,
+  handleRequestDeleteBookmark,
+} from './';
 
 describe('user sagas', () => {
   describe('handleRequestGetBookmarks', () => {

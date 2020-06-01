@@ -11,7 +11,7 @@ import {
   SELECTED_BOOKMARK_CHANGE,
   BOOKMARKS_META_CHANGE,
   UserActionTypes,
-} from '../types';
+} from 'app/user/types';
 
 export const doRequestGetBookmarks = (offset: number, limit: number): UserActionTypes => ({
   type: GET_BOOKMARKS_REQUEST,

@@ -1,12 +1,12 @@
-import reducer from './index';
+import { bookmarks, users } from 'fixtures';
 import {
   doSuccessGetBookmarks,
   doSuccessDeleteBookmark,
   doChangeSelectedBookmark,
   doChangeBookmarksMeta,
-} from '../actions';
-import { Bookmark, UserActionTypes } from '../types';
-import { bookmarks, users } from '../../../fixtures';
+} from 'app/user/actions';
+import { Bookmark, UserActionTypes } from 'app/user/types';
+import reducer from './';
 
 describe('user reducer', () => {
   const user = users.find(user => !user.is_admin);

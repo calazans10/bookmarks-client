@@ -25,13 +25,13 @@ exports[`BookmarkTable renders without crashing 1`] = `
         data-label="Actions"
       >
         <button
-          class="sc-AxhCb bzqWB"
+          class="sc-fzoLsD iaBQzV"
           type="button"
         >
           Edit
         </button>
         <button
-          class="sc-AxhCb iPDvrL"
+          class="sc-fzoLsD iMstfD"
           type="button"
         >
           Delete
@@ -58,13 +58,13 @@ exports[`BookmarkTable renders without crashing 1`] = `
         data-label="Actions"
       >
         <button
-          class="sc-AxhCb bzqWB"
+          class="sc-fzoLsD iaBQzV"
           type="button"
         >
           Edit
         </button>
         <button
-          class="sc-AxhCb iPDvrL"
+          class="sc-fzoLsD iMstfD"
           type="button"
         >
           Delete
@@ -91,13 +91,13 @@ exports[`BookmarkTable renders without crashing 1`] = `
         data-label="Actions"
       >
         <button
-          class="sc-AxhCb bzqWB"
+          class="sc-fzoLsD iaBQzV"
           type="button"
         >
           Edit
         </button>
         <button
-          class="sc-AxhCb iPDvrL"
+          class="sc-fzoLsD iMstfD"
           type="button"
         >
           Delete
@@ -124,13 +124,13 @@ exports[`BookmarkTable renders without crashing 1`] = `
         data-label="Actions"
       >
         <button
-          class="sc-AxhCb bzqWB"
+          class="sc-fzoLsD iaBQzV"
           type="button"
         >
           Edit
         </button>
         <button
-          class="sc-AxhCb iPDvrL"
+          class="sc-fzoLsD iMstfD"
           type="button"
         >
           Delete

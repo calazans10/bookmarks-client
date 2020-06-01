@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import Table from '../../../../core/components/modules/Table';
-import TableRow from '../../../../core/components/modules/TableRow';
-import TableColumn from '../../../../core/components/modules/TableColumn';
+import { doChangeLocation } from 'app/router/actions';
+import { doShowConfirm } from 'app/ui/actions';
+import { doRequestDeleteBookmark, doChangeSelectedBookmark } from 'app/user/actions';
+import { getBookmarks } from 'app/user/selectors';
+import { RouterActionTypes } from 'app/router/types';
+import { UIActionTypes } from 'app/ui/types';
+import { Bookmark, UserActionTypes } from 'app/user/types';
+import Table from 'app/core/components/modules/Table';
+import TableRow from 'app/core/components/modules/TableRow';
+import TableColumn from 'app/core/components/modules/TableColumn';
+import Confirm from 'app/ui/components/modules/Confirm';
 import ButtonAction from '../ButtonAction';
-import Confirm from '../../../../ui/components/modules/Confirm';
-import { doRequestDeleteBookmark, doChangeSelectedBookmark } from '../../../actions';
-import { doChangeLocation } from '../../../../router/actions';
-import { doShowConfirm } from '../../../../ui/actions';
-import { getBookmarks } from '../../../selectors';
-import { Bookmark, UserActionTypes } from '../../../types';
-import { RouterActionTypes } from '../../../../router/types';
-import { UIActionTypes } from '../../../../ui/types';
 
 type BookmarkTableProps = {
   bookmarks: Bookmark[];

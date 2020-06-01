@@ -7,7 +7,7 @@ import {
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
   BOOKMARKS_META_CHANGE,
-} from '../types';
+} from 'app/user/types';
 
 const initialState: UserState = {
   bookmarks: {
