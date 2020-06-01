@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import MainForm from './index';
+import MainForm from './';
 
 describe('MainForm', () => {
   it('renders without crashing', () => {

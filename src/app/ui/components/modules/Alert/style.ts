@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { em, rem, math, stripUnit, hideVisually } from 'polished';
-import alertIcon from '../../../../../images/alerticon.svg';
-import closeIcon from '../../../../../images/closeicon.svg';
+import alertIcon from 'images/alerticon.svg';
+import closeIcon from 'images/closeicon.svg';
 
 type ContainerProps = {
   isVisible: boolean;

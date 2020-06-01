@@ -1,6 +1,6 @@
-import reducer from './index';
-import { doShowConfirm, doHideConfirm } from '../../actions';
-import { UIActionTypes } from '../../types';
+import { doShowConfirm, doHideConfirm } from 'app/ui/actions';
+import { UIActionTypes } from 'app/ui/types';
+import reducer from './';
 
 describe('loading reducer', () => {
   it('should return the initial state', () => {
@@ -11,18 +11,28 @@ describe('loading reducer', () => {
   });
 
   it('should handle CONFIRM_SHOW', () => {
-    const action = doShowConfirm();
+    // Arrange
     const expectedState = {
       isVisible: true,
     };
+
+    // Act
+    const action = doShowConfirm();
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 
   it('should handle CONFIRM_HIDE', () => {
-    const action = doHideConfirm();
+    // Arrange
     const expectedState = {
       isVisible: false,
     };
+
+    // Act
+    const action = doHideConfirm();
+
+    // Assert
     expect(reducer(undefined, action)).toEqual(expectedState);
   });
 });

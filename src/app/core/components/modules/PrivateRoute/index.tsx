@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
-import { isUserLoggedIn, getUserAllowedPaths } from '../../../../auth/selectors';
+import { isUserLoggedIn, getUserAllowedPaths } from 'app/auth/selectors';
 
 type PrivateRouteProps = {
   exact: boolean;

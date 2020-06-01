@@ -1,13 +1,4 @@
-import {
-  doRequestGetBookmarks,
-  doSuccessGetBookmarks,
-  doRequestCreateBookmark,
-  doRequestUpdateBookmark,
-  doRequestDeleteBookmark,
-  doSuccessDeleteBookmark,
-  doChangeSelectedBookmark,
-  doChangeBookmarksMeta,
-} from './index';
+import { bookmarks, users } from 'fixtures';
 import {
   GET_BOOKMARKS_REQUEST,
   GET_BOOKMARKS_SUCCESS,
@@ -17,8 +8,17 @@ import {
   DELETE_BOOKMARK_SUCCESS,
   SELECTED_BOOKMARK_CHANGE,
   BOOKMARKS_META_CHANGE,
-} from '../types';
-import { bookmarks, users } from '../../../fixtures';
+} from 'app/user/types';
+import {
+  doRequestGetBookmarks,
+  doSuccessGetBookmarks,
+  doRequestCreateBookmark,
+  doRequestUpdateBookmark,
+  doRequestDeleteBookmark,
+  doSuccessDeleteBookmark,
+  doChangeSelectedBookmark,
+  doChangeBookmarksMeta,
+} from './';
 
 describe('user actions', () => {
   const user = users.find(user => !user.is_admin);

@@ -1,4 +1,5 @@
 import { AxiosError } from 'axios';
+import { doRequestLogout } from 'app/auth/actions';
 import {
   ALERT_SHOW,
   ALERT_HIDE,
@@ -7,8 +8,7 @@ import {
   LOADING_SHOW,
   LOADING_HIDE,
   UIActionTypes,
-} from '../types';
-import { doRequestLogout } from '../../auth/actions';
+} from 'app/ui/types';
 
 export const doShowAlert = (message: string): UIActionTypes => ({
   type: ALERT_SHOW,

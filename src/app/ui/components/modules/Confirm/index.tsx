@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import Portal from '../../../../core/components/modules/Portal';
-import { doHideConfirm } from '../../../actions';
-import { isConfirmVisible } from '../../../selectors';
-import { UIActionTypes } from '../../../types';
+import { doHideConfirm } from 'app/ui/actions';
+import { isConfirmVisible } from 'app/ui/selectors';
+import { UIActionTypes } from 'app/ui/types';
+import Portal from 'app/core/components/modules/Portal';
 import { Container, Dialog, Wrapper, Title, Text, Footer, Button } from './style';
 
 type Kind = 'primary' | 'secondary' | 'danger';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import FormGroup from './index';
+import FormGroup from './';
 
 describe('FormGroup', () => {
   const defaultMeta = {

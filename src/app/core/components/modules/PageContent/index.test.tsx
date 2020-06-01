@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { renderWithRedux } from 'test-utils';
-import PageContent from './index';
+import PageContent from './';
 
 describe('PageContent', () => {
   it('renders without crashing', () => {

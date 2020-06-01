@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AuthForm from '../../modules/AuthForm';
-import Logo from '../../../../core/components/modules/Logo';
-import MainWrapper from '../../../../core/components/modules/MainWrapper';
-import MainHeader from '../../../../core/components/modules/MainHeader';
-import MainNavigation from '../../../../core/components/modules/MainNavigation';
-import MainContent from '../../../../core/components/modules/MainContent';
-import { doRequestRegistration } from '../../../actions';
-import { AuthActionTypes, AuthData } from '../../../types';
+import { doRequestRegistration } from 'app/auth/actions';
+import { AuthActionTypes, AuthData } from 'app/auth/types';
+import AuthForm from 'app/auth/components/modules/AuthForm';
+import Logo from 'app/core/components/modules/Logo';
+import MainWrapper from 'app/core/components/modules/MainWrapper';
+import MainHeader from 'app/core/components/modules/MainHeader';
+import MainNavigation from 'app/core/components/modules/MainNavigation';
+import MainContent from 'app/core/components/modules/MainContent';
 
 type SignUpProps = {
   onRequestRegistration: (name: string, email: string, password: string) => AuthActionTypes;

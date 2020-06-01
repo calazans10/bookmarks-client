@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ButtonAction from './index';
+import ButtonAction from './';
 
 describe('ButtonAction', () => {
   it('renders without crashing', () => {

@@ -1,3 +1,4 @@
+import { bookmarks, users } from 'fixtures';
 import {
   getBookmarks,
   getBookmarksCount,
@@ -9,8 +10,7 @@ import {
   getUsersOffset,
   getUsersLimit,
   getUsersTotal,
-} from './index';
-import { bookmarks, users } from '../../../fixtures';
+} from './';
 
 describe('admin selectors', () => {
   const filteredUsers = users.filter(user => !user.is_admin)

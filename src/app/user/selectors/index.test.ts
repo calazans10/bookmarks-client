@@ -1,3 +1,5 @@
+import { bookmarks, users } from 'fixtures';
+import { Bookmark } from 'app/user/types';
 import {
   getBookmarks,
   getBookmarksCount,
@@ -5,9 +7,7 @@ import {
   getBookmarksLimit,
   getBookmarksTotal,
   getSelectedBookmark,
-} from './index';
-import { Bookmark } from '../types';
-import { bookmarks, users } from '../../../fixtures';
+} from './';
 
 describe('bookmark selectors', () => {
   const user = users.find(user => !user.is_admin);

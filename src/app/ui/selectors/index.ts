@@ -1,4 +1,4 @@
-import { UISelector } from '../types';
+import { UISelector } from 'app/ui/types';
 
 export const isAlertVisible = ({ ui }: UISelector) => ui.alert.isVisible;
 

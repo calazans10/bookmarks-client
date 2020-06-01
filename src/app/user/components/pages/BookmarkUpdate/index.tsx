@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BookmarkForm from '../../modules/BookmarkForm';
-import PageContent from '../../../../core/components/modules/PageContent';
-import { doRequestUpdateBookmark } from '../../../actions';
-import { getSelectedBookmark } from '../../../selectors';
-import { Bookmark, BookmarkData, UserActionTypes } from '../../../types';
+import { doRequestUpdateBookmark } from 'app/user/actions';
+import { getSelectedBookmark } from 'app/user/selectors';
+import { Bookmark, BookmarkData, UserActionTypes } from 'app/user/types';
+import PageContent from 'app/core/components/modules/PageContent';
+import BookmarkForm from 'app/user/components/modules/BookmarkForm';
 
 type BookmarkUpdateProps = {
   bookmark: Bookmark;

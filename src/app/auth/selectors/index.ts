@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { User, AuthSelector } from '../types';
+import { User, AuthSelector } from 'app/auth/types';
 
 export const isUserLoggedIn = ({ auth }: AuthSelector) => !!auth.token;
 

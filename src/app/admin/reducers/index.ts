@@ -8,7 +8,7 @@ import {
   GET_USERS_SUCCESS,
   BOOKMARKS_META_CHANGE,
   USERS_META_CHANGE,
-} from '../types';
+} from 'app/admin/types';
 
 const initialState: AdminState = {
   bookmarks: {

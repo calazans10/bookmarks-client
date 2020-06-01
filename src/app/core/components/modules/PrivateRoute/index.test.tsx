@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import { PrivateRoute } from './index';
+import { PrivateRoute } from './';
 
 const PrivateComponent = () => <div data-testid="test" />;
 

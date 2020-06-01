@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Table from '../../../../core/components/modules/Table';
-import TableRow from '../../../../core/components/modules/TableRow';
-import TableColumn from '../../../../core/components/modules/TableColumn';
-import { getBookmarks } from '../../../selectors';
-import { Bookmark } from '../../../types';
+import { getBookmarks } from 'app/admin/selectors';
+import { Bookmark } from 'app/admin/types';
+import Table from 'app/core/components/modules/Table';
+import TableRow from 'app/core/components/modules/TableRow';
+import TableColumn from 'app/core/components/modules/TableColumn';
 
 type BookmarkTableProps = {
   bookmarks: Bookmark[];

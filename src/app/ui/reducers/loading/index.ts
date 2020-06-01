@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { LoadingState, LOADING_SHOW, LOADING_HIDE } from '../../types';
+import { LoadingState, LOADING_SHOW, LOADING_HIDE } from 'app/ui/types';
 
 const initialState: LoadingState = {
   isVisible: false,

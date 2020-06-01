@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { ConfirmState, CONFIRM_SHOW, CONFIRM_HIDE } from '../../types';
+import { ConfirmState, CONFIRM_SHOW, CONFIRM_HIDE } from 'app/ui/types';
 
 const initialState: ConfirmState = {
   isVisible: false,

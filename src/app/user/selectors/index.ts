@@ -1,4 +1,4 @@
-import { UserSelector } from '../types';
+import { UserSelector } from 'app/user/types';
 
 export const getBookmarks = ({ user }: UserSelector) => user.bookmarks.data;
 

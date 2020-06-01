@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import TableRow from './index';
+import TableRow from './';
 
 describe('TableRow', () => {
   it('renders without crashing', () => {

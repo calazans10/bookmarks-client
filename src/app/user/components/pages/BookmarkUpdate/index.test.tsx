@@ -1,8 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { bookmarks, users } from 'fixtures';
 import { renderWithRedux } from 'test-utils';
-import { BookmarkUpdate } from './index';
-import { bookmarks, users } from '../../../../../fixtures';
+import { BookmarkUpdate } from './';
 
 describe('BookmarkUpdate', () => {
   it('renders without crashing', () => {

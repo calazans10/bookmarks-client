@@ -1,12 +1,12 @@
-import reducer from './index';
+import { bookmarks, users } from 'fixtures';
 import {
   doSuccessGetUsers,
   doSuccessGetBookmarks,
   doChangeBookmarksMeta,
   doChangeUsersMeta,
-} from '../actions';
-import { AdminActionTypes } from '../types';
-import { bookmarks, users } from '../../../fixtures';
+} from 'app/admin/actions';
+import { AdminActionTypes } from 'app/admin/types';
+import reducer from './';
 
 describe('admin reducer', () => {
   it('should return the initial state', () => {

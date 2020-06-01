@@ -1,5 +1,5 @@
-import reducer from './index';
-import { doSuccessLogout } from '../app/auth/actions';
+import { doSuccessLogout } from 'app/auth/actions';
+import reducer from './';
 
 describe('root reducer', () => {
   const expectedState = {

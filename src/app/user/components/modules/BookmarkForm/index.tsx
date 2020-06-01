@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Field } from 'react-final-form';
-import MainForm from '../../../../core/components/modules/MainForm';
-import FormGroup from '../../../../core/components/modules/FormGroup';
-import ButtonSubmit from '../../../../core/components/modules/ButtonSubmit';
-import { BookmarkData } from '../../../types';
-import { required } from '../../../../../utils/validators';
+import { required } from 'utils/validators';
+import { BookmarkData } from 'app/user/types';
+import MainForm from 'app/core/components/modules/MainForm';
+import FormGroup from 'app/core/components/modules/FormGroup';
+import ButtonSubmit from 'app/core/components/modules/ButtonSubmit';
 
 type BookmarkFormProps = {
   legend: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Alert from '../../../../ui/components/modules/Alert';
+import Alert from 'app/ui/components/modules/Alert';
 import { Container } from './style';
 
 type MainWrapperProps = {

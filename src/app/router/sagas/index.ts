@@ -1,6 +1,6 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { LOCATION_CHANGE, ChangeLocationAction } from '../types';
+import { LOCATION_CHANGE, ChangeLocationAction } from 'app/router/types';
 
 export function* handleChangeLocation(action: ChangeLocationAction) {
   const { pathname } = action.payload;

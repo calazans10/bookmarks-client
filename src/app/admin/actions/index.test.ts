@@ -1,11 +1,4 @@
-import {
-  doRequestGetBookmarks,
-  doSuccessGetBookmarks,
-  doRequestGetUsers,
-  doSuccessGetUsers,
-  doChangeBookmarksMeta,
-  doChangeUsersMeta,
-} from './index';
+import { bookmarks, users } from 'fixtures';
 import {
   GET_BOOKMARKS_REQUEST,
   GET_BOOKMARKS_SUCCESS,
@@ -13,8 +6,16 @@ import {
   GET_USERS_SUCCESS,
   BOOKMARKS_META_CHANGE,
   USERS_META_CHANGE,
-} from '../types';
-import { bookmarks, users } from '../../../fixtures';
+} from 'app/admin/types';
+import {
+  doRequestGetBookmarks,
+  doSuccessGetBookmarks,
+  doRequestGetUsers,
+  doSuccessGetUsers,
+  doChangeBookmarksMeta,
+  doChangeUsersMeta,
+} from './';
+
 
 describe('admin actions', () => {
   it('should create doRequestGetBookmarks action', () => {

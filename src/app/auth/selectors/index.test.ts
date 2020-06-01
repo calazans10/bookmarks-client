@@ -1,5 +1,5 @@
-import { isUserLoggedIn, getUser, getUserAllowedPaths } from './index';
-import { users } from '../../../fixtures';
+import { users } from 'fixtures';
+import { isUserLoggedIn, getUser, getUserAllowedPaths } from './';
 
 describe('auth selectors', () => {
   const user = users[0];

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { doRequestLogout } from '../../../../auth/actions';
-import { AuthActionTypes } from '../../../../auth/types';
+import { doRequestLogout } from 'app/auth/actions';
+import { AuthActionTypes } from 'app/auth/types';
 import { Container, Item, Button } from './style';
 
 type MainNavigationProps = {

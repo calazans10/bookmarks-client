@@ -1,5 +1,5 @@
-import reducer from './index';
-import { UIActionTypes } from '../types';
+import { UIActionTypes } from 'app/ui/types';
+import reducer from './';
 
 describe('ui reducer', () => {
   it('should return the initial state', () => {

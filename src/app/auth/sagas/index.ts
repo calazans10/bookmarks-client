@@ -1,8 +1,8 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { doSuccessLogin, doSuccessLogout } from '../actions';
-import { requestLogin, requestRegistration, requestGetCurrentUser } from '../api';
-import { doShowAlert, doShowLoading, doHideLoading } from '../../ui/actions';
+import { doSuccessLogin, doSuccessLogout } from 'app/auth/actions';
+import { doShowAlert, doShowLoading, doHideLoading } from 'app/ui/actions';
+import { requestLogin, requestRegistration, requestGetCurrentUser } from 'app/auth/api';
 import {
   LOGIN_REQUEST,
   LOGOUT_REQUEST,
@@ -10,7 +10,7 @@ import {
   User,
   RequestLoginAction,
   RequestRegistrationAction,
-} from '../types';
+} from 'app/auth/types';
 
 export function* handleRequestLogin(action: RequestLoginAction) {
   try {

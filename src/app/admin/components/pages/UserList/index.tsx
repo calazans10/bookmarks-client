@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import UserTable from '../../modules/UserTable';
-import PageContent from '../../../../core/components/modules/PageContent';
-import PageNavigation from '../../../../core/components/modules/PageNavigation';
-import Pagination from '../../../../core/components/modules/Pagination';
-import { doChangeUsersMeta, doRequestGetUsers } from '../../../actions';
-import { getUsersCount, getUsersLimit, getUsersOffset, getUsersTotal } from '../../../selectors';
-import { AdminActionTypes } from '../../../types';
+import { doChangeUsersMeta, doRequestGetUsers } from 'app/admin/actions';
+import { getUsersCount, getUsersLimit, getUsersOffset, getUsersTotal } from 'app/admin/selectors';
+import { AdminActionTypes } from 'app/admin/types';
+import UserTable from 'app/admin/components/modules/UserTable';
+import PageContent from 'app/core/components/modules/PageContent';
+import PageNavigation from 'app/core/components/modules/PageNavigation';
+import Pagination from 'app/core/components/modules/Pagination';
 
 type UserListProps = {
   count: number;

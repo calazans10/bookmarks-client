@@ -2,16 +2,16 @@ import React, { ReactNode } from 'react';
 import { AnyAction, Action, createStore, Store } from 'redux';
 import { Provider } from 'react-redux';
 import { render, RenderResult } from '@testing-library/react';
-import rootReducer from '../reducers';
+import rootReducer from 'reducers';
 
 interface RenderWithRedux<
   S = any,
   A extends Action = AnyAction,
   I extends S = any
-> {
+  > {
   (
     ui: ReactNode,
-    reduxOptions: {
+    reduxOptions?: {
       store?: Store<S, A>
       initialState?: I
     }

@@ -1,5 +1,5 @@
+import { LOGOUT_SUCCESS } from 'app/auth/types';
 import appReducer from './app';
-import { LOGOUT_SUCCESS } from '../app/auth/types';
 
 const rootReducer = (state, action) => {
   let initialState = state;

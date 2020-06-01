@@ -2,7 +2,7 @@ import { Server, Model, Response, hasMany, belongsTo } from 'miragejs';
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
 import env from 'env-var';
-import { bookmarks, users } from '../fixtures';
+import { bookmarks, users } from 'fixtures';
 
 const API_URL: string = env.get('REACT_APP_API_URL').required().asString();
 
