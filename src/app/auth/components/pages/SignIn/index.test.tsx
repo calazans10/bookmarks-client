@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { renderWithRedux } from 'test-utils';
+import { renderWithRedux } from 'utils/test-utils';
 import { SignIn } from './';
 
 describe('SignIn', () => {

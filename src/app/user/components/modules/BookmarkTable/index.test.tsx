@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderWithRedux } from 'test-utils';
+import { renderWithRedux } from 'utils/test-utils';
 import { bookmarks, users } from 'fixtures';
 import { BookmarkTable } from './';
 
