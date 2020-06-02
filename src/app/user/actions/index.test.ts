@@ -18,11 +18,11 @@ import {
   doSuccessDeleteBookmark,
   doChangeSelectedBookmark,
   doChangeBookmarksMeta,
-} from './';
+} from '.';
 
 describe('user actions', () => {
-  const user = users.find(user => !user.is_admin);
-  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+  const user = users.find(u => !u.isAdmin);
+  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.userId === user!.id);
 
   it('should create doRequestGetBookmarks action', () => {
     const offset = 1;

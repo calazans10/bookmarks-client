@@ -58,10 +58,9 @@ export const makeServer = () => {
         return schema.db.users.firstOrCreate({ email }, {
           name,
           id: uuidv4(),
-          is_admin: false,
-          created_at: date,
-          updated_at: date,
-          bookmarks_count: 0,
+          isAdmin: false,
+          createdAt: date,
+          updatedAt: date,
         });
       });
 
@@ -81,7 +80,7 @@ export const makeServer = () => {
       });
 
       this.get('/v1/admin/users', schema => {
-        const data = schema.db.users.where({ is_admin: false });
+        const data = schema.db.users.where({ isAdmin: false });
         return getCollectionResponse(data);
       });
 
@@ -89,7 +88,7 @@ export const makeServer = () => {
         const token = getToken(request.requestHeaders);
         try {
           const decoded = jwt.verify(token, 'secret');
-          const data = schema.db.bookmarks.where({ user_id: decoded.userId });
+          const data = schema.db.bookmarks.where({ userId: decoded.userId });
           return getCollectionResponse(data);
         } catch (error) {
           return new Response(401);
@@ -106,9 +105,9 @@ export const makeServer = () => {
           schema.db.bookmarks.insert({
             ...attrs,
             id: uuidv4(),
-            user_id: decoded.userId,
-            created_at: date,
-            updated_at: date,
+            userId: decoded.userId,
+            createdAt: date,
+            updatedAt: date,
           });
 
           return new Response(201);
@@ -120,7 +119,7 @@ export const makeServer = () => {
       this.put('/v1/bookmarks/:id', (schema, request) => {
         const attrs = JSON.parse(request.requestBody);
         const { id } = request.params;
-        schema.db.bookmarks.update(id, { ...attrs, updated_at: new Date().toISOString() });
+        schema.db.bookmarks.update(id, { ...attrs, updatedAt: new Date().toISOString() });
         return new Response(204);
       });
 

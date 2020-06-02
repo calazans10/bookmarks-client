@@ -1,7 +1,7 @@
 import sinon from 'sinon';
 import ApiClient from 'client';
 import { bookmarks, users } from 'fixtures';
-import { requestGetBookmarks, requestGetUsers } from './';
+import { requestGetBookmarks, requestGetUsers } from '.';
 
 describe('admin requests', () => {
   const sandbox = sinon.createSandbox();
@@ -43,7 +43,7 @@ describe('admin requests', () => {
     const offset = 1;
     const limit = 10;
 
-    const data = users.filter(user => !user.is_admin);
+    const data = users.filter(user => !user.isAdmin);
 
     const response = {
       data: {

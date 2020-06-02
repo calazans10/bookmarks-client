@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Loading } from './';
+import { Loading } from '.';
 
 describe('Loading', () => {
   describe('when is visible', () => {

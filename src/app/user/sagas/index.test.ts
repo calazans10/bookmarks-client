@@ -21,7 +21,7 @@ import {
   handleRequestCreateBookmark,
   handleRequestUpdateBookmark,
   handleRequestDeleteBookmark,
-} from './';
+} from '.';
 
 describe('user sagas', () => {
   describe('handleRequestGetBookmarks', () => {
@@ -51,7 +51,7 @@ describe('user sagas', () => {
             id: 'e4f262c4-8dd3-4db4-85c8-83e03b8ecad4',
             name: 'John Doe',
             email: 'john.doe@example.com',
-            is_admin: false,
+            isAdmin: false,
           },
         },
       ];

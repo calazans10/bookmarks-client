@@ -9,7 +9,7 @@ import {
 } from 'app/admin/actions';
 import { requestGetBookmarks, requestGetUsers } from 'app/admin/api';
 import { doShowLoading, doHideLoading, doHandleError } from 'app/ui/actions';
-import { handleRequestGetBookmarks, handleRequestGetUsers } from './';
+import { handleRequestGetBookmarks, handleRequestGetUsers } from '.';
 
 describe('admin sagas', () => {
   describe('handleRequestGetBookmarks', () => {
@@ -63,7 +63,7 @@ describe('admin sagas', () => {
   describe('handleRequestGetUsers', () => {
     const offset = 1;
     const limit = 10;
-    const data = users.filter(user => !user.is_admin);
+    const data = users.filter(user => !user.isAdmin);
 
     const action = doRequestGetUsers(offset, limit);
     const generator = cloneableGenerator(handleRequestGetUsers)(action);

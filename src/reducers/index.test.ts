@@ -1,5 +1,5 @@
 import { doSuccessLogout } from 'app/auth/actions';
-import reducer from './';
+import reducer from '.';
 
 describe('root reducer', () => {
   const expectedState = {
@@ -76,7 +76,7 @@ describe('root reducer', () => {
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
         user: {
           email: 'john.doe@example.com',
-          is_admin: false,
+          isAdmin: false,
           name: 'John Doe',
         },
       },

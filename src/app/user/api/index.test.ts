@@ -6,7 +6,7 @@ import {
   requestCreateBookmark,
   requestUpdateBookmark,
   requestDeleteBookmark,
-} from './';
+} from '.';
 
 describe('user requests', () => {
   const sandbox = sinon.createSandbox();
@@ -20,8 +20,8 @@ describe('user requests', () => {
     const offset = 1;
     const limit = 10;
 
-    const user = users.find(user => !user.is_admin);
-    const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+    const user = users.find(u => !u.isAdmin);
+    const filteredBookmarks = bookmarks.filter(bookmark => bookmark.userId === user!.id);
 
     const response = {
       data: {

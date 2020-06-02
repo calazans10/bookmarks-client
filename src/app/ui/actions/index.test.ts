@@ -16,7 +16,7 @@ import {
   doShowLoading,
   doHideLoading,
   doHandleError,
-} from './';
+} from '.';
 
 describe('ui actions', () => {
   it('should create doShowAlert action', () => {

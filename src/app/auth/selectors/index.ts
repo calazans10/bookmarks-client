@@ -6,7 +6,7 @@ export const isUserLoggedIn = ({ auth }: AuthSelector) => !!auth.token;
 export const getUser = ({ auth }: AuthSelector) => auth.user;
 
 export const getUserAllowedPaths = createSelector(getUser, (user: User) => {
-  if (user.is_admin) {
+  if (user.isAdmin) {
     return ['/admin/bookmarks', '/admin/users'];
   }
 

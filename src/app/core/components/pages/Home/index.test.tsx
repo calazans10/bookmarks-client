@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { renderWithRedux } from 'utils/test-utils';
-import { Home } from './';
+import { Home } from '.';
 
 describe('Home', () => {
   it('renders without crashing', () => {

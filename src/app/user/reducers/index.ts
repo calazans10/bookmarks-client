@@ -31,8 +31,8 @@ const applySuccessGetBookmarks = (state, action) => {
 const applySuccessDeleteBookmark = (state, action) => {
   const { bookmarkId } = action.payload;
   state.bookmarks.data = state.bookmarks.data.filter(bookmark => bookmark.id !== bookmarkId);
-  state.bookmarks.meta.count--;
-  state.bookmarks.meta.total--;
+  state.bookmarks.meta.count -= 1;
+  state.bookmarks.meta.total -= 1;
 };
 
 const applyChangeSelectedBookmark = (state, action) => {

@@ -19,7 +19,7 @@ export function* handleRequestLogin(action: RequestLoginAction) {
     yield call([sessionStorage, 'setItem'], 'token', token);
     const response: User = yield call(requestGetCurrentUser);
     yield put(doSuccessLogin(response, token));
-    if (response.is_admin) {
+    if (response.isAdmin) {
       yield put(push('/admin/bookmarks'));
     } else {
       yield put(push('/bookmarks'));

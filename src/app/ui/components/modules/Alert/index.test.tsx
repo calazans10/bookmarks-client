@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Alert } from './';
+import { Alert } from '.';
 
 describe('Alert', () => {
   it('renders without crashing', () => {

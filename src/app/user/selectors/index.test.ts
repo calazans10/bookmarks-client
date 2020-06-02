@@ -7,11 +7,11 @@ import {
   getBookmarksLimit,
   getBookmarksTotal,
   getSelectedBookmark,
-} from './';
+} from '.';
 
 describe('bookmark selectors', () => {
-  const user = users.find(user => !user.is_admin);
-  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+  const user = users.find(u => !u.isAdmin);
+  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.userId === user!.id);
 
   const selectedBookmark = {} as Bookmark;
 

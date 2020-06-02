@@ -9,20 +9,18 @@ export interface Bookmark {
   id: string;
   title: string;
   url: string;
-  user_id: string;
-  created_at: string;
-  updated_at: string;
+  userId: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface User {
   id: string;
   name: string;
   email: string;
-  password_digest: string;
-  is_admin: boolean;
-  created_at: string;
-  updated_at: string;
-  bookmarks_count: number;
+  isAdmin: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface Meta {

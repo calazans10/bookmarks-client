@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { renderWithRedux } from 'utils/test-utils';
-import { SignUp } from './';
+import { SignUp } from '.';
 
 describe('SignUp', () => {
   it('renders without crashing', () => {

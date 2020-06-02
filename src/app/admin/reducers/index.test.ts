@@ -6,7 +6,7 @@ import {
   doChangeUsersMeta,
 } from 'app/admin/actions';
 import { AdminActionTypes } from 'app/admin/types';
-import reducer from './';
+import reducer from '.';
 
 describe('admin reducer', () => {
   it('should return the initial state', () => {
@@ -67,7 +67,7 @@ describe('admin reducer', () => {
 
   it('should handle GET_USERS_SUCCESS', () => {
     // Arrange
-    const data = users.filter(user => !user.is_admin)
+    const data = users.filter(user => !user.isAdmin)
 
     const meta = {
       count: data.length,

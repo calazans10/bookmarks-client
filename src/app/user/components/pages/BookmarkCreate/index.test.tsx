@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { renderWithRedux } from 'utils/test-utils';
-import { BookmarkCreate } from './';
+import { BookmarkCreate } from '.';
 
 describe('BookmarkCreate', () => {
   it('renders without crashing', () => {

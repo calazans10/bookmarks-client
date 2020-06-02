@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import FallbackLoading from './';
+import FallbackLoading from '.';
 
 describe('FallbackLoading', () => {
   it('renders without crashing', () => {

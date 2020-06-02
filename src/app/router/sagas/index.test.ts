@@ -2,7 +2,7 @@ import { put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { push } from 'connected-react-router';
 import { doChangeLocation } from 'app/router/actions';
-import { handleChangeLocation } from './';
+import { handleChangeLocation } from '.';
 
 describe('router sagas', () => {
   describe('handleChangeLocation', () => {
