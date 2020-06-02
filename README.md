@@ -1,5 +1,25 @@
 # Bookmarks Client
 
+## Usage
+
+1.  Clone this repository
+
+        $ git clone git@github.com:calazans10/bookmarks-client.git
+
+2.  Change directory to the application folder
+
+        $ cd bookmarks-client
+
+3.  Install the dependencies
+
+        $ npm install
+
+4.  Run the server
+
+        $ npm start
+
+5.  Using a browser, go to `http://localhost:5000` to load the initial page
+
 ## Naming convention
 
 - **Action Types**
@@ -112,3 +132,15 @@
     mapDispatchToProps
   )(Home);
   ```
+
+## Contribute
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Submit a pull request
+
+## License
+
+MIT © [Jeferson Farias Calazans](http://calazans10.com)
