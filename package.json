@@ -8,10 +8,11 @@
     }
   },
   "lint-staged": {
-    "*.ts?(x)": [
+    "**/*.ts?(x)": [
       "npm test",
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   },
   "dependencies": {
