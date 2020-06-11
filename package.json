@@ -8,7 +8,7 @@
     }
   },
   "lint-staged": {
-    "**/*.ts?(x)": [
+    "*.{js,jsx,ts,tsx}": [
       "npm test",
       "eslint --fix",
       "prettier --write"
