@@ -8,7 +8,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@redux-saga/testing-utils": "^1.1.3",
