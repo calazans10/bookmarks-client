@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import env from 'env-var';
 import { bookmarks, users } from 'fixtures';
 
-const API_URL: string = env.get('REACT_APP_API_URL').required().asString();
+const API_URL = env.get('REACT_APP_API_URL').required().asString();
 
 const getToken = requestHeaders => requestHeaders.Authorization.split(' ')[1];
 
@@ -35,10 +35,10 @@ export const makeServer = () => {
     },
 
     routes() {
-      this.urlPrefix = API_URL
-      this.namespace = "/api";
+      this.urlPrefix = API_URL;
+      this.namespace = '/api';
 
-      this.post("/v1/session", (schema, request) => {
+      this.post('/v1/session', (schema, request) => {
         const attrs = JSON.parse(request.requestBody);
         const { email } = attrs.auth;
 
@@ -55,13 +55,16 @@ export const makeServer = () => {
         const { name, email } = attrs;
         const date = new Date().toISOString();
 
-        return schema.db.users.firstOrCreate({ email }, {
-          name,
-          id: uuidv4(),
-          isAdmin: false,
-          createdAt: date,
-          updatedAt: date,
-        });
+        return schema.db.users.firstOrCreate(
+          { email },
+          {
+            name,
+            id: uuidv4(),
+            isAdmin: false,
+            createdAt: date,
+            updatedAt: date,
+          }
+        );
       });
 
       this.get('/v1/me', (schema, request) => {
@@ -134,4 +137,4 @@ export const makeServer = () => {
       server.loadFixtures();
     },
   });
-}
+};

@@ -1,23 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import { isUserLoggedIn, getUserAllowedPaths } from 'app/auth/selectors';
 
-type PrivateRouteProps = {
-  exact: boolean;
-  path: string;
-  isLoggedIn: boolean;
-  allowedPaths: string[];
-  children?: React.ReactNode;
-};
-
-export const PrivateRoute = ({
-  isLoggedIn,
-  allowedPaths,
-  children = null,
-  ...rest
-}: PrivateRouteProps) => {
-  const renderChildrenOr404 = (path: string, location: any) => {
+export const PrivateRoute = ({ isLoggedIn, allowedPaths, children = null, ...rest }) => {
+  const renderChildrenOr404 = (path, location) => {
     if (allowedPaths.includes(path)) {
       return children;
     }
@@ -37,6 +25,17 @@ export const PrivateRoute = ({
       }
     />
   );
+};
+
+PrivateRoute.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+  /* eslint react/forbid-prop-types: "off" */
+  allowedPaths: PropTypes.array.isRequired,
+  children: PropTypes.node,
+};
+
+PrivateRoute.defaultProps = {
+  children: null,
 };
 
 const mapStateToProps = state => ({

@@ -2,6 +2,18 @@
   "name": "pos-service-bookmarks-front",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts?(x)": [
+      "npm test",
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@redux-saga/testing-utils": "^1.1.3",
     "@reduxjs/toolkit": "^1.3.6",
@@ -26,6 +38,7 @@
     "miragejs": "^0.1.40",
     "polished": "^3.6.4",
     "prettier": "^2.0.5",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-final-form": "^6.5.0",
@@ -93,7 +106,9 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
+    "husky": "^4.2.5",
     "jest-environment-jsdom-sixteen": "^1.0.3",
+    "lint-staged": "^10.2.9",
     "stylelint": "^13.6.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-property-sort-order-smacss": "^6.3.0",
