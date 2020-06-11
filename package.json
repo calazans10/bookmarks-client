@@ -2,17 +2,13 @@
   "name": "pos-service-bookmarks-front",
   "version": "0.1.0",
   "private": true,
-  "husky": {
+   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "npm test",
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   },
   "dependencies": {
     "@redux-saga/testing-utils": "^1.1.3",
