@@ -1,6 +1,6 @@
-import reducer from './index';
 import { doShowLoading, doHideLoading } from 'app/ui/actions';
 import { UIActionTypes } from 'app/ui/types';
+import reducer from '.';
 
 describe('loading reducer', () => {
   it('should return the initial state', () => {

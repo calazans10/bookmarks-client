@@ -1,4 +1,4 @@
-import reducer from './';
+import reducer from '.';
 
 describe('app reducer', () => {
   it('should return the initial state', () => {

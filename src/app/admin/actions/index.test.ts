@@ -14,7 +14,7 @@ import {
   doSuccessGetUsers,
   doChangeBookmarksMeta,
   doChangeUsersMeta,
-} from './';
+} from '.';
 
 
 describe('admin actions', () => {
@@ -68,7 +68,7 @@ describe('admin actions', () => {
   });
 
   it('should create doSuccessGetUsers action', () => {
-    const data = users.filter(user => !user.is_admin);
+    const data = users.filter(user => !user.isAdmin);
 
     const meta = {
       count: data.length,

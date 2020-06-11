@@ -5,6 +5,7 @@
   "extends": [
     "stylelint-config-recommended",
     "stylelint-config-styled-components",
-    "stylelint-config-property-sort-order-smacss"
+    "stylelint-config-property-sort-order-smacss",
+    "stylelint-config-prettier"
   ]
 }

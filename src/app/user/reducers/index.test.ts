@@ -6,11 +6,11 @@ import {
   doChangeBookmarksMeta,
 } from 'app/user/actions';
 import { Bookmark, UserActionTypes } from 'app/user/types';
-import reducer from './';
+import reducer from '.';
 
 describe('user reducer', () => {
-  const user = users.find(user => !user.is_admin);
-  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.user_id === user!.id);
+  const user = users.find(u => !u.isAdmin);
+  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.userId === user!.id);
 
   it('should return the initial state', () => {
     const expectedState = {

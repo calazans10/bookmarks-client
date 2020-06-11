@@ -1,6 +1,6 @@
 import React from 'react';
-import { renderWithRedux } from 'test-utils';
-import MainWrapper from './';
+import { renderWithRedux } from 'utils/test-utils';
+import MainWrapper from '.';
 
 describe('MainWrapper', () => {
   it('renders without crashing', () => {

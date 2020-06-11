@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Portal from './';
+import Portal from '.';
 
 describe('Portal', () => {
   it('shows the children', () => {

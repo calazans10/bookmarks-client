@@ -1,5 +1,5 @@
 import { users } from 'fixtures';
-import { isUserLoggedIn, getUser, getUserAllowedPaths } from './';
+import { isUserLoggedIn, getUser, getUserAllowedPaths } from '.';
 
 describe('auth selectors', () => {
   const user = users[0];
@@ -22,7 +22,7 @@ describe('auth selectors', () => {
 
   describe('getUserAllowedPaths', () => {
     it('should returns the allowed paths for user', () => {
-      const updatedState = { ...state, auth: { user: { ...user, is_admin: false }, token } };
+      const updatedState = { ...state, auth: { user: { ...user, isAdmin: false }, token } };
 
       expect(getUserAllowedPaths(updatedState)).toEqual([
         '/bookmarks',

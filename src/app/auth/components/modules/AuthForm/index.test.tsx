@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import AuthForm from './';
+import AuthForm from '.';
 
 describe('AuthForm', () => {
   describe('when is registration', () => {

@@ -12,7 +12,7 @@ import {
   doRequestLogout,
   doSuccessLogout,
   doRequestRegistration,
-} from './';
+} from '.';
 
 describe('auth actions', () => {
   it('should create doRequestLogin action', () => {

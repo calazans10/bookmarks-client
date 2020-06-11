@@ -10,10 +10,10 @@ import {
   getUsersOffset,
   getUsersLimit,
   getUsersTotal,
-} from './';
+} from '.';
 
 describe('admin selectors', () => {
-  const filteredUsers = users.filter(user => !user.is_admin)
+  const filteredUsers = users.filter(user => !user.isAdmin)
 
   const state = {
     admin: {

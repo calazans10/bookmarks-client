@@ -1,6 +1,6 @@
 import { doShowAlert, doHideAlert } from 'app/ui/actions';
 import { UIActionTypes } from 'app/ui/types';
-import reducer from './';
+import reducer from '.';
 
 describe('alert reducer', () => {
   it('should return the initial state', () => {

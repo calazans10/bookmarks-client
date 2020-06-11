@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import MainHeader from './';
+import MainHeader from '.';
 
 describe('MainHeader', () => {
   it('renders without crashing', () => {

@@ -11,7 +11,7 @@ import {
 } from 'app/auth/actions';
 import { doShowAlert, doShowLoading, doHideLoading } from 'app/ui/actions';
 import { requestLogin, requestRegistration, requestGetCurrentUser } from 'app/auth/api';
-import { handleRequestLogin, handleRequestLogout, handleRequestRegistration } from './';
+import { handleRequestLogin, handleRequestLogout, handleRequestRegistration } from '.';
 
 describe('auth sagas', () => {
   describe('handleRequestLogin', () => {
@@ -117,11 +117,9 @@ describe('auth sagas', () => {
       id: 'da20ff85-e58f-499c-8572-48479af0d10a',
       name: 'Justin Thomas',
       email: 'justin.thomas@example.com',
-      is_admin: false,
-      password_digest: '$2a$12$uI33eoOlnEiwMIVSiS8Ti.kfEYF.r9lfYfLY3Z6YjB/mQa0M8VF2a',
-      created_at: '2020-02-05T22:29:33.031Z',
-      updated_at: '2020-02-05T22:29:33.031Z',
-      bookmarks_count: 0,
+      isAdmin: false,
+      createdAt: '2020-02-05T22:29:33.031Z',
+      updatedAt: '2020-02-05T22:29:33.031Z',
     };
 
     const action = doRequestRegistration(name, email, password);

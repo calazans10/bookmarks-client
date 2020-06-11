@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ButtonLink from './';
+import ButtonLink from '.';
 
 describe('ButtonLink', () => {
   it('renders without crashing', () => {

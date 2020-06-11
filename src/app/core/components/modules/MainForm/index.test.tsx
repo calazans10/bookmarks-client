@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import MainForm from './';
+import MainForm from '.';
 
 describe('MainForm', () => {
   it('renders without crashing', () => {
@@ -8,7 +8,7 @@ describe('MainForm', () => {
       <MainForm legend="A legend" onSubmit={jest.fn()}>
         <div>
           <label htmlFor="test">A label</label>
-          <input id="test" name="test" type="text" />
+          <input type="text" id="test" name="test" />
         </div>
       </MainForm>
     );
