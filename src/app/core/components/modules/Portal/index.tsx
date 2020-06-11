@@ -9,8 +9,8 @@ if (!modalRoot) {
   document.body.appendChild(modalRoot);
 }
 
-class Portal extends React.Component {
-  el: HTMLElement = document.createElement("div");
+class Portal extends React.Component<{ children: React.ReactNode }> {
+  el: HTMLElement = document.createElement('div');
 
   componentDidMount() {
     modalRoot.appendChild(this.el);
@@ -21,7 +21,8 @@ class Portal extends React.Component {
   }
 
   render() {
-    return ReactDOM.createPortal(this.props.children, this.el);
+    const { children } = this.props;
+    return ReactDOM.createPortal(children, this.el);
   }
 }
 

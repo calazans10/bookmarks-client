@@ -32,8 +32,8 @@ export const PrivateRoute = ({
         isLoggedIn ? (
           renderChildrenOr404(match.path, location)
         ) : (
-            <Redirect to={{ pathname: '/', state: { from: location } }} />
-          )
+          <Redirect to={{ pathname: '/', state: { from: location } }} />
+        )
       }
     />
   );
