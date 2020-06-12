@@ -8,6 +8,12 @@ const API_URL = env.get('REACT_APP_API_URL').required().asString();
 
 const getToken = requestHeaders => requestHeaders.Authorization.split(' ')[1];
 
+const getUserId = token => {
+  /* eslint @typescript-eslint/no-explicit-any: "off" */
+  const decoded: any = jwt.verify(token, 'secret');
+  return decoded.userId;
+};
+
 const getCollectionResponse = data => ({
   meta: {
     count: data.length,
@@ -70,8 +76,8 @@ export const makeServer = () => {
       this.get('/v1/me', (schema, request) => {
         const token = getToken(request.requestHeaders);
         try {
-          const decoded = jwt.verify(token, 'secret');
-          return schema.db.users.find(decoded.userId);
+          const userId = getUserId(token);
+          return schema.db.users.find(userId);
         } catch (error) {
           return new Response(401);
         }
@@ -90,8 +96,8 @@ export const makeServer = () => {
       this.get('/v1/bookmarks', (schema, request) => {
         const token = getToken(request.requestHeaders);
         try {
-          const decoded = jwt.verify(token, 'secret');
-          const data = schema.db.bookmarks.where({ userId: decoded.userId });
+          const userId = getUserId(token);
+          const data = schema.db.bookmarks.where({ userId });
           return getCollectionResponse(data);
         } catch (error) {
           return new Response(401);
@@ -102,13 +108,13 @@ export const makeServer = () => {
         const attrs = JSON.parse(request.requestBody);
         const token = getToken(request.requestHeaders);
         try {
-          const decoded = jwt.verify(token, 'secret');
+          const userId = getUserId(token);
           const date = new Date().toISOString();
 
           schema.db.bookmarks.insert({
             ...attrs,
             id: uuidv4(),
-            userId: decoded.userId,
+            userId,
             createdAt: date,
             updatedAt: date,
           });

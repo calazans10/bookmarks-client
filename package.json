@@ -2,7 +2,7 @@
   "name": "pos-service-bookmarks-front",
   "version": "0.1.0",
   "private": true,
-   "husky": {
+  "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }

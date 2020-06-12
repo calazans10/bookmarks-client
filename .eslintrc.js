@@ -27,11 +27,11 @@ module.exports = {
   },
   plugins: ['react', 'prettier', '@typescript-eslint'],
   rules: {
-    'class-methods-use-this': 0,
-    'arrow-parens': [2, 'as-needed'],
-    'consistent-return': 0,
+    'class-methods-use-this': 'off',
+    'arrow-parens': ['error', 'as-needed'],
+    'consistent-return': 'off',
     'import/extensions': [
-      2,
+      'error',
       'ignorePackages',
       {
         js: 'never',
@@ -40,17 +40,17 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'import/prefer-default-export': 0,
-    'import/no-named-as-default': 0,
+    'import/prefer-default-export': 'off',
+    'import/no-named-as-default': 'off',
     'jsx-a11y/anchor-is-valid': [
-      2,
+      'error',
       {
         components: ['Link'],
         specialLink: ['to'],
       },
     ],
     'jsx-a11y/label-has-associated-control': [
-      2,
+      'error',
       {
         labelComponents: ['CustomInputLabel'],
         labelAttributes: ['label'],
@@ -59,22 +59,22 @@ module.exports = {
       },
     ],
     'no-param-reassign': [
-      2,
+      'error',
       {
         props: true,
         ignorePropertyModificationsFor: ['config', 'state', 'draft', 'sketch', 'outline'],
       },
     ],
-    'no-use-before-define': 0,
+    'no-use-before-define': 'off',
     'react/jsx-filename-extension': [
-      1,
+      'warn',
       {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     ],
-    'react/jsx-props-no-spreading': 0,
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/no-non-null-assertion': 0,
+    'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
   settings: {
     'import/resolver': {
