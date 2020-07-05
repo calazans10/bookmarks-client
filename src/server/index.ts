@@ -6,23 +6,14 @@ import { bookmarks, users } from 'fixtures';
 
 const API_URL = env.get('REACT_APP_API_URL').required().asString();
 
-const getToken = requestHeaders => requestHeaders.Authorization.split(' ')[1];
+const getToken = (requestHeaders: Record<string, string>) =>
+  requestHeaders.Authorization.split(' ')[1];
 
-const getUserId = token => {
+const getUserId = (token: string) => {
   /* eslint @typescript-eslint/no-explicit-any: "off" */
   const decoded: any = jwt.verify(token, 'secret');
   return decoded.userId;
 };
-
-const getCollectionResponse = data => ({
-  meta: {
-    count: data.length,
-    offset: 1,
-    limit: 9999,
-    total: data.length,
-  },
-  data,
-});
 
 export const makeServer = () => {
   return new Server({
@@ -84,13 +75,29 @@ export const makeServer = () => {
       });
 
       this.get('/v1/admin/bookmarks', schema => {
-        const data = schema.db.bookmarks;
-        return getCollectionResponse(data);
+        const data = schema.db.bookmarks.all();
+        return {
+          meta: {
+            count: data.length,
+            offset: 1,
+            limit: 9999,
+            total: data.length,
+          },
+          data,
+        };
       });
 
       this.get('/v1/admin/users', schema => {
         const data = schema.db.users.where({ isAdmin: false });
-        return getCollectionResponse(data);
+        return {
+          meta: {
+            count: data.length,
+            offset: 1,
+            limit: 9999,
+            total: data.length,
+          },
+          data,
+        };
       });
 
       this.get('/v1/bookmarks', (schema, request) => {
@@ -98,7 +105,15 @@ export const makeServer = () => {
         try {
           const userId = getUserId(token);
           const data = schema.db.bookmarks.where({ userId });
-          return getCollectionResponse(data);
+          return {
+            meta: {
+              count: data.length,
+              offset: 1,
+              limit: 9999,
+              total: data.length,
+            },
+            data,
+          };
         } catch (error) {
           return new Response(401);
         }

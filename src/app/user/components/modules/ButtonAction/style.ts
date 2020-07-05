@@ -6,11 +6,19 @@ const theme = {
   danger: '#e74c3c',
 };
 
-export const Button = styled.button`
+type ButtonTheme = {
+  main: 'success' | 'danger';
+};
+
+type ButtonProps = {
+  theme: ButtonTheme;
+};
+
+export const Button = styled.button<ButtonProps>`
   width: ${rem('100px')};
   padding: ${rem('8px')};
   border: none;
-  background-color: ${props => theme[props.theme.main]};
+  background-color: ${(props: ButtonProps) => theme[props.theme.main]};
   color: #fff;
   font-size: ${em('10px')};
   font-weight: 500;

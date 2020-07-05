@@ -6,7 +6,7 @@ const initialState: AlertState = {
   isVisible: false,
 };
 
-const applyShowAlert = (state, action) => {
+const applyShowAlert = (state: AlertState, action: PayloadAction<{ message: string }>) => {
   const { message } = action.payload;
   state.message = message;
   state.isVisible = true;

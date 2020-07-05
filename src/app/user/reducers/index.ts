@@ -22,25 +22,34 @@ const initialState: UserState = {
   selectedBookmark: {} as Bookmark,
 };
 
-const applySuccessGetBookmarks = (state, action) => {
+const applySuccessGetBookmarks = (
+  state: UserState,
+  action: PayloadAction<{ meta: Meta; data: Bookmark[] }>
+) => {
   const { meta, data } = action.payload;
   state.bookmarks.meta = meta;
   state.bookmarks.data = data;
 };
 
-const applySuccessDeleteBookmark = (state, action) => {
+const applySuccessDeleteBookmark = (
+  state: UserState,
+  action: PayloadAction<{ bookmarkId: string }>
+) => {
   const { bookmarkId } = action.payload;
   state.bookmarks.data = state.bookmarks.data.filter(bookmark => bookmark.id !== bookmarkId);
   state.bookmarks.meta.count -= 1;
   state.bookmarks.meta.total -= 1;
 };
 
-const applyChangeSelectedBookmark = (state, action) => {
+const applyChangeSelectedBookmark = (
+  state: UserState,
+  action: PayloadAction<{ bookmark: Bookmark }>
+) => {
   const { bookmark } = action.payload;
   state.selectedBookmark = bookmark;
 };
 
-const applyChangeBookmarksMeta = (state, action) => {
+const applyChangeBookmarksMeta = (state: UserState, action: PayloadAction<Meta>) => {
   state.bookmarks.meta = action.payload;
 };
 

@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
 import { routerMiddleware } from 'connected-react-router';
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
@@ -17,7 +17,8 @@ const persistConfig = {
   blacklist: ['ui'],
 };
 
-const createAppMiddleware = sagaMiddleware => {
+/* eslint @typescript-eslint/ban-types: "off" */
+const createAppMiddleware = (sagaMiddleware: SagaMiddleware<object>) => {
   const appMiddleware = [
     ...getDefaultMiddleware({
       thunk: false,

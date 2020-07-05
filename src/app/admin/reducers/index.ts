@@ -31,23 +31,29 @@ const initialState: AdminState = {
   },
 };
 
-const applySuccessGetBookmarks = (state, action) => {
+const applySuccessGetBookmarks = (
+  state: AdminState,
+  action: PayloadAction<{ meta: Meta; data: Bookmark[] }>
+) => {
   const { meta, data } = action.payload;
   state.bookmarks.meta = meta;
   state.bookmarks.data = data;
 };
 
-const applySuccessGetUsers = (state, action) => {
+const applySuccessGetUsers = (
+  state: AdminState,
+  action: PayloadAction<{ meta: Meta; data: User[] }>
+) => {
   const { meta, data } = action.payload;
   state.users.meta = meta;
   state.users.data = data;
 };
 
-const applyChangeBookmarksMeta = (state, action) => {
+const applyChangeBookmarksMeta = (state: AdminState, action: PayloadAction<Meta>) => {
   state.bookmarks.meta = action.payload;
 };
 
-const applyChangeUsersMeta = (state, action) => {
+const applyChangeUsersMeta = (state: AdminState, action: PayloadAction<Meta>) => {
   state.users.meta = action.payload;
 };
 

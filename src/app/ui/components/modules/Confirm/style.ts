@@ -94,23 +94,23 @@ export const Dialog = styled.div<DialogProps>`
   top: -100vh;
   left: calc(50% - 145px);
   width: ${rem('290px')};
-  height: ${props => theme.dialog[props.theme.main].ht.sm};
+  height: ${(props: DialogProps) => theme.dialog[props.theme.main].ht.sm};
   transition: all 0.3s ease-in;
 
   @media (min-width: 750px) {
     left: calc(50% - 227px);
     width: ${rem('454px')};
-    height: ${props => theme.dialog[props.theme.main].ht.lg};
+    height: ${(props: DialogProps) => theme.dialog[props.theme.main].ht.lg};
   }
 
-  ${props =>
+  ${(props: DialogProps) =>
     props.isHidden &&
     css`
       top: -100vh;
       opacity: 0;
     `}
 
-  ${props =>
+  ${(props: DialogProps) =>
     props.isVisible &&
     css`
       top: calc(40% - 95px);
@@ -138,7 +138,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.p<ParagraphProps>`
   margin-bottom: ${rem('18px')};
-  color: ${props => theme.title[props.theme.main]};
+  color: ${(props: ParagraphProps) => theme.title[props.theme.main]};
   font-size: ${em('20px')};
   font-weight: 700;
   line-height: ${stripUnit(math('20px / 24px'))};
@@ -152,7 +152,7 @@ export const Title = styled.p<ParagraphProps>`
 
 export const Text = styled.p<ParagraphProps>`
   width: 100%;
-  color: ${props => theme.text[props.theme.main]};
+  color: ${(props: ParagraphProps) => theme.text[props.theme.main]};
   font-size: ${em('14px')};
   line-height: ${stripUnit(math('14px / 17px'))};
 
@@ -176,9 +176,9 @@ export const Button = styled.button<ButtonProps>`
   height: ${rem('50px')};
   border: none;
   border-color: transparent;
-  background-color: ${props => theme.button[props.theme.main].bg};
+  background-color: ${(props: ButtonProps) => theme.button[props.theme.main].bg};
   background-image: none;
-  color: ${props => theme.button[props.theme.main].fg};
+  color: ${(props: ButtonProps) => theme.button[props.theme.main].fg};
   font-size: ${em('14px')};
   font-weight: 600;
   line-height: ${stripUnit(math('14px / 17px'))};

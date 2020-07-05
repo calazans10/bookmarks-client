@@ -6,7 +6,10 @@ const initialState: AuthState = {
   token: '',
 };
 
-const applySuccessLogin = (state, action) => {
+const applySuccessLogin = (
+  state: AuthState,
+  action: PayloadAction<{ user: User; token: string }>
+) => {
   const { user, token } = action.payload;
   state.user = user;
   state.token = token;

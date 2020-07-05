@@ -7,7 +7,7 @@ type PaginationProps = {
   count: number;
   limit: number;
   total: number;
-  onChange: (data: { selected: number }) => void;
+  onChange: (selectedItem: { selected: number }) => void;
 };
 
 const Pagination = ({ initialPage, count, limit, total, onChange }: PaginationProps) => {
@@ -24,6 +24,8 @@ const Pagination = ({ initialPage, count, limit, total, onChange }: PaginationPr
         nextLabel="Next >"
         initialPage={initialPage}
         pageCount={Math.ceil(total / limit)}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
         containerClassName="pagination"
         onPageChange={onChange}
       />
