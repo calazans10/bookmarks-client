@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
-import { ErrorMessages } from 'enums';
 import { BookmarkData } from 'app/user/types';
 import MainForm from 'app/core/components/modules/MainForm';
 import FormGroup from 'app/core/components/modules/FormGroup';
@@ -23,8 +22,8 @@ const defaultProps = {
 };
 
 const schema = yup.object().shape({
-  title: yup.string().required(ErrorMessages.REQUIRED),
-  url: yup.string().url(ErrorMessages.URL).required(ErrorMessages.REQUIRED),
+  title: yup.string().required(),
+  url: yup.string().url().required(),
 });
 
 const BookmarkForm = ({ legend, action, title, url, onSubmit }: BookmarkFormProps) => {

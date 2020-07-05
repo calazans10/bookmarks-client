@@ -15,7 +15,7 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
     <input
       name="isRegistration"
       type="hidden"
-      value="NO"
+      value="no"
     />
     <div
       class="sc-AxiKw bLDZyO"
@@ -84,7 +84,7 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
     <input
       name="isRegistration"
       type="hidden"
-      value="YES"
+      value="yes"
     />
     <div
       class="sc-AxiKw bLDZyO"

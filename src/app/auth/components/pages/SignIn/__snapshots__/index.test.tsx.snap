@@ -76,7 +76,7 @@ exports[`SignIn renders without crashing 1`] = `
         <input
           name="isRegistration"
           type="hidden"
-          value="NO"
+          value="no"
         />
         <div
           class="sc-AxiKw bLDZyO"

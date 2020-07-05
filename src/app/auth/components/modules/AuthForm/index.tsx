@@ -2,11 +2,15 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
-import { ErrorMessages } from 'enums';
 import { AuthData } from 'app/auth/types';
 import MainForm from 'app/core/components/modules/MainForm';
 import FormGroup from 'app/core/components/modules/FormGroup';
 import ButtonSubmit from 'app/core/components/modules/ButtonSubmit';
+
+enum Active {
+  YES = 'yes',
+  NO = 'no',
+}
 
 type AuthFormProps = {
   legend: string;
@@ -21,15 +25,15 @@ const defaultProps = {
 
 const schema = yup.object().shape({
   firstName: yup.string().when('isRegistration', {
-    is: 'YES',
-    then: yup.string().required(ErrorMessages.REQUIRED),
+    is: Active.YES,
+    then: yup.string().required(),
   }),
   lastName: yup.string().when('isRegistration', {
-    is: 'YES',
-    then: yup.string().required(ErrorMessages.REQUIRED),
+    is: Active.YES,
+    then: yup.string().required(),
   }),
-  email: yup.string().email(ErrorMessages.EMAIL).required(ErrorMessages.REQUIRED),
-  password: yup.string().required(ErrorMessages.REQUIRED),
+  email: yup.string().email().required(),
+  password: yup.string().required(),
 });
 
 const AuthForm = ({ legend, action, isRegistration, onSubmit }: AuthFormProps) => {
@@ -42,7 +46,7 @@ const AuthForm = ({ legend, action, isRegistration, onSubmit }: AuthFormProps) =
       <input
         name="isRegistration"
         type="hidden"
-        defaultValue={isRegistration ? 'YES' : 'NO'}
+        defaultValue={isRegistration ? Active.YES : Active.NO}
         ref={register}
       />
       {isRegistration && (
