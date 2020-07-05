@@ -15,8 +15,8 @@ type SignUpProps = {
 
 export const SignUp = ({ onRequestRegistration }: SignUpProps) => {
   const onSubmit = async (values: AuthData) => {
-    const { name, email, password } = values;
-    onRequestRegistration(name as string, email, password);
+    const { firstName, lastName, email, password } = values;
+    onRequestRegistration(`${firstName} ${lastName}`, email, password);
   };
 
   return (

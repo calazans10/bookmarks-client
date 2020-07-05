@@ -6,22 +6,17 @@ exports[`FormGroup when is invalid renders without crashing 1`] = `
 >
   <label
     class="sc-AxirZ bgWkfA"
-    for="password"
   >
     Password
   </label>
   <input
+    aria-invalid="false"
     class="sc-AxiKw bmohav"
-    id="password"
-    name="password"
     placeholder="Password"
     type="password"
+    value=""
   />
-  <span
-    class="sc-AxhCb XwNWq"
-  >
-    This field is required.
-  </span>
+  
 </div>
 `;
 
@@ -31,16 +26,16 @@ exports[`FormGroup when is valid renders without crashing 1`] = `
 >
   <label
     class="sc-AxirZ bgWkfA"
-    for="password"
   >
     Password
   </label>
   <input
+    aria-invalid="false"
     class="sc-AxiKw bmohav"
-    id="password"
-    name="password"
     placeholder="Password"
     type="password"
+    value=""
   />
+  
 </div>
 `;

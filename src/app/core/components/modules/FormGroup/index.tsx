@@ -1,54 +1,52 @@
-import React, { useState } from 'react';
-import { FieldInputProps, FieldMetaState } from 'react-final-form';
+import React from 'react';
 import { Container, Label, Input, ErrorMessage } from './style';
 
 type FormGroupProps = {
-  /* eslint @typescript-eslint/no-explicit-any: "off" */
-  input: FieldInputProps<any, HTMLElement>;
-  meta: FieldMetaState<any>;
+  name: string;
   label: string;
   type: string;
-  mask: string;
   autoFocus: boolean;
   disabled: boolean;
+  defaultValue: string | number | ReadonlyArray<string>;
+  /* eslint @typescript-eslint/no-explicit-any: "off" */
+  inputRef: ((instance: any) => void) | React.RefObject<any> | null | undefined;
+  error: string;
 } & typeof defaultProps;
 
 const defaultProps = {
-  label: '',
   type: 'tel',
-  mask: '',
   autoFocus: false,
   disabled: false,
+  defaultValue: '',
+  error: '',
 };
 
-const FormGroup = ({ input, meta, label, type, mask, autoFocus, disabled }: FormGroupProps) => {
-  const [isFocused, setIsFocused] = useState(false);
-
-  const isInvalid = meta.touched && meta.error && !isFocused;
-
-  const onFocus = () => setIsFocused(true);
-
-  const onBlur = () => setIsFocused(false);
-
-  return (
-    <Container>
-      <Label htmlFor={input.name}>{label}</Label>
-      <Input
-        {...input}
-        id={input.name}
-        type={type}
-        mask={mask}
-        formatChars={{ 9: '[0-9]', '?': '[0-9]' }}
-        autoFocus={autoFocus}
-        disabled={disabled}
-        placeholder={label}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      />
-      {isInvalid && <ErrorMessage>{meta.error}</ErrorMessage>}
-    </Container>
-  );
-};
+const FormGroup = ({
+  name,
+  label,
+  type,
+  autoFocus,
+  disabled,
+  defaultValue,
+  inputRef,
+  error,
+}: FormGroupProps) => (
+  <Container>
+    <Label htmlFor={name}>{label}</Label>
+    <Input
+      id={name}
+      name={name}
+      type={type}
+      autoFocus={autoFocus}
+      disabled={disabled}
+      placeholder={label}
+      defaultValue={defaultValue}
+      aria-invalid={!!error}
+      ref={inputRef}
+    />
+    {error && <ErrorMessage role="alert">{error}</ErrorMessage>}
+  </Container>
+);
 
 FormGroup.defaultProps = defaultProps;
 

@@ -73,6 +73,11 @@ exports[`SignIn renders without crashing 1`] = `
         >
           Login to your account
         </legend>
+        <input
+          name="isRegistration"
+          type="hidden"
+          value="NO"
+        />
         <div
           class="sc-AxiKw bLDZyO"
         >
@@ -80,16 +85,18 @@ exports[`SignIn renders without crashing 1`] = `
             class="sc-AxhCb ieTFEo"
             for="email"
           >
-            Email
+            E-mail
           </label>
           <input
+            aria-invalid="false"
             class="sc-AxhUy ePtFHq"
             id="email"
             name="email"
-            placeholder="Email"
+            placeholder="E-mail"
             type="email"
             value=""
           />
+          
         </div>
         <div
           class="sc-AxiKw bLDZyO"
@@ -101,6 +108,7 @@ exports[`SignIn renders without crashing 1`] = `
             Password
           </label>
           <input
+            aria-invalid="false"
             class="sc-AxhUy ePtFHq"
             id="password"
             name="password"
@@ -108,6 +116,7 @@ exports[`SignIn renders without crashing 1`] = `
             type="password"
             value=""
           />
+          
         </div>
         <div>
           <button

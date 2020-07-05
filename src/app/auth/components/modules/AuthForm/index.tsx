@@ -1,11 +1,8 @@
 import React from 'react';
-import { Form, Field } from 'react-final-form';
-import {
-  required,
-  mustBeFullName,
-  mustBeEmail,
-  composeValidators,
-} from 'utils/validators';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers';
+import * as yup from 'yup';
+import { ErrorMessages } from 'enums';
 import { AuthData } from 'app/auth/types';
 import MainForm from 'app/core/components/modules/MainForm';
 import FormGroup from 'app/core/components/modules/FormGroup';
@@ -22,41 +19,70 @@ const defaultProps = {
   isRegistration: false,
 };
 
-const AuthForm = ({ legend, action, isRegistration, onSubmit }: AuthFormProps) => (
-  <Form
-    onSubmit={onSubmit}
-    render={({ handleSubmit }) => (
-      <MainForm legend={legend} onSubmit={handleSubmit}>
-        {isRegistration && (
-          <Field
-            name="name"
-            validate={composeValidators(required, mustBeFullName)}
-            render={({ input, meta }) => (
-              <FormGroup input={input} meta={meta} label="Name" type="text" />
-            )}
+const schema = yup.object().shape({
+  firstName: yup.string().when('isRegistration', {
+    is: 'YES',
+    then: yup.string().required(ErrorMessages.REQUIRED),
+  }),
+  lastName: yup.string().when('isRegistration', {
+    is: 'YES',
+    then: yup.string().required(ErrorMessages.REQUIRED),
+  }),
+  email: yup.string().email(ErrorMessages.EMAIL).required(ErrorMessages.REQUIRED),
+  password: yup.string().required(ErrorMessages.REQUIRED),
+});
+
+const AuthForm = ({ legend, action, isRegistration, onSubmit }: AuthFormProps) => {
+  const { register, handleSubmit, errors } = useForm<AuthData>({
+    resolver: yupResolver(schema),
+  });
+
+  return (
+    <MainForm legend={legend} onSubmit={handleSubmit(onSubmit)}>
+      <input
+        name="isRegistration"
+        type="hidden"
+        defaultValue={isRegistration ? 'YES' : 'NO'}
+        ref={register}
+      />
+      {isRegistration && (
+        <>
+          <FormGroup
+            name="firstName"
+            label="First Name"
+            type="text"
+            inputRef={register}
+            error={errors.firstName?.message}
           />
-        )}
-        <Field
-          name="email"
-          validate={composeValidators(required, mustBeEmail)}
-          render={({ input, meta }) => (
-            <FormGroup input={input} meta={meta} label="Email" type="email" />
-          )}
-        />
-        <Field
-          name="password"
-          validate={required}
-          render={({ input, meta }) => (
-            <FormGroup input={input} meta={meta} label="Password" type="password" />
-          )}
-        />
-        <div>
-          <ButtonSubmit>{action}</ButtonSubmit>
-        </div>
-      </MainForm>
-    )}
-  />
-);
+          <FormGroup
+            name="lastName"
+            label="Last Name"
+            type="text"
+            inputRef={register}
+            error={errors.lastName?.message}
+          />
+        </>
+      )}
+      <FormGroup
+        name="email"
+        label="E-mail"
+        type="email"
+        inputRef={register}
+        error={errors.email?.message}
+      />
+      <FormGroup
+        name="password"
+        label="Password"
+        type="password"
+        inputRef={register}
+        error={errors.password?.message}
+      />
+      <div>
+        <ButtonSubmit>{action}</ButtonSubmit>
+      </div>
+    </MainForm>
+  );
+};
 
 AuthForm.defaultProps = defaultProps;
 

@@ -22,6 +22,7 @@ exports[`BookmarkForm renders without crashing 1`] = `
         Title
       </label>
       <input
+        aria-invalid="false"
         class="sc-AxhUy ePtFHq"
         id="title"
         name="title"
@@ -29,6 +30,7 @@ exports[`BookmarkForm renders without crashing 1`] = `
         type="text"
         value=""
       />
+      
     </div>
     <div
       class="sc-AxiKw bLDZyO"
@@ -40,6 +42,7 @@ exports[`BookmarkForm renders without crashing 1`] = `
         Url
       </label>
       <input
+        aria-invalid="false"
         class="sc-AxhUy ePtFHq"
         id="url"
         name="url"
@@ -47,6 +50,7 @@ exports[`BookmarkForm renders without crashing 1`] = `
         type="url"
         value=""
       />
+      
     </div>
     <div>
       <button

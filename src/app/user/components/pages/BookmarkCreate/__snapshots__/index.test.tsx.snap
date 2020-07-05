@@ -84,6 +84,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
             Title
           </label>
           <input
+            aria-invalid="false"
             class="sc-fzqBZW YgUtV"
             id="title"
             name="title"
@@ -91,6 +92,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
             type="text"
             value=""
           />
+          
         </div>
         <div
           class="sc-fznZeY iUPSmW"
@@ -102,6 +104,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
             Url
           </label>
           <input
+            aria-invalid="false"
             class="sc-fzqBZW YgUtV"
             id="url"
             name="url"
@@ -109,6 +112,7 @@ exports[`BookmarkCreate renders without crashing 1`] = `
             type="url"
             value=""
           />
+          
         </div>
         <div>
           <button

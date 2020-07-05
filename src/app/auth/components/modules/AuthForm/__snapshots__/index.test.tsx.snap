@@ -12,6 +12,11 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
     >
       A legend
     </legend>
+    <input
+      name="isRegistration"
+      type="hidden"
+      value="NO"
+    />
     <div
       class="sc-AxiKw bLDZyO"
     >
@@ -19,16 +24,18 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
         class="sc-AxhCb ieTFEo"
         for="email"
       >
-        Email
+        E-mail
       </label>
       <input
+        aria-invalid="false"
         class="sc-AxhUy ePtFHq"
         id="email"
         name="email"
-        placeholder="Email"
+        placeholder="E-mail"
         type="email"
         value=""
       />
+      
     </div>
     <div
       class="sc-AxiKw bLDZyO"
@@ -40,6 +47,7 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
         Password
       </label>
       <input
+        aria-invalid="false"
         class="sc-AxhUy ePtFHq"
         id="password"
         name="password"
@@ -47,6 +55,7 @@ exports[`AuthForm when is not registration renders without crashing 1`] = `
         type="password"
         value=""
       />
+      
     </div>
     <div>
       <button
@@ -72,23 +81,50 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
     >
       A legend
     </legend>
+    <input
+      name="isRegistration"
+      type="hidden"
+      value="YES"
+    />
     <div
       class="sc-AxiKw bLDZyO"
     >
       <label
         class="sc-AxhCb ieTFEo"
-        for="name"
+        for="firstName"
       >
-        Name
+        First Name
       </label>
       <input
+        aria-invalid="false"
         class="sc-AxhUy ePtFHq"
-        id="name"
-        name="name"
-        placeholder="Name"
+        id="firstName"
+        name="firstName"
+        placeholder="First Name"
         type="text"
         value=""
       />
+      
+    </div>
+    <div
+      class="sc-AxiKw bLDZyO"
+    >
+      <label
+        class="sc-AxhCb ieTFEo"
+        for="lastName"
+      >
+        Last Name
+      </label>
+      <input
+        aria-invalid="false"
+        class="sc-AxhUy ePtFHq"
+        id="lastName"
+        name="lastName"
+        placeholder="Last Name"
+        type="text"
+        value=""
+      />
+      
     </div>
     <div
       class="sc-AxiKw bLDZyO"
@@ -97,16 +133,18 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
         class="sc-AxhCb ieTFEo"
         for="email"
       >
-        Email
+        E-mail
       </label>
       <input
+        aria-invalid="false"
         class="sc-AxhUy ePtFHq"
         id="email"
         name="email"
-        placeholder="Email"
+        placeholder="E-mail"
         type="email"
         value=""
       />
+      
     </div>
     <div
       class="sc-AxiKw bLDZyO"
@@ -118,6 +156,7 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
         Password
       </label>
       <input
+        aria-invalid="false"
         class="sc-AxhUy ePtFHq"
         id="password"
         name="password"
@@ -125,6 +164,7 @@ exports[`AuthForm when is registration renders without crashing 1`] = `
         type="password"
         value=""
       />
+      
     </div>
     <div>
       <button

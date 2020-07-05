@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Field } from 'react-final-form';
-import { required } from 'utils/validators';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers';
+import * as yup from 'yup';
+import { ErrorMessages } from 'enums';
 import { BookmarkData } from 'app/user/types';
 import MainForm from 'app/core/components/modules/MainForm';
 import FormGroup from 'app/core/components/modules/FormGroup';
@@ -20,34 +22,41 @@ const defaultProps = {
   url: '',
 };
 
-const BookmarkForm = ({ legend, action, title, url, onSubmit }: BookmarkFormProps) => (
-  <Form
-    initialValues={{ title, url }}
-    onSubmit={onSubmit}
-    render={({ handleSubmit }) => (
-      <MainForm legend={legend} onSubmit={handleSubmit}>
-        <Field
-          name="title"
-          validate={required}
-          render={({ input, meta }) => (
-            <FormGroup input={input} meta={meta} label="Title" type="text" />
-          )}
-        />
-        <Field
-          name="url"
-          validate={required}
-          render={({ input, meta }) => (
-            <FormGroup input={input} meta={meta} label="Url" type="url" />
-          )}
-        />
-        <div>
-          <ButtonSubmit>{action}</ButtonSubmit>
-          <Link to="/bookmarks">Cancel</Link>
-        </div>
-      </MainForm>
-    )}
-  />
-);
+const schema = yup.object().shape({
+  title: yup.string().required(ErrorMessages.REQUIRED),
+  url: yup.string().url(ErrorMessages.URL).required(ErrorMessages.REQUIRED),
+});
+
+const BookmarkForm = ({ legend, action, title, url, onSubmit }: BookmarkFormProps) => {
+  const { register, handleSubmit, errors } = useForm<BookmarkData>({
+    resolver: yupResolver(schema),
+  });
+
+  return (
+    <MainForm legend={legend} onSubmit={handleSubmit(onSubmit)}>
+      <FormGroup
+        name="title"
+        label="Title"
+        type="text"
+        defaultValue={title}
+        inputRef={register}
+        error={errors.title?.message}
+      />
+      <FormGroup
+        name="url"
+        label="Url"
+        type="url"
+        defaultValue={url}
+        inputRef={register}
+        error={errors.url?.message}
+      />
+      <div>
+        <ButtonSubmit>{action}</ButtonSubmit>
+        <Link to="/bookmarks">Cancel</Link>
+      </div>
+    </MainForm>
+  );
+};
 
 BookmarkForm.defaultProps = defaultProps;
 

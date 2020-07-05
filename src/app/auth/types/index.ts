@@ -22,7 +22,8 @@ export interface AuthSelector {
 }
 
 export interface AuthData {
-  name?: string;
+  firstName?: string;
+  lastName?: string;
   email: string;
   password: string;
 }

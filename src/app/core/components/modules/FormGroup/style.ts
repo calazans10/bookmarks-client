@@ -1,4 +1,3 @@
-import InputMask from 'react-input-mask';
 import styled from 'styled-components';
 import { em, rem } from 'polished';
 
@@ -13,7 +12,7 @@ export const Label = styled.label`
   letter-spacing: 1.25px;
 `;
 
-export const Input = styled(InputMask)`
+export const Input = styled.input`
   width: 100%;
   padding: ${rem('12px')};
   border: ${rem('1px')} solid #e3e3e3;
