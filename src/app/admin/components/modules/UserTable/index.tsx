@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getUsers } from 'app/admin/selectors';
-import { User } from 'app/admin/types';
+import { User, RootState } from 'app/admin/types';
 import Table from 'app/core/components/modules/Table';
 import TableRow from 'app/core/components/modules/TableRow';
 import TableColumn from 'app/core/components/modules/TableColumn';
@@ -23,7 +23,7 @@ export const UserTable = ({ users }: UserTableProps) => (
   </Table>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   users: getUsers(state),
 });
 

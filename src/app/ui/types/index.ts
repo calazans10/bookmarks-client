@@ -18,7 +18,7 @@ export interface LoadingState {
   isVisible: boolean;
 }
 
-export interface UISelector {
+export interface RootState {
   ui: {
     alert: AlertState;
     confirm: ConfirmState;

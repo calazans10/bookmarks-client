@@ -1,13 +1,13 @@
-import { UserSelector } from 'app/user/types';
+import { RootState } from 'app/user/types';
 
-export const getBookmarks = ({ user }: UserSelector) => user.bookmarks.data;
+export const getBookmarks = ({ user }: RootState) => user.bookmarks.data;
 
-export const getBookmarksCount = ({ user }: UserSelector) => user.bookmarks.meta.count;
+export const getBookmarksCount = ({ user }: RootState) => user.bookmarks.meta.count;
 
-export const getBookmarksOffset = ({ user }: UserSelector) => user.bookmarks.meta.offset;
+export const getBookmarksOffset = ({ user }: RootState) => user.bookmarks.meta.offset;
 
-export const getBookmarksLimit = ({ user }: UserSelector) => user.bookmarks.meta.limit;
+export const getBookmarksLimit = ({ user }: RootState) => user.bookmarks.meta.limit;
 
-export const getBookmarksTotal = ({ user }: UserSelector) => user.bookmarks.meta.total;
+export const getBookmarksTotal = ({ user }: RootState) => user.bookmarks.meta.total;
 
-export const getSelectedBookmark = ({ user }: UserSelector) => user.selectedBookmark;
+export const getSelectedBookmark = ({ user }: RootState) => user.selectedBookmark;

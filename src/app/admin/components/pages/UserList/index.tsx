@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { doChangeUsersMeta, doRequestGetUsers } from 'app/admin/actions';
 import { getUsersCount, getUsersLimit, getUsersOffset, getUsersTotal } from 'app/admin/selectors';
-import { AdminActionTypes } from 'app/admin/types';
+import { RootState, AdminActionTypes } from 'app/admin/types';
 import UserTable from 'app/admin/components/modules/UserTable';
 import PageContent from 'app/core/components/modules/PageContent';
 import PageNavigation from 'app/core/components/modules/PageNavigation';
@@ -54,7 +54,7 @@ export const UserList = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   count: getUsersCount(state),
   offset: getUsersOffset(state),
   limit: getUsersLimit(state),

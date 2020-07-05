@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { doHideConfirm } from 'app/ui/actions';
 import { isConfirmVisible } from 'app/ui/selectors';
-import { UIActionTypes } from 'app/ui/types';
+import { RootState, UIActionTypes } from 'app/ui/types';
 import Portal from 'app/core/components/modules/Portal';
 import { Container, Dialog, Wrapper, Title, Text, Footer, Button } from './style';
 
@@ -72,7 +72,7 @@ export const Confirm = ({
 
 Confirm.defaultProps = defaultProps;
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   isVisible: isConfirmVisible(state),
 });
 

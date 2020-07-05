@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { isLoadingVisible } from 'app/ui/selectors';
+import { RootState } from 'app/ui/types';
 import { Container } from './style';
 
 type LoadingProps = {
@@ -19,7 +20,7 @@ export const Loading = ({ isVisible }: LoadingProps) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   isVisible: isLoadingVisible(state),
 });
 

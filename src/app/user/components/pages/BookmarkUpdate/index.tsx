@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { doRequestUpdateBookmark } from 'app/user/actions';
 import { getSelectedBookmark } from 'app/user/selectors';
-import { Bookmark, BookmarkData, UserActionTypes } from 'app/user/types';
+import { Bookmark, BookmarkData, RootState, UserActionTypes } from 'app/user/types';
 import PageContent from 'app/core/components/modules/PageContent';
 import BookmarkForm from 'app/user/components/modules/BookmarkForm';
 
@@ -29,7 +29,7 @@ export const BookmarkUpdate = ({ bookmark, onRequestUpdateBookmark }: BookmarkUp
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   bookmark: getSelectedBookmark(state),
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getBookmarks } from 'app/admin/selectors';
-import { Bookmark } from 'app/admin/types';
+import { Bookmark, RootState } from 'app/admin/types';
 import Table from 'app/core/components/modules/Table';
 import TableRow from 'app/core/components/modules/TableRow';
 import TableColumn from 'app/core/components/modules/TableColumn';
@@ -26,7 +26,7 @@ export const BookmarkTable = ({ bookmarks }: BookmarkTableProps) => (
   </Table>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   bookmarks: getBookmarks(state),
 });
 

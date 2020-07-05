@@ -11,7 +11,7 @@ import {
   getBookmarksOffset,
   getBookmarksTotal,
 } from 'app/user/selectors';
-import { UserActionTypes } from 'app/user/types';
+import { RootState, UserActionTypes } from 'app/user/types';
 
 type BookmarkListProps = {
   count: number;
@@ -59,7 +59,7 @@ export const BookmarkList = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   count: getBookmarksCount(state),
   offset: getBookmarksOffset(state),
   limit: getBookmarksLimit(state),

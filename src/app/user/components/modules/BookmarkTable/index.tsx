@@ -6,7 +6,7 @@ import { doRequestDeleteBookmark, doChangeSelectedBookmark } from 'app/user/acti
 import { getBookmarks } from 'app/user/selectors';
 import { RouterActionTypes } from 'app/router/types';
 import { UIActionTypes } from 'app/ui/types';
-import { Bookmark, UserActionTypes } from 'app/user/types';
+import { Bookmark, RootState, UserActionTypes } from 'app/user/types';
 import Table from 'app/core/components/modules/Table';
 import TableRow from 'app/core/components/modules/TableRow';
 import TableColumn from 'app/core/components/modules/TableColumn';
@@ -78,7 +78,7 @@ export const BookmarkTable = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   bookmarks: getBookmarks(state),
 });
 

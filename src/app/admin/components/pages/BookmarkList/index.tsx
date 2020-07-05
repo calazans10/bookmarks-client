@@ -7,7 +7,7 @@ import {
   getBookmarksOffset,
   getBookmarksTotal,
 } from 'app/admin/selectors';
-import { AdminActionTypes } from 'app/admin/types';
+import { RootState, AdminActionTypes } from 'app/admin/types';
 import BookmarkTable from 'app/admin/components/modules/BookmarkTable';
 import PageContent from 'app/core/components/modules/PageContent';
 import PageNavigation from 'app/core/components/modules/PageNavigation';
@@ -59,7 +59,7 @@ export const BookmarkList = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   count: getBookmarksCount(state),
   offset: getBookmarksOffset(state),
   limit: getBookmarksLimit(state),

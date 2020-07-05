@@ -1,9 +1,9 @@
-import { UISelector } from 'app/ui/types';
+import { RootState } from 'app/ui/types';
 
-export const isAlertVisible = ({ ui }: UISelector) => ui.alert.isVisible;
+export const isAlertVisible = ({ ui }: RootState) => ui.alert.isVisible;
 
-export const getAlertMessage = ({ ui }: UISelector) => ui.alert.message;
+export const getAlertMessage = ({ ui }: RootState) => ui.alert.message;
 
-export const isLoadingVisible = ({ ui }: UISelector) => ui.loading.isVisible;
+export const isLoadingVisible = ({ ui }: RootState) => ui.loading.isVisible;
 
-export const isConfirmVisible = ({ ui }: UISelector) => ui.confirm.isVisible;
+export const isConfirmVisible = ({ ui }: RootState) => ui.confirm.isVisible;

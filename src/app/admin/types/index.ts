@@ -41,7 +41,7 @@ export interface AdminState {
   };
 }
 
-export interface AdminSelector {
+export interface RootState {
   admin: AdminState;
 }
 

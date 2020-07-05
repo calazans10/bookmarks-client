@@ -36,7 +36,7 @@ export interface UserState {
   selectedBookmark: Bookmark;
 }
 
-export interface UserSelector {
+export interface RootState {
   user: UserState;
 }
 
