@@ -36,7 +36,7 @@
     "connected-react-router": "^6.8.0",
     "env-var": "^6.2.0",
     "history": "^4.10.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "miragejs": "^0.1.40",
     "polished": "^3.6.5",
     "prettier": "^2.0.5",
